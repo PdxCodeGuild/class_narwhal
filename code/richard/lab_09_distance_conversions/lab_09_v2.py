@@ -48,8 +48,8 @@ units_output = input("What are the units of output? (feet, miles, meters, kilome
 
 
 # Step 2: Calculate the output number in meters
-if units_input in ["feet", "miles", "meters", "kilometers", "yards", "inches"]:
-    print("Good, thats a unit input I can understand")
+if units_input in ["feet", "miles", "meters", "kilometers", "yards", "inches"] and units_output in ["feet", "miles", "meters", "kilometers", "yards", "inches"]:
+    print("Good, those are inputs I can understand")
 else:
     print("Sorry, I need the input to be feet, miles, meters, kilometers, yards, or inches")
 
@@ -80,13 +80,16 @@ elif units_output == "meters":
 elif units_output == "kilometers":
     output = output / 1000
 elif units_output == "yards":
-    output = output * 0.9144
+    output = output / 0.9144
 elif units_output == "inches":
-    output = output * 0.0254
+    output = output / 0.0254
+else:
+    output = "unknown"
 
 
 # round the output
-output = round(output, 4)
+if type(output) == int or type(output) == float:
+    output = round(output, 4)
 
 
 # Step 4: Print the output
