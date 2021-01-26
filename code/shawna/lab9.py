@@ -12,9 +12,6 @@ while True:
         'inches': 0.0254
     }
 
-    def check_int(value):
-
-
     def to_meters(quantity, from_unit):
         """Converts user quantity into meters"""
 
