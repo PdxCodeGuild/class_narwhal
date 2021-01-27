@@ -66,5 +66,5 @@ def main():
         print(f'{distance} {input_unit} is equal to {output} {convert_to} ')
         choice = input('Would you like to convert another unit (yes/no)? ')
     
-    #print('Goodbye!')
+    print('Goodbye!')
 main()

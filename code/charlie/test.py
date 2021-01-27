@@ -1,6 +1,6 @@
-s = "You gotta lie to kick it"
+s = "You ain't gotta lie to kick it"
 l = s.split(" ")
-l2 = ["P", "M", "C"]
+l2 = ["C", "M", "P"]
 s2 = ", ".join(l2)
 
 print(f"This is the split string: {l}")
