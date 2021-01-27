@@ -4,11 +4,11 @@
 
 # - Version 1 - #
 
-#nums = [5, 0, 8, 3, 4, 1, 6]
+nums = [5, 0, 8, 3, 4, 1, 6]
 
-#x = sum(nums)/7
+x = sum(nums)/7
 
-#print(round(x, 2))
+print(round(x, 2))
 
 # - Version 2 - #
 
@@ -32,4 +32,3 @@ You entered: {nums}""") # shows which numbers the user input
 print(f"""
 The average is: {avg:.2f}.""") # shows what the average of the input numbers
 
-#######################################
