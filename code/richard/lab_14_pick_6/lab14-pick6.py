@@ -45,8 +45,7 @@ print(f"winning ticket: {winning_tickets}")
 
 
 
-# 2. Start your balance at 0
-balance = 0 
+# 2. write functions that I will need
 
 
 def buy_ticket():
@@ -103,11 +102,13 @@ def calc_payout(matches):
     return payout
 
 
-my_ticket = buy_ticket()
+# my_ticket = buy_ticket()
 # print(f"Ticket 1: {my_ticket}")
 # print(compare_ticket(my_ticket, winning_tickets))
 
 
+
+# 3. Solve the problem
 '''
 2. Loop 100,000 times, for each loop:
 3. Generate a list of 6 random numbers representing the ticket
@@ -131,12 +132,14 @@ for each_attempt in range(times):
     winnings = calc_payout(matches)
     total_winnings += winnings
 
-
+# calculate total amount of money lost
 amount_lost = - balance - total_winnings
 
+
+# Display the output
 print(f"You bought {times} tickets. That cost you {-balance}. You had {count} matched numbers.")
 print(f"Your total winnings were {total_winnings}")
-print(f"You lost {amount_lost}")
+print(f"You lost {amount_lost} dollars")
 
 
 
