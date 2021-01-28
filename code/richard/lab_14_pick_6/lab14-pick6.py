@@ -153,3 +153,7 @@ print(f"You lost {amount_lost} dollars")
 The ROI (return on investment) is defined as `(earnings - expenses)/expenses`. 
 Calculate your ROI, print it out along with your earnings and expenses.
 '''
+
+ROI = amount_lost / balance
+ROI_percent = round(ROI * 100, 2)
+print(f"The ROI of this was {ROI_percent} %")
