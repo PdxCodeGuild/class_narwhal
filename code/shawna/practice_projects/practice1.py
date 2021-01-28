@@ -11,3 +11,16 @@ def is_even(num):
 print(is_even(9))
 
 #-------1.2-------
+# Write a function that takes two ints, a and b, and returns True if one is positive and the other is negative.
+
+def opposite(a, b):
+    if ((a < 0) and (b > 0)) or ((a > 0) and (b < 0)):
+        return True
+    else:
+        return False
+
+print(f"Positive and negative: {opposite(4, -2)}")
+print(f"Negative and positive: {opposite(-4, 2)}")
+print(f"Positive and positive: {opposite(4, 2)}")
+print(f"Negative and negative: {opposite(-4, -2)}")
+
