@@ -7,9 +7,8 @@
 
 def is_even(num):
    return True if num % 2 == 0 else False
-
+print('-' * 40)
 print(is_even(9))
-
 #-------1.2-------
 # Write a function that takes two ints, a and b, and returns True if one is positive and the other is negative.
 
@@ -18,9 +17,17 @@ def opposite(a, b):
         return True
     else:
         return False
-
+print('-' * 40)
 print(f"Positive and negative: {opposite(4, -2)}")
 print(f"Negative and positive: {opposite(-4, 2)}")
 print(f"Positive and positive: {opposite(4, 2)}")
 print(f"Negative and negative: {opposite(-4, -2)}")
 
+#-------1.3-------
+# Write a function that returns True if a number within 10 of 100.
+
+def near100(num):
+    return True if num in range(90, 111) else False
+
+print('-' * 40)
+print(near100(110))
