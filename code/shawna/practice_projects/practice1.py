@@ -31,3 +31,15 @@ def near100(num):
 
 print('-' * 40)
 print(near100(110))
+
+#-------1.4-------
+#Write a function that returns the maximum of 3 parameters.
+
+def max(a, b, c):
+    group = [a, b, c]
+    group.sort()
+    max = group[-1]
+    return max
+
+print('-' * 40)
+print(max(10, 22, 13))
