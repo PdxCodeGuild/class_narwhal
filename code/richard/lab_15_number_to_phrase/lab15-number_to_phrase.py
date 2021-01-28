@@ -25,8 +25,7 @@ def convert_num_to_eng(number):
     ones_digit = number % 10
     # print(ones_digit)
 
-    if number == 0:
-        result = "zero"
+
 
     if number >= 10 and number <= 19:
         if number == 10:
@@ -93,12 +92,16 @@ def convert_num_to_eng(number):
     else:
         word2 = ""
 
+
     if (number >=20 ):
         result = word1 + word2
     elif number < 10:
         result = word2
     else:
         result = result
+
+    if number == 0:
+        result = "zero"
     
     return result
 
@@ -155,7 +158,10 @@ def hundreds(number):
 def final(number):
     first_part = hundreds(number)
     last_part = convert_num_to_eng(number)
-    result = first_part + last_part
+    if number == 0:
+        result = "zero"
+    else:
+        result = first_part + last_part
     return(result)
 
 print(final(89))
@@ -163,6 +169,7 @@ print(final(100))
 print(final(167))
 print(final(444))
 print(final(999))
+print(final(0))
 
 
 '''
