@@ -1,9 +1,10 @@
 while True:
     user_input = input('Enter the numbers to calculate the average seperated by a comma (i.e. 1, 2, 3) or "done" to exit.\n')
+    sub_total = 0
+    
     if user_input.lower() == "done":
             break
     try: 
-        sub_total = 0
         #split input on the comma and remove leading whitespace
         # list comprehension example found here https://stackoverflow.com/questions/4071396/split-by-comma-and-strip-whitespace-in-python
         nums = [num.strip() for num in user_input.split(',')]
