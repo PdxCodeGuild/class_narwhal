@@ -158,18 +158,33 @@ def hundreds(number):
 def final(number):
     first_part = hundreds(number)
     last_part = convert_num_to_eng(number)
+    if number % 100 == 0:
+        last_part = ""
+
     if number == 0:
         result = "zero"
+    
     else:
         result = first_part + last_part
+
+    # remove the trailing slash if there is one
+    if result.endswith("-"):
+        result = result[:-1]
+
     return(result)
 
+
+print(final(0))
+print(final(17))
 print(final(89))
 print(final(100))
+print(final(200))
 print(final(167))
+print(final(190))
 print(final(444))
 print(final(999))
-print(final(0))
+
+
 
 
 '''
