@@ -1,3 +1,4 @@
+import math
 # Instructions: For each practice problem, write a function that returns a value (not just prints it). 
 # You can then call the function a couple times to test it, comment those calls out, 
 # and move on to the next problem.
@@ -43,3 +44,16 @@ def max(a, b, c):
 
 print('-' * 40)
 print(max(10, 22, 13))
+
+#-------1.4-------
+#Print out the powers of 2 from 2^0 to 2^20
+
+def expo(num):
+    values =[]
+    for i in range (0, 21):
+        total = num ** i
+        values.append((total))
+    return values
+    
+print('-' * 40)
+print(expo(2))
