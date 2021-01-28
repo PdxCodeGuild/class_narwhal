@@ -19,6 +19,8 @@ print(double_letters(x))
 
 # Write a function that takes a string, and returns a list of strings, each missing a different character. #
 
+# this doens't work for some reason #
+
 def missing_char(word):
     result = []
     for char in word:
