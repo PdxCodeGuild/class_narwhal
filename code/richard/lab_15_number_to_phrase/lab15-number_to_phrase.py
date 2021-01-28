@@ -17,11 +17,15 @@ Hint 2: use the digit as an index for a list of strings OR as a key for a dict o
 
 def convert_num_to_eng(number):
 
+    number = number % 100
+
     tens_digit = number // 10
     # print(tens_digit)
 
     ones_digit = number % 10
     # print(ones_digit)
+
+
 
     if number >= 10 and number <= 19:
         if number == 10:
@@ -88,12 +92,16 @@ def convert_num_to_eng(number):
     else:
         word2 = ""
 
+
     if (number >=20 ):
         result = word1 + word2
     elif number < 10:
         result = word2
     else:
         result = result
+
+    if number == 0:
+        result = "zero"
     
     return result
 
@@ -140,22 +148,43 @@ def hundreds(number):
         word = ""
     return(word)
 '''
-print(hundreds(151))
-print(hundreds(444))
-print(hundreds(999))
 '''
-
+# print(hundreds(151))
+# print(hundreds(444))
+# print(hundreds(999))
+'''
+'''
 
 def final(number):
     first_part = hundreds(number)
     last_part = convert_num_to_eng(number)
-    result = first_part + last_part
+    if number % 100 == 0:
+        last_part = ""
+
+    if number == 0:
+        result = "zero"
+    
+    else:
+        result = first_part + last_part
+
+    # remove the trailing slash if there is one
+    if result.endswith("-"):
+        result = result[:-1]
+
     return(result)
 
+
+print(final(0))
+print(final(17))
+print(final(89))
 print(final(100))
+print(final(200))
 print(final(167))
+print(final(190))
 print(final(444))
 print(final(999))
+
+
 
 
 '''
