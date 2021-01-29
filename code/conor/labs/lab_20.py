@@ -3,7 +3,8 @@
 # - Credit Card Validation - #
 
 # Given test card number #
-card_num = '4556737586899855'
+
+card_num = input('Enter your card number: ')
 
 # Turn the number into a list #
 card_list = [(x) for x in card_num]
@@ -36,7 +37,7 @@ print(sum_card_list)
 # Take the second digit #
 second_digit = sum_card_list % 10
 print(second_digit)
-
+print(check)
 # Match the Second Digit with the Check Digit #
 if second_digit == check:
     print('Valid')
