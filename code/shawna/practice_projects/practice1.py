@@ -8,7 +8,6 @@ import math
 
 def is_even(num):
    return True if num % 2 == 0 else False
-print('-' * 40)
 print(is_even(9))
 #-------1.2-------
 # Write a function that takes two ints, a and b, and returns True if one is positive and the other is negative.
@@ -54,6 +53,6 @@ def expo(num):
         total = num ** i
         values.append((total))
     return values
-    
+
 print('-' * 40)
 print(expo(2))
