@@ -9,14 +9,12 @@ def pick_6():
     return rand_list
 
 winning = pick_6()
-print(winning)
 
 def user_ticket():
     ticket = pick_6()
     return ticket
 
 user = user_ticket()
-print(user)
 
 def comp_tickets(user, winning):
     count = 0
@@ -37,7 +35,6 @@ def comp_tickets(user, winning):
     return count
 
 match = comp_tickets(user, winning)
-print(match)
 
 def payout(match):
     if match == 1:
@@ -58,9 +55,6 @@ def payout(match):
 
 pay = payout(match)
 
-print(payout(match))
-
-
 balance = 0
 times = 100000
 count = 0
@@ -73,13 +67,13 @@ for attempts in range(times):
     user = user_ticket()
     match = comp_tickets(user, winning)
     pay = payout(match)
-    winnings = pay
+    winnings += pay
     
-return_on_invest = balance + winnings
+return_on_invest =  (winnings - balance)/balance
     
 
 print(f"""
 You played {times} times and spent {balance} dollars.
 Your total winnings were {winnings} dollars.
-Your Return on Investment was {return_on_invest} dollars.
+Your Return on Investment was {return_on_invest:.2f} dollars.
 """)
