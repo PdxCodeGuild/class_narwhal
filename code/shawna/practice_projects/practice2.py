@@ -7,41 +7,42 @@ def practice_one():
     output = "".join([2*l for l in str])
     return (output)
 
-# Problem 2
-# Write a function that takes a string, and returns a list of strings, each missing a different character.
+# Problem 2 Write a function that takes a string, and returns a list of strings, each missing a different character.
 
 def practice_two():
     word = input("Gimme a word:  ")
     missing_ltr = [word.replace(i, "", 1) for i in word ]
     return (missing_ltr)
 
-# Problem 3
-# Return the letter that appears the latest in the english alphabet.
+# Problem 3  Return the letter that appears the latest in the english alphabet.
 
 def practice_three():
     word = input("Gimme a long word and I will tell you which letter appears last ing the alphabet:  ")
     ltr = sorted((list(word)))[-1]
     return (ltr)
 
-# Problem 4
-# Write a function that returns the number of occurances of 'hi' in a given string.
+# Problem 4 Write a function that returns the number of occurances of 'hi' in a given string.
 def practice_four():
     phrase = input("Write the string in which you would like to count the substring here:  ")
     substring = input("Write the substring that you would like me to track here:  ")
     
     return phrase.count(substring)
 
-# Problem 5
-# Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
+# Problem 5 Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
 def practice_five():
     string = input("Type out some 'cat's and some 'dog's here and I will tell you if they are even.  ")
     substring1 = "cat"
     substring2 = "dog"
     return string.count(substring1) == string.count(substring2)
 
-print(practice_five())
-# Problem 6
-# Return the number of letter occurances in a string.
+
+# Problem 6 Return the number of letter occurances in a string.
+def practice_six():
+    word = input("Word?:  ")
+    ltr = input("Letter to count?  ")
+
+    return word.count(ltr)
+
 
 # def count_letter(letter, word):
 #     ...
