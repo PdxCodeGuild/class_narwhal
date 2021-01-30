@@ -33,10 +33,13 @@ def practice_four():
 
 # Problem 5
 # Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
+def practice_five():
+    string = input("Type out some 'cat's and some 'dog's here and I will tell you if they are even.  ")
+    substring1 = "cat"
+    substring2 = "dog"
+    return string.count(substring1) == string.count(substring2)
 
-# cat_dog('catdog') → True
-# cat_dog('catcat') → False
-# cat_dog('catdogcatdog') → True
+print(practice_five())
 # Problem 6
 # Return the number of letter occurances in a string.
 
