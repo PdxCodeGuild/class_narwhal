@@ -43,13 +43,12 @@ def practice_six():
 
     return word.count(ltr)
 
+# Problem 7  Convert input strings to lowercase without any surrounding whitespace.
+def practice_seven():
+    string = (input("Write something here. Yell, stomp your feet, scream into the abyss. Ya know...spaces and caps. ")).lower()
+    string = string.strip()
 
-# def count_letter(letter, word):
-#     ...
-# count_letter('i', 'antidisestablishmentterianism') → 5
-# count_letter('p', 'pneumonoultramicroscopicsilicovolcanoconiosis') → 2
-# Problem 7
-# Convert input strings to lowercase without any surrounding whitespace.
-
+    print(string)
+practice_seven()
 # lower_case("SUPER!") → 'super!'
 # lower_case("        NANNANANANA BATMAN        ") → 'nannananana batman'
