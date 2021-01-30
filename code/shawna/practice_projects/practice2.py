@@ -17,19 +17,20 @@ def practice_two():
 
 # Problem 3
 # Return the letter that appears the latest in the english alphabet.
+
 def practice_three():
     word = input("Gimme a long word and I will tell you which letter appears last ing the alphabet:  ")
     ltr = sorted((list(word)))[-1]
-    print (ltr)
+    return (ltr)
 
-practice_three()
-
-# >>> latest_letter('pneumonoultramicroscopicsilicovolcanoconiosis')
-# the latest letter is v.
 # Problem 4
 # Write a function that returns the number of occurances of 'hi' in a given string.
+def practice_four():
+    phrase = input("Write the string in which you would like to count the substring here:  ")
+    substring = input("Write the substring that you would like me to track here:  ")
+    
+    return phrase.count(substring)
 
-# count_hi('hihi') → 2
 # Problem 5
 # Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
 
