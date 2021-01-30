@@ -10,9 +10,19 @@ def practice_one():
 # Problem 2
 # Write a function that takes a string, and returns a list of strings, each missing a different character.
 
-# missing_char('kitten') → ['itten', 'ktten', 'kiten', 'kiten', 'kittn', 'kitte']
+def practice_two():
+    word = input("Gimme a word:  ")
+    missing_ltr = [word.replace(i, "", 1) for i in word ]
+    return (missing_ltr)
+
 # Problem 3
 # Return the letter that appears the latest in the english alphabet.
+def practice_three():
+    word = input("Gimme a long word and I will tell you which letter appears last ing the alphabet:  ")
+    ltr = sorted((list(word)))[-1]
+    print (ltr)
+
+practice_three()
 
 # >>> latest_letter('pneumonoultramicroscopicsilicovolcanoconiosis')
 # the latest letter is v.
