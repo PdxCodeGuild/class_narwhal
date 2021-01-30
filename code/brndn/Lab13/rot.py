@@ -20,9 +20,6 @@ for l in entry:                      #for each letter in the entered string
     if l not in letters:             #skip over characters not in alphabet
         continue                     
     index = letters.find(l) + amt    #find the letter in the alphabet (ascii_lowercase) and get rotated index
-    while index > 25:                #for multiple index overages by 25
-        if index > 25:               #if index > 25
-            index -= 26              #subtract 26 to return to first index of alphabet
-    cipher += letters[index]         #add the letter of rotated index to the encrypted string
-
+    cipher += letters[index%26]      #add the letter of rotated index to the encrypted string
+                                     #%26 to return indices >25 to beginning of alphabet
 print(f'\n"{cipher}"\n')
