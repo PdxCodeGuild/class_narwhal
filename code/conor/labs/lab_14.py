@@ -9,30 +9,32 @@ def pick_6():
     return rand_list
 
 winning = pick_6()
-print(winning)
 
 def user_ticket():
     ticket = pick_6()
     return ticket
 
 user = user_ticket()
-print(user)
 
-def comp_tickets(user_ticket, pick_6):
+def comp_tickets(user, winning):
     count = 0
-    if user_ticket[0] == pick_6[0]:
+    if user == winning:
         count += 1
-    if user_ticket[1] == pick_6[1]:
+    if user[0] == winning[0]:
         count += 1
-    if user_ticket[2] == pick_6[2]:
+    if user[1] == winning[1]:
         count += 1
-    if user_ticket[3] == pick_6[3]:
+    if user[2] == winning[2]:
         count += 1
-    if user_ticket[4] == pick_6[4]:
+    if user[3] == winning[3]:
         count += 1
-    if user_ticket[5] == pick_6[5]:
+    if user[4] == winning[4]:
+        count += 1
+    if user[5] == winning[5]:
         count += 1
     return count
+
+match = comp_tickets(user, winning)
 
 def payout(match):
     if match == 1:
@@ -51,22 +53,27 @@ def payout(match):
         payout = 0
     return payout
 
-match = comp_tickets(user, winning)
-
-print(payout(match))
-
+pay = payout(match)
 
 balance = 0
 times = 100000
-
+count = 0
+matches = 0
+winnings = 0
 
 for attempts in range(times):
     balance = balance - 2
-    count = comp_tickets('user_ticket', 'pick_6')
-    winnings = payout('match')
-    #tot_win = balance / winnings
+    winning = pick_6()
+    user = user_ticket()
+    match = comp_tickets(user, winning)
+    pay = payout(match)
+    winnings += pay
+    
+return_on_invest =  (winnings - balance)/balance
+    
 
 print(f"""
 You played {times} times and spent {balance} dollars.
 Your total winnings were {winnings} dollars.
+Your Return on Investment was {return_on_invest:.2f} dollars.
 """)
