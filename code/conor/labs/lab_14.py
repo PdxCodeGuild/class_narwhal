@@ -60,20 +60,22 @@ times = 100000
 count = 0
 matches = 0
 winnings = 0
+expenses = 0
 
 for attempts in range(times):
-    balance = balance - 2
+    balance -= 2
+    expenses += 2
     winning = pick_6()
     user = user_ticket()
     match = comp_tickets(user, winning)
     pay = payout(match)
     winnings += pay
     
-return_on_invest =  (winnings - balance)/balance
+return_on_invest =  (winnings - expenses)/expenses
     
 
 print(f"""
-You played {times} times and spent {balance} dollars.
+You played {times} times and spent {expenses} dollars.
 Your total winnings were {winnings} dollars.
-Your Return on Investment was {return_on_invest:.2f} dollars.
+Your Return on Investment was {return_on_invest:.2f}.
 """)
