@@ -63,4 +63,15 @@ def reverse_list():
         output.append((l[word]))
     return output   
         
-print(reverse_list())
+#print(reverse_list())
+
+
+#Problem 6 #Write a function to move all the elements of a list with value less than 10 to a new list and return it.
+
+def less_ten(nums):
+    output = [num for num in nums if num < 10]
+
+    return output
+
+print(less_ten([1, 19, 22, 10, 4, 3, 28, 2, -1]))
+    
