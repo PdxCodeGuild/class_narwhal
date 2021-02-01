@@ -9,14 +9,23 @@ def random_element(a):
 
 #print(random_element(fruits))
 
+#Problem 2 Write a REPL which asks users for a list of numbers, which they enter, until they say 'done'. Then print out the list.
 def number_loop():
     output = []
     while True:
         num = input("Enter a number or enter 'done' when complete:  ")
         if num.lower() == "done":
-            print(output)
+            return (output)
             break
         else:
             num = int(num)
             output.append(num)
-number_loop()
+#print(number_loop())
+
+#Problem 3 Write a function that takes a list of numbers, and returns True if there is an even number of even numbers.
+
+def even_count(numbers):
+    return len(numbers) %2 == 0
+
+print(even_count((1, 2, 3, 4)))
+print(even_count((1, 2, 3)))
