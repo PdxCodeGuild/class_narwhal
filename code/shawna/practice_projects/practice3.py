@@ -27,5 +27,29 @@ def number_loop():
 def even_count(numbers):
     return len(numbers) %2 == 0
 
-print(even_count((1, 2, 3, 4)))
-print(even_count((1, 2, 3)))
+#print(even_count((1, 2, 3, 4)))
+#print(even_count((1, 2, 3)))
+
+#Problem 4 Print out every other element of a list, first using a while loop, then using a for loop.
+
+def while_even():
+    l = ("apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit")
+    i = 0
+    output = []
+    while (i < len(l)):
+        if ((i == 0) or (i % 2 == 0)):
+            output.append(l[i])
+        i += 1
+    return output      
+
+print(while_even())
+
+def for_even():
+    l = ("apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit")
+    output = []
+    for count, word in enumerate(l):
+        if (count == 0) or(count %2 == 0):
+            output.append(word)
+    return output
+
+print(for_even())
