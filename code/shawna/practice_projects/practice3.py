@@ -42,7 +42,7 @@ def while_even():
         i += 1
     return output      
 
-print(while_even())
+#print(while_even())
 
 def for_even():
     l = ("apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit")
@@ -52,4 +52,15 @@ def for_even():
             output.append(word)
     return output
 
-print(for_even())
+#print(for_even())
+
+# Problem 5 Write a function that returns the reverse of a list.
+def reverse_list():
+    l = ["apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit"]
+    output = []
+
+    for word in range ((len(l) -1), -1, -1):
+        output.append((l[word]))
+    return output   
+        
+print(reverse_list())
