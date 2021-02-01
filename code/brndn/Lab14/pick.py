@@ -37,8 +37,7 @@ while loop < 100000:
             match += 1
 
     earnings += win[match]   #gets winnings by matches from win dict -2 for ticket purchase
-    expense += 2            #cost per ticket
-
+    expense += 2            #cost per ticketcvnol.
     loop += 1    #advances the loop counter per loop
 
 print(f'\nEarnings: ${earnings}')
