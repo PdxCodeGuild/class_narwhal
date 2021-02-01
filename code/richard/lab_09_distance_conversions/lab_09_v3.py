@@ -24,7 +24,8 @@ conversion = {
 
 # 2. Ask the user for inputs
 
-valid_input_output_units = ["ft", "mi", "m", "km", "yard", "inch"]
+valid_input_output_units = conversion.keys()
+# ["ft", "mi", "m", "km", "yard", "inch"]
 
 
 # Distance to convert
