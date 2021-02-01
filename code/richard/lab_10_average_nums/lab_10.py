@@ -51,15 +51,16 @@ user_input = 0
 
 while True:
     user_input = input("enter a number, or 'done': ")
+
     if user_input == "done" or user_input == " ":
         break
-    
+
     try:
-        val = int(user_input)
+        val = float(user_input)
         num_list.append(float(user_input))
         continue
     except ValueError:
-        print("That's not an int!")
+        print("That's not a number!")
 
         
 
