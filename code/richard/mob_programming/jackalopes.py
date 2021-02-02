@@ -36,10 +36,14 @@ while total_jackalopes <= population_target:
     # print(reproducing_adults)
     # print(f'reproducing adult pairs - {reproducing_adults_count}')
 
+
+
     ## add 1 year to everyones' ages
     for i in range(len(jackalopes)):
         jackalopes[i] = jackalopes[i] + 1
     # print(jackalopes)
+
+
 
     ## how many new kids?
     new_kids = reproducing_adults_count # pairs
@@ -51,11 +55,13 @@ while total_jackalopes <= population_target:
             jackalopes.append(0) # add new kids to the list
     # print(jackalopes)
 
+
+
     # remove the 10 year old jackalopes from the list
-    jackalopes2 = [n for n in jackalopes if (n < 10)]
+    jackalopes = [n for n in jackalopes if (n < 10)]
     # print(jackalopes2)
 
-    total_jackalopes = len(jackalopes2)
+    total_jackalopes = len(jackalopes)
 
 '''
     ## calculate dead jackalopes
