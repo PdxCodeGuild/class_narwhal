@@ -85,4 +85,16 @@ def common_elements(l1, l2):
         return ("No matching elements")
     
 
-print(common_elements(["apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit"], ["monkeys", "eat", "many", "bananas"]))
+#print(common_elements(["apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit"], ["monkeys", "eat", "many", "bananas"]))
+
+#Problem 8 Write a function to combine two lists of equal length into one, alternating elements.
+
+def combine(l1, l2):
+    output = []
+    for i in range(len(l1)):
+        output.append(l1[i])
+        output.append(l2[i])
+    return output
+
+print(combine(['a','b','c'],[1,2,3]))
+
