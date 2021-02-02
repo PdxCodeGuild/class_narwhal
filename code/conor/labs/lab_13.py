@@ -20,8 +20,11 @@ output_phrase = ''
 
 # find the letters, get the index. Add the letters to blank string
 for i in phrase:
-    i = alpha.find(i) + encrypt
-    output_phrase += alpha[i%26] # use %26 to return index to beginning of alphabet
+    if i in list(alpha):
+        i = alpha.find(i) + encrypt
+        output_phrase += alpha[i%26]
+    else:
+        output_phrase += i
 
 # print output phrase
 print(f'{output_phrase}')

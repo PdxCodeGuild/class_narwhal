@@ -42,7 +42,7 @@ def while_even():
         i += 1
     return output      
 
-print(while_even())
+#print(while_even())
 
 def for_even():
     l = ("apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit")
@@ -52,4 +52,26 @@ def for_even():
             output.append(word)
     return output
 
-print(for_even())
+#print(for_even())
+
+# Problem 5 Write a function that returns the reverse of a list.
+def reverse_list():
+    l = ["apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit"]
+    output = []
+
+    for word in range ((len(l) -1), -1, -1):
+        output.append((l[word]))
+    return output   
+        
+#print(reverse_list())
+
+
+#Problem 6 #Write a function to move all the elements of a list with value less than 10 to a new list and return it.
+
+def less_ten(nums):
+    output = [num for num in nums if num < 10]
+
+    return output
+
+print(less_ten([1, 19, 22, 10, 4, 3, 28, 2, -1]))
+    
