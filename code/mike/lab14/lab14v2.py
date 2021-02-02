@@ -16,43 +16,38 @@ pays = {
     5 : 1000000,
     6 : 25000000
 }
-winning_nums = []
 balance = 0
-loop_count = 0 # loop 100,000 times
-ticket_nums = []
-cost = 2
+cost = 0
 win = 0
-match_nums = 0
 
-
+# defined function to generate 6 numbers
 def pick6():
-    num = random.randint(1,99)
-    return num
+    ticket = []
+    for num in range(6):
+        num = random.randint(1,99)
+        ticket.append(num)
+    return ticket
 
+# defined function to get number of matches
+def num_matches(winning,ticket):
+    matching_nums = 0
+    for x in range(len(winning)):
+        if winning[x] == ticket[x]:
+            matching_nums += 1
+    return matching_nums
 
+# identify winning nums
+winning_nums = pick6()
 
+# loop for 100,000
+for x in range(100000):
 
-while loop_count < 100000:
+    ticket_nums = pick6() # get ticket numbers
+    matching_nums = num_matches(winning_nums,ticket_nums) # get matching numbers
+    cost += 2 # increase total cost of $2 per ticket
+    balance -= 2 # reduce $2 per ticket from balance
+    win += pays[matching_nums] # calculate winnings from matches
+    balance += pays[matching_nums] # adds winnings to balance
 
-    for w in range(6):
-        w = pick6()
-        winning_nums.append(w)
-
-    for t in range(6):
-        t = pick6()
-        ticket_nums.append(t)
-
-    cost =+ 2
-    balance -= 2
-    loop_count += 1
-
-    if winning_nums == ticket_nums:
-        match_nums += 1
-
-    win += pays[match_nums]
-    balance += pays[match_nums]
-
-print(f'${balance}') # Final Balance
-print(f'${(win - cost)/cost}') # Return on Investment
-print(f'${win}') # Earnings
-print(f'{cost}')
+print(f'Balance: ${balance}') # Final Balance
+print(f'ROI: ${(win-cost)/cost:.2f} ') # RIO
