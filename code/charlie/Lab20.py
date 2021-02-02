@@ -29,7 +29,8 @@ def main():
         Str_cc = input("Please enter a 16 digit credit card to validate: ")
         Int_cc = [int(char) for char in Str_cc]
         Check_d = Int_cc[-1]
-        Int_cc.pop(15)
+        index = len(Int_cc)
+        Int_cc.pop(index-1)
     
         checksum = Validation(Int_cc, Sum)
         
