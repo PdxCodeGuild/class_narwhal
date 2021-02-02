@@ -1,3 +1,7 @@
+# Feb 2nd, 2021
+# Richard
+# Josh
+
 '''Mob Programming: Jackalope Simulator
 
 Version 1
@@ -10,7 +14,7 @@ With these conditions in mind, we can represent our population as a list of ints
 '''
 
 
-jackalopes = [9]
+jackalopes = [0]
 total_jackalopes = len(jackalopes)
 print(f'total jackalope pairs - {total_jackalopes}')
 
@@ -19,7 +23,7 @@ offspring = 1
 reproductive_age_min = 4
 reproductive_age_max = 8
 jackalope_age_of_death = 10
-population_target = 1000 / 2
+population_target = 500 # 1000 / 2
 
 while total_jackalopes <= population_target:
     time += 1
@@ -49,7 +53,6 @@ while total_jackalopes <= population_target:
 
 
     ## calculate dead jackalopes
-    ## calculate old dead
 
     # how many jackalopes age 10 or older?
     dying_adults = [n for n in jackalopes if (n == 10)]
@@ -59,14 +62,18 @@ while total_jackalopes <= population_target:
     print(f'dying adult pairs - {dying_adults_count}')
 
     # remove the 10 year old jackalopes from the list
-    for items in range(len(jackalopes)): # range(len(jackalopes)):
+    jackalopes2 = [n for n in jackalopes if (n < 10)]
+    print(jackalopes2)
+
+    total_jackalopes = len(jackalopes2)
+'''
+    for items in jackalopes: # range(len(jackalopes)):
         if jackalopes[items] == 10:
             jackalopes.remove(10)   # .remove() ?
+'''
+    
 
-    total_jackalopes = len(jackalopes)
-
-    print(jackalopes)
-
+print(f"jackalopes - {jackalopes}")
 print(f"total jackalopes - {total_jackalopes}")
 print(f"time - {time}")
 
@@ -87,7 +94,9 @@ print(f"time - {time}")
 
 '''
 Version 2
-Now let's give the jackalopes distinct sexes and extend their gestation period to one year. We can represent each jackalope with a dictionary, thus our population will be a list of dictionaries. A jackalope will have the following properties:
+Now let's give the jackalopes distinct sexes and extend their gestation period to one year. 
+We can represent each jackalope with a dictionary, thus our population will be a list of dictionaries. 
+A jackalope will have the following properties:
 
 name
 age
