@@ -68,7 +68,6 @@ print(f"Here's what you get back: {listToStr}")
 
 '''
 ## Version 2 (optional)
-
 Allow the user to input the amount of rotation used in the encryption / decryption.
 '''
 # done by adjusting the code above
