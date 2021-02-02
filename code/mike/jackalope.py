@@ -10,13 +10,7 @@ With these conditions in mind, we can represent our population as a list of ints
 
 
 
-def check_age(age_of_jacks):
-    x = []
-    for i in range(len(age_of_jacks)):
-        if 4 <= age_of_jacks[i] <= 8:
-            age_of_jacks.append(0)
-            age_of_jacks[i] += 1
-        x = age_of_jacks
+#def check_age(age_of_jacks):
     # return age_of_jacks
 
 
@@ -24,15 +18,24 @@ def check_age(age_of_jacks):
 def main():
 
 
-years = 0
-age_of_jacks = [5, 6]
+    age_of_jacks = [0, 0]
+    years = 0 
 
+    while len(age_of_jacks) <= 1000:
 
-while len(age_of_jacks) <= 1000:
-    age_of_jacks = check_age(age_of_jacks)
+        for i in range(len(age_of_jacks)):
+            if 4 <= age_of_jacks[i] <= 8:
+                age_of_jacks.append(0)
+            if age_of_jacks[i] == 10:
+                age_of_jacks.pop(i)
+                break
+            
+            age_of_jacks[i] += 1
+        years += 1
 
-
-print(age_of_jacks)
+    print(age_of_jacks)
+    print(len(age_of_jacks))
+    print("It takes this many years = ", years)
 
 main()
 # while population <= 1000:
