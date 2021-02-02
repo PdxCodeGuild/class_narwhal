@@ -19,6 +19,8 @@ def pick_6():
 
 
 winning_ticket = pick_6()
+    
+
 
 
 
