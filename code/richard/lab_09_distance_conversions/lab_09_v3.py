@@ -24,14 +24,49 @@ conversion = {
 
 # 2. Ask the user for inputs
 
-user_input_distance = int(input("what is the distance to convert from? <enter a number> "))
+valid_input_output_units = conversion.keys()
+# ["ft", "mi", "m", "km", "yard", "inch"]
+
+
+# Distance to convert
+while True:
+    try:
+        user_input_distance = int(input("what is the distance to convert from? <enter a number> "))
+        break
+    except ValueError:
+        print('try again')
 #print(user_input_distance)
 
-user_input_units = input("what are the units to convert from? <enter ft, mi, m, km, yard, inch> ")
+
+while True:
+    try:
+        user_input_units = input("what are the units to convert from? <enter ft, mi, m, km, yard, inch> ")
+        if user_input_units in valid_input_output_units:
+            break
+        else:
+            print("Please retry entering that")
+            continue
+    except ValueError:
+        print('try again')
 #print(user_input_units)
 
-user_output_units = input("what are the units to convert to? <enter ft, mi, m, km, yard, inch> ")
+
+
+
+
+while True:
+    try:
+        user_output_units = input("what are the units to convert to? <enter ft, mi, m, km, yard, inch> ")
+        if user_output_units in valid_input_output_units:
+            break
+        else:
+            print("Please retry entering that")
+            continue
+    except ValueError:
+        print('try again')
 #print(user_output_units)
+
+
 
 
 
@@ -45,7 +80,7 @@ inputs_valid = user_input_units in conversion.keys() and user_output_units in co
 if inputs_valid:
     print("Good, your input units and output units are valid")
 else:
-    print("sorry, those inputs do not make any sense")
+    print("sorry, those inputs types do not make sense")
 
 
 # 4. Create a conversion factor to convert input units to output units

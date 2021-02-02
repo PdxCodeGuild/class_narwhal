@@ -24,7 +24,13 @@ Presentation Day: May 7th, 2021
 
 ## Python Labs Assigned:
 
-
+ Lab 09 -- Unit Converter  
+ Lab 10 -- Average Numbers  
+ Lab 15 -- Number to Phrase  
+ Lab 19 -- Blackjack  
+ Lab 14 -- Pick 6  
+ Lab 20 -- Credit Card Validation  
+ Lab 13 -- ROT13  
 
 #### Optional Python Labs
 
