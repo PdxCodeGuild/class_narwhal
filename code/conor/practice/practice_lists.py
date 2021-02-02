@@ -17,18 +17,18 @@ print(f'Your random fruit is: {random_element(fruits)}')
 # - Problem 2 - #
 
 # Write a REPL which asks users for a list of numbers, which are enterd until they day done. Print out the list. #
-
-# won't stop looping even with a break #
-
+'''
 output = []
 
 while True:
     number = input('Enter a number or say "done": ')
-    for n in number:
-        if number == 'done':
-            print(f"Your numbers are: {output}")
-            break
-        else:
-            number = int(number)
-            output.append(number)
-    
+    if number == 'done':
+        print(f"Your numbers are: {output}")
+        break
+    else:
+        number = int(number)
+        output.append(number)
+'''
+# - Problem 3 - #
+
+# Write a function that takes a list of numbers and returns true if there is an even number of even numbers #
