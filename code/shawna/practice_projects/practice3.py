@@ -70,8 +70,43 @@ def reverse_list():
 
 def less_ten(nums):
     output = [num for num in nums if num < 10]
-
     return output
 
-print(less_ten([1, 19, 22, 10, 4, 3, 28, 2, -1]))
+#print(less_ten([1, 19, 22, 10, 4, 3, 28, 2, -1]))
+
+#Problem 7 Write a function to find all common elements between two lists.
+def common_elements(l1, l2):
+    set1 = set(l1)
+    set2 = set(l2)
+
+    if (set1 & set2):
+        return (set1 & set2)
+    else:
+        return ("No matching elements")
     
+
+#print(common_elements(["apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit"], ["monkeys", "eat", "many", "bananas"]))
+
+#Problem 8 Write a function to combine two lists of equal length into one, alternating elements.
+
+def combine(l1, l2):
+    output = []
+    for i in range(len(l1)):
+        output.append(l1[i])
+        output.append(l2[i])
+    return output
+
+#print(combine(['a','b','c'],[1,2,3]))
+
+#Problem 9 Given a list of numbers, and a target number, find a pair of numbers from the list that sum to a target number
+def find_pair(nums, target):
+    pair = []
+    for num1 in nums:
+        value = (target - num1)
+        for num2 in nums:
+            if (num2 == value):
+                pair.append(num2)
+    return pair
+
+
+print(find_pair([5, 6, 2, 3], 7))
