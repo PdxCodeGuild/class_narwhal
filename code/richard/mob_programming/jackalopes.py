@@ -10,7 +10,7 @@ With these conditions in mind, we can represent our population as a list of ints
 '''
 
 
-jackalopes = [4]
+jackalopes = [9]
 total_jackalopes = len(jackalopes)
 print(f'total jackalope pairs - {total_jackalopes}')
 
@@ -21,42 +21,54 @@ reproductive_age_max = 8
 jackalope_age_of_death = 10
 population_target = 1000 / 2
 
-# do while total_jackalopes <= population_target:
-#     time += 1
+while total_jackalopes <= population_target:
+    time += 1
 
-## calculate new offspring
-# how many reproducing adults?
-reproducing_adults = [n for n in jackalopes if (n >= 4 and n <= 8)]
-# print(reproducing_adults)
-reproducing_adults_count = len(reproducing_adults)
-# print(reproducing_adults)
-print(f'reproducing adult pairs - {reproducing_adults_count}')
+    ## calculate new offspring
+    # how many reproducing adults?
+    reproducing_adults = [n for n in jackalopes if (n >= 4 and n <= 8)]
+    # print(reproducing_adults)
+    reproducing_adults_count = len(reproducing_adults)
+    # print(reproducing_adults)
+    print(f'reproducing adult pairs - {reproducing_adults_count}')
 
-## add 1 year to everyones' ages
-for i in range(len(jackalopes)):
-    jackalopes[i] = jackalopes[i] + 1
-print(jackalopes)
+    ## add 1 year to everyones' ages
+    for i in range(len(jackalopes)):
+        jackalopes[i] = jackalopes[i] + 1
+    print(jackalopes)
 
-## how many new kids?
-new_kids = reproducing_adults_count # pairs
-# add the new kids to the list of jackalopes
-if reproducing_adults_count == 0:
-    jackalopes = jackalopes
-else:
-    for kids in reproducing_adults:
-        jackalopes.append(0)
-print(jackalopes)
-
-
-## calculate dead jackalopes
-# how many jackalopes older than 10?
-
-## count total jackalopes
-# total jackalopes = original - dead jackalopes + new
+    ## how many new kids?
+    new_kids = reproducing_adults_count # pairs
+    # add the new kids to the list of jackalopes
+    if reproducing_adults_count == 0:
+        jackalopes = jackalopes
+    else:
+        for kids in reproducing_adults:
+            jackalopes.append(0)
+    print(jackalopes)
 
 
+    ## calculate dead jackalopes
+    ## calculate old dead
 
+    # how many jackalopes age 10 or older?
+    dying_adults = [n for n in jackalopes if (n == 10)]
+    # print(reproducing_adults)
+    dying_adults_count = len(dying_adults)
+    # print(reproducing_adults)
+    print(f'dying adult pairs - {dying_adults_count}')
 
+    # remove the 10 year old jackalopes from the list
+    for items in range(len(jackalopes)): # range(len(jackalopes)):
+        if jackalopes[items] == 10:
+            jackalopes.remove(10)   # .remove() ?
+
+    total_jackalopes = len(jackalopes)
+
+    print(jackalopes)
+
+print(f"total jackalopes - {total_jackalopes}")
+print(f"time - {time}")
 
 
 
