@@ -5,43 +5,35 @@ def pick6():
     temp.sort()
     return temp
 
-def win_matches(win_nums, my_ticket):
+def win_matches(win_nums, my_ticket, winnings):
     num_matches = 0
     for i in range(6):
         if win_nums[i] == my_ticket[i]:
             num_matches += 1
-
-    if num_matches == 1:
-        return 4
-    if num_matches == 2:
-        return 7
-    if num_matches == 3:
-        return 100
-    if num_matches == 4:
-        return 50000
-    if num_matches == 5:
-        return 1000000
-    if num_matches == 6:
-        return 25000000
+    
+    if num_matches in winnings:
+        return winnings[num_matches]
 
     return 0
 
 def main():
+    winnings = {6: 25000000, 5: 1000000, 4: 50000, 3: 100, 2: 7, 1: 4, 0: 0}
     win_nums = pick6()
     my_ticket = pick6()
     balance = 0
-    wins = 0
-    i = 0
+    earnings = 0
+    expenses = 0
 
-    while i < 100000:
-        wins += win_matches(win_nums, my_ticket)
+    for i in range(100000):
+        earnings += win_matches(win_nums, my_ticket, winnings)
         balance -= 2
-        i += 1
+        expenses += 2
         win_nums = pick6()
         my_ticket = pick6()
 
-    print(f'wins == {wins}')
-    balance += wins 
+    ROI = (earnings - expenses)/expenses
+    balance += earnings
+    print("Earnings = ", earnings)
     print(f'Your balance after 100,000 plays = {balance}')
-
+    print('Your ROI for this round = ', ROI)
 main()
