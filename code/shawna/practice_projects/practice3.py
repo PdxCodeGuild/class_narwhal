@@ -70,8 +70,19 @@ def reverse_list():
 
 def less_ten(nums):
     output = [num for num in nums if num < 10]
-
     return output
 
-print(less_ten([1, 19, 22, 10, 4, 3, 28, 2, -1]))
+#print(less_ten([1, 19, 22, 10, 4, 3, 28, 2, -1]))
+
+#Problem 7 Write a function to find all common elements between two lists.
+def common_elements(l1, l2):
+    set1 = set(l1)
+    set2 = set(l2)
+
+    if (set1 & set2):
+        return (set1 & set2)
+    else:
+        return ("No matching elements")
     
+
+print(common_elements(["apples", "bananas", "carrots", "dragonfruit", "escrole", "figs", "grapefruit"], ["monkeys", "eat", "many", "bananas"]))
