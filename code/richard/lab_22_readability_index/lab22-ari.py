@@ -71,7 +71,7 @@ ari_scale = {
 }
 
 big = ari_scale[score]
-print(f"big: {big}")
+# print(f"big: {big}")
 
 ages = big.get('ages')
 # print(f"ages: {ages}")
