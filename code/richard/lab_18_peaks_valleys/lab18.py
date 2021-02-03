@@ -7,9 +7,9 @@ Define the following functions:
 
 1. `peaks` - Returns the indices of peaks. A peak has a lower number on both the left and the right.
 
-1. `valleys` - Returns the indices of 'valleys'. A valley is a number with a higher number on both the left and the right.
+2. `valleys` - Returns the indices of 'valleys'. A valley is a number with a higher number on both the left and the right.
 
-1. `peaks_and_valleys` - uses the above two functions to compile a single list of the peaks and 
+3. `peaks_and_valleys` - uses the above two functions to compile a single list of the peaks and 
 valleys in order of appearance in the original data.
 
 Visualization of test data:
@@ -53,39 +53,43 @@ length_of_data = len(data)
 
 
 
-# Problems in the function below
-def peaks(x):
-   peaks = []
-   for a, b in enumerate(x):
-      print(a, b)
-      if a == 0 or a == len(x):
-         pass
-      
-      elif b > x[a - 1] and b > x[a + 1]:
-         peaks.append(a)
-   return(peaks)
-
- 
-
-
-peaks(data)
+# peaks
+def peaks(data):
+    peak = []
+    for num in range(len(data) - 1):
+        if data[num - 1] < data[num] and data[num] > data[num + 1]:  # 6, 7, 6   |   8, 9, 8
+            peak.append(num)
+    return peak
+    
+print(f"Peaks: {peaks(data)}")
 
 
 
 
 
 # valleys
-def valleys(input):
-   print("1")
-
-# valleys(data)
+def valleys(data):
+    valley = []
+    for num in range(len(data) - 1):
+      if num == 0 or num == len(data):
+         continue
+      else:
+         if data[num - 1] > data[num] and data[num] < data[num + 1]:  # 6, 7, 6   |   8, 9, 8
+            valley.append(num)
+    return valley
+    
+print(f"Valleys: {valleys(data)}")
 
 
 # peaks and valleys
-def peaks_and_valleys(input):
-   print("1")
+def peaks_and_valleys(data):
+   peaks1 = peaks(data)
+   valleys1 = valleys(data)
+   combined = peaks1 + valleys1
+   combined.sort()
+   return combined
 
-# peaks_and_valleys(data)
+print(f"Peaks and Valleys: {peaks_and_valleys(data)}")
 
 
 
