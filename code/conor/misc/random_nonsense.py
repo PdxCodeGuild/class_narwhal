@@ -36,7 +36,7 @@
 '''
 
 # LAB 19 #
-
+'''
 card_value = {
     'A' : 1,
     '2' : 2,
@@ -87,3 +87,11 @@ print(f'Your second card is: {card_2}')
 print(f'Your third card is: {card_3}')
 print(f'Your total points in hand are: {points_IH}')
 print(advice(points_IH))
+'''
+'''
+fruits = ['pear', 'apple', 'grapes']
+prices = [0.75, 1.0, 1.5]
+product_to_price = dict(zip(fruits, prices))
+
+print(product_to_price)
+'''
