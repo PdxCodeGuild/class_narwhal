@@ -29,6 +29,7 @@ def main():
             if age_of_jacks[i] == 10:
                 age_of_jacks.pop(i)
                 break
+            age_of_jacks.remove()
             
             age_of_jacks[i] += 1
         years += 1
