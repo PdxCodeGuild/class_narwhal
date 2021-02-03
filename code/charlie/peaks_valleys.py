@@ -9,7 +9,7 @@ def valleys(data, LOL):
     temp = []
     for i in range(LOL):
         if i > 0 and data[i-1] > data[i]: 
-            if data[i] < data[i+1] and i < LOL:
+            #if data[i] < data[i+1] and i < LOL:
                 temp.append(i)
     return temp       
 
