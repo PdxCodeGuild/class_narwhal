@@ -12,12 +12,21 @@ f.close()
 
 # make all lower case
 sherlock = sherlock.lower()
-# print(sherlock)
 
-# taking out punctuation
-translator = str.maketrans('', '', string.punctuation)
+# Take out all punctuation punctuation
+translator = str.maketrans('', '', string.punctuation + "“")
 words_only = sherlock.translate(translator)
-# print(words_only)
+
+# Below is another way to take out all punctuation
+
+# sherlock = list(sherlock)
+
+# for punc in string.punctuation + "“":
+#     while punc in sherlock:
+#         sherlock.remove(punc)
+
+# words_only = ''.join(sherlock)
+
 
 # Function to send words only text into a function with keys : values
 def count_dict(x):
@@ -29,7 +38,6 @@ def count_dict(x):
             count_dict[word] +=1
     return count_dict
     
-# print(count_dict(words_only))
 
 # Converting the Function incl. Sherlock to a manageable variable
 word_count = count_dict(words_only)
