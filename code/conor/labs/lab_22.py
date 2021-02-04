@@ -30,7 +30,7 @@ def characters(x):
 
 # Find the number of Sentences. I counted the numbers of periods for this example.
 def sentences(x):
-    sentences = x.split('.') # I'm aware of other ways to do this :)
+    sentences = x.split('.') # I'm aware there are other ways to do this :)
     sentences = len(sentences)
     return int(sentences)
 
