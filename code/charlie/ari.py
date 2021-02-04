@@ -37,7 +37,7 @@ def main():
     num_chars = len(chars)-1
     num_sent = len(sentences)-1
 
-    ARI = (4.71*(num_chars/num_words) + 0.5*(num_words/num_sent))-21.43
+    ARI = (4.72*(num_chars/num_words) + 0.5*(num_words/num_sent))-21.43
     ARI = math.ceil(ARI)
 
     if ARI <= 14:
