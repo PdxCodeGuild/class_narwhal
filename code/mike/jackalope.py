@@ -26,12 +26,7 @@ def main():
                 age_of_jacks.pop(i)
                 #end loop if there is no i beyond end
                 break
-<<<<<<< HEAD
-            age_of_jacks.remove()
-            
-=======
             #add one to the age of each jack
->>>>>>> 2975de46ef21fb2931581346e1477747a7fb9a30
             age_of_jacks[i] += 1
         #count the number of loops aka "years"
         years += 1
