@@ -29,4 +29,4 @@ def valleys(x):
 def peaks_and_valleys(x):
     return sorted(peaks(x) + valleys(x))
         
-print(peaks(data), valleys(data), peaks_and_valleys(data))        
+print(peaks(data), valleys(data), peaks_and_valleys(data))
