@@ -1,22 +1,27 @@
-# def encode(to_encode, alpha):
-#     for i in range(len(to_encode)):
-#         #if to_encode[i] == alpha
+import string
+#from string import ascii_lowercase as lower - This allows you to rename built-in methods or functions
+
+def ROT_choose(input_str, rot_amount):
+    output_str = ""
+
+    for letter in input_str:
+        if letter in string.ascii_lowercase:
+            output_str += string.ascii_lowercase[(string.ascii_lowercase.index(letter) + int(rot_amount)) % 26]
+        elif letter in string.ascii_uppercase:
+            output_str += string.ascii_uppercase[(string.ascii_uppercase.index(letter) + int(rot_amount)) % 26]
+        else:
+            output_str += letter
+    return output_str
 
 
-
-#     return 0
         
         
 
 
 def main():
 
-    alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l','m', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    # temp = input("Please enter a string of characters, it can be a word or completely random letters, and this program will use a cipher to encode/decode it:")
-    # to_encode =[char for char in temp]
-    # encrypted = encode(to_encode, alpha)
-    w = ['f', 'w']
-    i = alpha.index(w[0])
-    print(i)
+   # alpha = [string.ascii_lowercase]
+
+    print(ROT_choose(input("Please enter a string: "), input("Please enter a rotation amount: ")))
 
 main()
