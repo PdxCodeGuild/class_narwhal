@@ -58,7 +58,7 @@ sentences = period + exclamation_point + question_mark
 ARI = int(4.71 * (characters/words) + .5 * (words/sentences) - 21.43)
 
 # Get grade level
-grade = ari_scale[ARI]
+scale = ari_scale[ARI]
 
 
 print('Characters: ', characters)
@@ -71,7 +71,7 @@ print('Automated Readability Index: ', ARI)
 
 print(f'''
 The ARI for "{file_name}" is {ARI}.
-This corresponds to a {grade['grade_level']} of difficulty
-that is suitable for an average person {grade['ages']} years old.
+This corresponds to a {scale['grade_level']} of difficulty
+that is suitable for an average person {scale['ages']} years old.
 '''
 )
