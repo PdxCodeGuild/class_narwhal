@@ -38,11 +38,35 @@
 # print(leap_years)
 
 ##### Try/Except blocks for "error handling" #############
-def my_func(num1, num2):
-    try:
-        return num1 - num2
-    except TypeError:
-        print("Those are not numbers!")
+# def my_func(num1, num2):
+#     try:
+#         return num1 - num2
+#     except TypeError:
+#         print("Those are not numbers!")
 
-print(my_func("5", "three"))
+# print(my_func("5", "three"))
+
+try:
+    f = open("gettys.txt")
+    contents = f.read()
+    sentences = contents.split('.')
+    chars = ' '.join(sentences)
+    words = chars.split()
+    
+    print("The number of words in the Gettysburg Address = ", len(words)-1)
+    
+    print("The number of characters in the Gettysburg Address = ", len(chars)-1)
+    print("The number of sentences in the Gettysburg Address = ", len(sentences)-1)
+    #print(contents)
+except (IOError, OSError) as e:
+    print(e)
+finally:
+    f.close()
+
+
+
+# with open("gettys.txt") as f:
+#     contents = f.read()
+
+# print(contents)
 

@@ -1,23 +1,26 @@
 ####### Lab 20 - CC Validation ########
-def Validation(Int_cc, Sum):
+def Validation(Int_cc):
     Int_cc.reverse()
 
-    for i in range(len(Int_cc)):
-        if i % 2 == 1:
-            Int_cc[i] *= 2
+    every_other_doubled = [digit * 2 if i % 2 == 0 else digit for i, digit in enumerate(Int_cc)]
+    subtract_nine = [digit - 9 if digit > 9 else digit for i, digit in enumerate(Int_cc)]
+    Ints_sum = sum(subtract_nine)
+    
+    # for i in range(len(Int_cc)):
+    #     if i % 2 == 1:
+    #         Int_cc[i] *= 2
 
-    for i in range(len(Int_cc)):
-        if Int_cc[i] > 9:
-            Int_cc[i] -= 9
+    # for i in range(len(Int_cc)):
+    #     if Int_cc[i] > 9:
+    #         Int_cc[i] -= 9
 
-    for i in Int_cc:
-        Sum += Int_cc[i]
+    # Ints_sum = sum(Int_cc)
 
-    if Sum < 10:
-        checksum = Sum
+    if Ints_sum < 10:
+        checksum = Ints_sum
         return checksum
     else:
-        checksum = Sum % 10
+        checksum = Ints_sum % 10
         return checksum
     return 0
     
@@ -25,14 +28,14 @@ def main():
     choice = 'yes'
 
     while choice == 'yes':
-        Sum = 0
         Str_cc = input("Please enter a 16 digit credit card to validate: ")
         Int_cc = [int(char) for char in Str_cc]
-        Check_d = Int_cc[-1]
+        Check_d = Int_cc.pop()
+        print("Check_D = ", Check_d)
         index = len(Int_cc)
         Int_cc.pop(index-1)
     
-        checksum = Validation(Int_cc, Sum)
+        checksum = Validation(Int_cc)
         
         if checksum == Check_d:
             print("Your card is valid!!")
