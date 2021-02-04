@@ -31,3 +31,16 @@ words = list(walden_words_dict.items())    #sort words by value (number of occur
 words.sort(key=lambda tup: tup[1], reverse=True)
 for i in range(min(10, len(words))):       #print 10 most frequent words
     print(words[i])
+
+'''
+('one', 499)
+('would', 337)
+('man', 314)
+('like', 296)
+('men', 230)
+('may', 222)
+('life', 198)
+('pond', 195)
+('never', 188)
+('house', 183)
+'''
