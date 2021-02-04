@@ -1,9 +1,12 @@
-
 # Practice Problems: Lists
+# Richard
+# Feb 4th 2021
+'''
 
 
-
-For each practice problem, write a function that returns a value (not just prints it). You can then call the function a couple times to test it, comment those calls out, and move on to the next problem. An example of this format is given below.
+For each practice problem, write a function that returns a value (not just prints it). 
+You can then call the function a couple times to test it, comment those calls out, and move on to the next problem.
+ An example of this format is given below.
 
 ```python
 def add(a, b):
@@ -16,16 +19,19 @@ def add(a, b):
 
 ## Problem 1
 
-Write a function using random.randint to generate an index, use that index to pick a random element of a list and return it.
+Write a function using random.randint to generate an index, 
+use that index to pick a random element of a list and return it.
+'''
 
-```
 def random_element(a):
-    ...
+    import random
+    item = random.choice(a)
+    return item
 
 fruits = ['apples', 'bananas', 'pears']
-random_element(fruits) could return 'apples', 'bananas' or 'pears'
-```
+print(random_element(fruits)) # could return 'apples', 'bananas' or 'pears'
 
+'''
 ## Problem 2
 
 Write a REPL which asks users for a list of numbers, which they enter, until they say 'done'. Then print out the list.
@@ -153,4 +159,4 @@ def find_unique(nums):
     ...
 nums = [12, 24, 35, 24, 88, 120, 155, 88, 120, 155]
 unique_nums = find_unique(nums) → [12, 24, 35, 88, 120, 155]
-```
+'''

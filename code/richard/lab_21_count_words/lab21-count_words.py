@@ -79,11 +79,29 @@ for word in STOPWORDS:
 #print(word_dict)
 
 
-
 # 7. Print the most frequent 10 words and their counts again (without the stopwords in)
 print("Ten most frequent words with stop words removed")
 for word, count in word_dict.most_common(10):
     print(f"{word}: {count}")
+
+
+
+'''
+# completely different approach to the problem
+word_dict_2 = {}
+for word in book:
+    if word in STOPWORDS:                           #ignore stopwords
+        continue
+    elif word not in word_dict_2:                   #add new words to dictionary
+        word_dict_2[word] = 1
+    elif word in word_dict_2:                       #add value(+1) to existing words
+        word_dict_2[word] += 1
+
+words2 = list(word_dict_2.items())                  #sort words by value (number of occurrences)
+words2.sort(key=lambda tup: tup[1], reverse=True)
+for i in range(min(10, len(words2))):               #print 10 most frequent words
+    print(words2[i])
+'''
 
 
 
