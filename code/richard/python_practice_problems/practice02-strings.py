@@ -1,7 +1,9 @@
 
 # Practice: Strings
 
-# For each practice problem, write a function that returns a value (not just prints it). You can then call the function a couple # times to test it, comment those calls out, and move on to the next problem. An example of this format is given below.
+# For each practice problem, write a function that returns a value (not just prints it). 
+# You can then call the function a couple # times to test it, comment those calls out, 
+# and move on to the next problem. An example of this format is given below.
 '''
 ```python
 def add(a, b):
@@ -66,33 +68,48 @@ def count_hi(word):
 
 count_hi('hihi') # → 2
 
-'''
+
 ## Problem 5
 
 # Write a function that returns True if a given string contains the same number of 'cat' as it does 'dog'
 
+def cat_dog(input):
+    dog_count = input.count("dog")
+    cat_count = input.count("cat")
+    if dog_count == cat_count:
+        return True
+    else:
+        return False
 
-cat_dog('catdog') → True
-cat_dog('catcat') → False
-cat_dog('catdogcatdog') → True
+print(cat_dog('catdog')) # → True
+print(cat_dog('catcat')) # → False
+print(cat_dog('catdogcatdog')) # → True
 
 
 
 ## Problem 6
 
-Return the number of letter occurances in a string.
-```python
+# Return the number of letter occurances in a string.
+
 def count_letter(letter, word):
+    count = 0
+    for item in range(len(word)):
+        if letter == word[item]:
+            count += 1
+    return count
+
     ...
-count_letter('i', 'antidisestablishmentterianism') → 5
-count_letter('p', 'pneumonoultramicroscopicsilicovolcanoconiosis') → 2
-```
+print(count_letter('i', 'antidisestablishmentterianism')) # → 5
+print(count_letter('p', 'pneumonoultramicroscopicsilicovolcanoconiosis')) # → 2
+
 
 ## Problem 7
 
-Convert input strings to lowercase without any surrounding whitespace.
+# Convert input strings to lowercase without any surrounding whitespace.
+def lower_case(stuff):
+    stuff = stuff.strip()
+    stuff = stuff.lower()
+    return(stuff)
 
-
-lower_case("SUPER!") → 'super!'
-lower_case("        NANNANANANA BATMAN        ") → 'nannananana batman'
-'''
+print(lower_case("SUPER!")) # → 'super!'
+print(lower_case("        NANNANANANA BATMAN        ")) # → 'nannananana batman'
