@@ -6,7 +6,7 @@ import math # to round up
 import string # for the Characters function
 
 # importing .txt file with encoding to eliminate weird characters
-f = open('c:/users/dondc/projects/class_narwhal/code/conor/misc/gettysburg.txt', encoding ='utf-8')
+f = open('gettysburg.txt', encoding ='utf-8')
 burg = f.read()
 f.close()
 # print(burg)
