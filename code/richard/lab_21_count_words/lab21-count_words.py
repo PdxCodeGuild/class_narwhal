@@ -78,6 +78,14 @@ for word in STOPWORDS:
         del word_dict[word]
 #print(word_dict)
 
+
+# 7. Print the most frequent 10 words and their counts again (without the stopwords in)
+print("Ten most frequent words with stop words removed")
+for word, count in word_dict.most_common(10):
+    print(f"{word}: {count}")
+
+
+
 '''
 # completely different approach to the problem
 word_dict_2 = {}
@@ -94,13 +102,6 @@ words2.sort(key=lambda tup: tup[1], reverse=True)
 for i in range(min(10, len(words2))):               #print 10 most frequent words
     print(words2[i])
 '''
-
-
-
-# 7. Print the most frequent 10 words and their counts again (without the stopwords in)
-print("Ten most frequent words with stop words removed")
-for word, count in word_dict.most_common(10):
-    print(f"{word}: {count}")
 
 
 
