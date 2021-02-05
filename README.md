@@ -32,6 +32,7 @@ Presentation Day: May 7th, 2021
  Lab 20 -- Credit Card Validation  
  Lab 13 -- ROT13  
  Group -- Jackalope  
+ Lab 18 -- Peaks and Valleys  
  Lab 22 -- ARI  
  Lab 21 -- Count Words  
 
@@ -39,7 +40,6 @@ Presentation Day: May 7th, 2021
 
   Practice 1-5  
   Labs 01-08, 11, 12, 17 (You did these during the intro course)  
-  Lab 18 -- Peaks and Valleys  
   Lab 24 -- Rain Data  
   Lab 27 -- Connect Four  
 
