@@ -18,7 +18,6 @@ draw.rectangle(((100, 200), (220, 212)), fill="magenta")
 draw.rectangle(((280, 200), (400, 212)), fill="orange")
 draw.rectangle(((220, 350), (232, 501)), fill="yellow")
 draw.rectangle(((268, 350), (280, 500)), fill="yellow")
-#draw.arc((200, 250))
 
 # draw a line from x0, y0, x1, y1
 # using the color pink
@@ -31,5 +30,17 @@ circle_x = width/2
 circle_y = height/4
 circle_radius = 60
 draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='lightgreen')
+
+draw.pieslice(((240, 150),(260, 175)), 0, 180, fill="pink", outline="magenta", width=2)
+
+circle_x = width/1.75
+circle_y = height/4
+circle_radius = 10
+draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='red')
+
+circle_x = width/2.25
+circle_y = height/4
+circle_radius = 10
+draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='red')
 
 img.show()
