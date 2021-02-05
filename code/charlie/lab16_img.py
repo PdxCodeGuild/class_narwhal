@@ -11,11 +11,12 @@ for i in range(width):
 
         r = y
         g = y
-        b=y
+        b = y
         
         r = int(r)
         g = int(g)
         b = int(b)
+        
         pixels[i, j] = (r, g, b)
 
 img.show()
