@@ -1,20 +1,23 @@
-import random
+'''
+=-=-= MOB PROG. Jackalope Simulator =-=-=
+=-=-=-=-=-=-= 02 Jan 2021 =-=-=-=-=-=-=-=
+=-=- Composed by: Isaac, Conor, brndn =-=
+'''
 
+jackalopes = [0,0]
 
-jackalopes = [1,1]
+#jackalopes = [j+1 for j in jackalopes]
 
-total_jacks = len(jackalopes) 
+year = 0
+while len(jackalopes) <= 1000: 
 
+    for i, jack in enumerate(jackalopes):
+        jackalopes[i] = jackalopes[i] + 1  
+        if jack >= 4 and jack <= 8:
+            jackalopes.append(0)
+    for i in range(len(jackalopes)-1,0,-1):
+        if jackalopes[i] == 10:
+            jackalopes.pop(i)
+    year += 1
 
-#while total_jacks <= 1000: 
-
-jackalopes = [j+1 for j in jackalopes]
-
- 
-  
-if 4 <= jackalope <=8: 
-
-
-
-print(jackalopes)
-print(total_jacks)
+print(f'\n\N{RABBIT}\N{DEER}{year}\N{THUMBS UP SIGN}\n')
