@@ -18,12 +18,15 @@ draw.rectangle(((150, 125), (350, 375)), fill="lightblue")
 # draw a line from x0, y0, x1, y1
 # using the color pink
 color = (256, 128, 128)  # pink
-draw.line((0, 0, width, height), fill=color)
-draw.line((0, height, width, 0), fill=color)
+draw.line((75, 200, 150, 200), fill=color)
+draw.line((350, 200, 425, 200), fill=color)
+draw.line((150, 375, 150, height), fill=color)
+draw.line((350, 375, 350 , height), fill=color)
 
 
-circle_x = width/2
-circle_y = height/2
+
+circle_x = 250
+circle_y = 75
 circle_radius = 50
 draw.ellipse((circle_x-circle_radius, circle_y-circle_radius, circle_x+circle_radius, circle_y+circle_radius), fill='lightgreen')
 
