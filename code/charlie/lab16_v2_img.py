@@ -1,9 +1,9 @@
 from PIL import Image
+import colorsys
+
 img = Image.open("F_Douglass.jpeg") # must be in same folder
 width, height = img.size
 pixels = img.load()
-
-import colorsys
 
 for i in range(width):
     for j in range(height):
@@ -13,6 +13,10 @@ for i in range(width):
         h, s, v = colorsys.rgb_to_hsv(r/255, g/255, b/255)
 
         # do some math on h, s, v
+
+        h*=13
+        s*=10
+        v*=1.3
 
         r, g, b = colorsys.hsv_to_rgb(h, s, v)
 
