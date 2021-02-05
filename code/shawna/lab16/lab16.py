@@ -25,20 +25,16 @@
 # - Version 2 -#
 # - Increase Saturation, Decrease Brightness and Rotate Hue - #
 
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageColor
 import colorsys
 
 img = Image.open("lenna.png") # must be in same folder
-#width, height = img.size
-# lenna = img.load()
-
 enhancer = ImageEnhance.Sharpness(img)
-for i in range(8):
-    factor = i / 4.0
-    enhancer.enhance(factor).show(f"Sharpness {factor}")
-    # contrast = ImageEnhance.Contrast(img)
-    # contrast.enhance(4.0).save('img.png')
+bright = ImageEnhance.Brightness(img)
+color = ImageEnhance.Color(img)
+factor = 2
+color_factor = 0.3
+img2 = enhancer.enhance(factor).show(f"Sharpness {factor}")
+img3 = bright.enhance(factor).show(f"Brightness {factor}")
+img4 = color.enhance(color_factor).show(f"Color {color_factor}")
 
-# img2 = Image.open('img.png')
-# img2.show()
-img.show()
