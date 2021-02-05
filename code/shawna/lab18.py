@@ -1,3 +1,5 @@
+import numpy as np
+
 data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
 peaks_and_valleys = []
@@ -40,3 +42,9 @@ def peaks_and_valleys(data):
     return output
 
 print(peaks_and_valleys(data))
+print(data.shape(len(data), 1))
+
+
+# for num in data:
+#     y = (f"{num} {(num * 'x')}")
+#     print(np.rot90(y, 0, 1))

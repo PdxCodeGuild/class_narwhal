@@ -5,21 +5,30 @@ Peaks and Valleys
 '''
 
 
-
+# Dictionary of test data
 data = [1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9]
 
+# Generate list of peak indices
+peaks = []
+for p in range(len(data[1:-1])):
+    before = data[p-1]
+    current = data[p]
+    after = data[p+1]
+    if before < current > after:
+        peaks.append(p)
+print(peaks)
 
+# Generate list of valley indices
+valleys = []
+for v in range(len(data[0:-1])):
+    before = data[v-1]
+    current = data[v]
+    after = data[v+1]
+    if before > current < after:
+        valleys.append(v)
+print(valleys)
 
-for i in range(len(data)):
-    bi = data[i] - 1
-    ni = data(i)
-    ai = data(i) + 1
-    if bi < ni > ai:
-        print(bi,ni,ai)
+# Combine the two lists into one
+peaks_and_valleys = peaks + valleys
 
-# for p in data:
-#     bp = data[p] - 1
-#     np = data[p]
-#     ap = data[p] + 1
-#     if bp < np < ap:
-#         print(bp,np,ap)
+print(peaks_and_valleys)
