@@ -16,7 +16,7 @@ while x > 0:
         if i < x:
             line += '  '
         elif i >= x:
-            line += '\N{THUMBS UP SIGN}'
+            line += '\N{CACTUS}'
     print(line)
     x -= 1
 
