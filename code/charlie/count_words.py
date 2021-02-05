@@ -16,6 +16,7 @@ def main():
     #s = 'I $am a !string with punc&^%*tuation!'
     translator = str.maketrans('', '', string.punctuation)
     print(translator)
+    
     string_without_punct = contents.translate(translator)
     #print(string_without_punct)
 

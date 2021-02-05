@@ -15,7 +15,7 @@ To convert to greyscale, set R, G, and B to Y.
 # `Y = 0.299*R + 0.587*G + 0.114*B`
 
 def convert(R, G, B):
-    Y = 0.299*R + 0.587*G + 0.114*B
+    Y = int(0.299*R) + int(0.587*G) + int(0.114*B)
     return Y
 
 from PIL import Image
@@ -28,7 +28,12 @@ for i in range(width):
         r, g, b = pixels[i, j]
 
         # your code here
-        convert(r, g, b)
+        # To convert to greyscale, set R, G, and B to Y.
+        # Y = convert(r, g, b)
+        Y = (0.299*r) + (0.587*g) + (0.114*b)
+        r = int(Y)
+        g = int(Y)
+        b = int(Y)
 
         pixels[i, j] = (r, g, b)
 
