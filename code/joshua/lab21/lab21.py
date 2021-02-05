@@ -42,7 +42,7 @@ with open('happy_rain_night.txt', 'r') as f:   ## opens and reads txt file
 
     for word in words:
         if word in STOPWORDS:
-            continue
+            pass
         elif word not in my_dict:
            my_dict[word] = 1
         elif word in my_dict:

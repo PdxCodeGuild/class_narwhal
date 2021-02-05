@@ -19,15 +19,15 @@ def main():
     }
 
     try:
-        f = open("gettys.txt")
+        f = open("moby_edit.txt")
         contents = f.read()
         words = contents.split()
         sentences = contents.split('.')
         chars = "".join(words)
         
-        print("The number of words in the Gettysburg Address = ", len(words)-1)    
-        print("The number of characters in the Gettysburg Address = ", len(chars)-1)
-        print("The number of sentences in the Gettysburg Address = ", len(sentences)-1)
+        print("The number of words in the this book = ", len(words)-1)    
+        print("The number of characters in this tale = ", len(chars)-1)
+        print("The number of sentences in this piece of literary work = ", len(sentences)-1)
     except (IOError, OSError) as e:
         print(e)
     finally:
