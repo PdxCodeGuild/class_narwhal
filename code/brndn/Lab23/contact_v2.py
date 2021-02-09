@@ -17,15 +17,17 @@ for profile in contact_profiles:                          #pair keys with values
     contacts.append(dict(zip(keys,profile)))              #store each profile as a dictionary
 
 def create_record():
-    new_profile = input('\nEnter name, favorite fruit, and favorite color, each separated by a comma(,) without spaces:\n>>> ').split(',')
+    new_profile = input(f'\nEnter contact {", ".join(str(key) for key in keys)}, each separated by a comma(,) without spaces:\n>>> ').split(',')
     new_profile = [value.capitalize() for value in new_profile]
+    while len(keys) != len(new_profile):
+        new_profile.append('')
     contacts.append(dict(zip(keys,new_profile)))
     print(f'\nContact created:\n{dict(zip(keys,new_profile))}')
     
 def retrieve_record():
-    name = input('\nContact name: ').capitalize()
+    name = input(f'\n{keys[0]}: ').capitalize()
     for index, contact in enumerate(contacts):
-        if name in contact['Name']:
+        if name in contact[keys[0]]:
             print(f'\n{contacts[index]}')
             return index
     print('\nContact nonexistent')
