@@ -41,32 +41,41 @@ def record_create():
 
     # 2. Turn the input into a dictionary
     user_input = {'name': name, 'favorite_fruit': favorite_fruit, 'favorite_color': favorite_color, 'favorite_state': favorite_state}
-    print(user_input)
+    # print(user_input)
 
     # 3. Add the dictionary to the list called contacts
     contacts.append(user_input)
+    print("The updated list of contacts is: ")
     print(contacts)
 
 
 ## Retrieve
 def record_retrieve():
+    # 0. Print out the list of possible names
+    print("The people in the database are:")
+    print(contacts)                             # this could be better and just list the names
+
     # 1. Ask the user what contact to retrieve
-    retrieve_name = input("What person would you like the info on? ")
+    retrieve_name = input("What person would you like? ")
 
     # 2. Spit out that output (if it exists)
     retrieved_contact = None
     for contact in contacts:
         if contact["name"] == retrieve_name:
             retrieved_contact = contact
+            print("heres the contact you asked for: ")
             print(contact)
     if retrieved_contact == None:
         print("Nobody by that name")
+    return retrieved_contact
 
 
 
 ## Update
 def record_update():
-    update_question = input("Would you like to update any field on the contact we just recieved? (Y/N) ")
+    print("OK, lets update a record")
+    contact = record_retrieve()
+    update_question = input("Are you sure you want to update this contact? (Y/N) ")
     update_question = update_question.lower()
 
     if update_question == "y" or update_question == "yes":
@@ -77,8 +86,10 @@ def record_update():
         print(f"OK, lets update {update_field} to {update_value}")
         contact.update({update_field: update_value})
         print("heres the new contact info")
-        print(contact)
+        print(contacts)
         print("changes made")
+    else:
+        print("OK, good. That saves me some work")
 
 
 # print("New information is: ")
@@ -92,9 +103,18 @@ def record_delete():
 
     # if delete_question == "y" or update_question == "yes":
         print("OK, lets delete a record")
+        print("The contacts are: ")
+        print(contacts)
         print(f"There are {len(contacts)} in the list. ")
-        delete_item = int(input("Whats the position (first item is at positon 0) of the record you would like to delete? "))
-        del contacts[delete_item]
+        print("Remember the first item is item 0")
+        item_num = int(input("What item number do you want to delete? "))
+        contacts.pop(item_num)
+        
+        # delete_name = record_retrieve()
+        # print(delete_name)
+
+
+
         print("Here are the contacts after we deleted that one: ")
         print(contacts)
 
@@ -125,6 +145,7 @@ print(f"{contacts}")
 
 
 # The Hard way - code it using base Python
+
 
 
 
