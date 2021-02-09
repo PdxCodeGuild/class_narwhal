@@ -1,15 +1,26 @@
-def main():
+import string
 
+def main():
+    translator = str.maketrans('', '', string.punctuation + '""')
+    
     contact_list = []
-    with open('contact.csv', 'r') as file:
-        lines = file.read().split('\n')
-        keys_header = lines[0]
-        for line in keys_header:
-            field = line.split(",")
-            entry = {'name': , 'favorite color': , 'favorite band': }
-            for i, value in enumerate(field):
-                entry[field] = value.strip()
-            contact_list.append(entry)
+    with open('contact.csv', 'r') as f:
+        contacts = f.read()
+    
+    contacts = contacts.translate(translator)
+    keys = contacts[0]
+    contacts = str(contacts)
+    contacts = contacts.strip()
+    contacts = contacts.split(",")
+
+    #contacts.pop(0)
+    keys = keys.split(",")
+    contacts = [word for word in contacts if word not in keys]
+    for contact in contacts:
+        entry = {}
+        for key in keys:
+            entry[key] = contact
+        contact_list.append(entry)
 
     print(contact_list)
 
