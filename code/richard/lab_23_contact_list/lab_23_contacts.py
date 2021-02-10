@@ -67,6 +67,7 @@ def record_retrieve():
             print(contact)
     if retrieved_contact == None:
         print("Nobody by that name")
+    # print(retrieved_contact.get("name"))    
     return retrieved_contact
 
 
@@ -98,9 +99,18 @@ def record_update():
 
 ## Delete
 def record_delete():
+    contact = record_retrieve()
+    for item in range(len(contacts)):
+        # print(item, contacts)
+        if contacts[item] == contact:
+            del contacts[item]
+            break
+    print("Here are the contacts after we deleted that one: ")
+    print(contacts)
+    # contacts.pop(contact)
     # delete_question = input("Would you like to delete a record? (Y/N) ")
     # delete_question = delete_question.lower()
-
+    '''
     # if delete_question == "y" or update_question == "yes":
         print("OK, lets delete a record")
         print("The contacts are: ")
@@ -114,10 +124,9 @@ def record_delete():
         # print(delete_name)
 
 
-
-        print("Here are the contacts after we deleted that one: ")
-        print(contacts)
-
+'''
+        
+    
 
 
 # Run the program using the functions above.
@@ -145,6 +154,15 @@ print(f"{contacts}")
 
 
 # The Hard way - code it using base Python
+
+# 1. first line - keys of the dictionary
+headers = []
+
+# 2. other lines - loop throgh the items - ' '.join(listname)
+
+# 3. Combine first line & other lines
+
+
 
 
 
