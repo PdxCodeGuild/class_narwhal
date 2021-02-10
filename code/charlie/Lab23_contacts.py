@@ -1,20 +1,19 @@
 import string
 
 def main():
-    translator = str.maketrans('', '', string.punctuation + '""')
+   # translator = str.maketrans('', '', string.punctuation)
     
     contact_list = []
     with open('contact.csv', 'r') as f:
-        contacts = f.read()
+        contents = f.read().split('\n')
     
-    contacts = contacts.translate(translator)
-    keys = contacts[0]
-    contacts = str(contacts)
-    contacts = contacts.strip()
-    contacts = contacts.split(",")
-
-    #contacts.pop(0)
+    #contents = contents.translate(translator)
+    contents = [word.strip() for word in contents]
+    keys = contents[0]
     keys = keys.split(",")
+    
+    #contacts = contacts.split(",")
+    #contacts.pop(0)
     contacts = [word for word in contacts if word not in keys]
     for contact in contacts:
         entry = {}
