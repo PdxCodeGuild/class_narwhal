@@ -1,15 +1,20 @@
-# Lab 25: ATM
+class ATM:
 
-Let's represent an ATM with a class containing two attributes: a balance and an interest rate. A newly created account will default to a balance of 0 and an interest rate of 0.1%. Implement the initializer, as well as the following functions:
+    def __init__(self):
+        pass
 
-- `balance()` returns the account balance
-- `deposit(amount)` deposits the given amount in the account
-- `check_withdrawal(amount)` returns true if the withdrawn amount won't put the account in the negative
-- `withdraw(amount)` withdraws the amount from the account and returns it
-- `calc_interest()` returns the amount of interest calculated on the account
+    def balance(self):
+        return self
+    def withdraw(self,amount):
+        pass
+    def calc_interest(self):
+        return self
+    def deposit(self, amount):
+        pass
+    def check_withdrawal(self, amount):
+        pass
 
 
-```python
 atm = ATM() # create an instance of our class
 print('Welcome to the ATM')
 while True:
@@ -43,9 +48,3 @@ while True:
         break
     else:
         print('Command not recognized')
-```
-
-## Version 2
-
-Have the ATM maintain a list of transactions. Every time the user makes a deposit or withdrawal, add a string to a list saying 'user deposited $15' or 'user withdrew $15'. Add a new method `print_transactions()` to your class for printing out the list of transactions.
-

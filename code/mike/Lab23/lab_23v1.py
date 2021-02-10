@@ -9,6 +9,6 @@ for line in lines:
 
 
 
-print(rows)
+print(lines)
 
 print(contacts)
