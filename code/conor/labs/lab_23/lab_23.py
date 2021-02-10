@@ -35,18 +35,17 @@ def read(contact_list):
     for contact in contact_list:
         c = contact
         if c.get("name") == read:
-            print(c)
+            return(c)
 
 # read(contact_list, header)
 
 def update(contact_list):
     update = read(contact_list)
     contact_to_update = input("Please enter the category you would like to update: ")
-    update_contact = input(f"What would you like to change it to?  ")
-    update[contact_to_update] = update_contact
-    return update_contact
+    new_value = input(f"What would you like to change it to?  ")
+    update[contact_to_update] = new_value
 
-# update(contact_list)
+update(contact_list)
 
 def delete(contact_list):
     delete = input('Which contact would you like to delete? ')

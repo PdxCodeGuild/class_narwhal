@@ -1,36 +1,38 @@
-with open('contacts.csv', 'r') as file:
-    lines = file.read().split('\n')
+def load_csv():
+    with open('contacts.csv', 'r') as file:
+        lines = file.read().split('\n')
 
-    #split headers
-    headers = lines[0].split(',')
-    h1, h2, h3 = headers[0], headers[1], headers[2]
+        #split headers
+        headers = lines[0].split(',')
+        h1, h2, h3 = headers[0], headers[1], headers[2]
 
-    #create contacts
-    contacts =  []
+        #create contacts
+        contacts =  []
 
-    #collect each contact in lines and store in contacts
-    for contact in lines:
-        x = contact.split(',')
+        #collect each contact in lines and store in contacts
+        for contact in lines:
+            x = contact.split(',')
+            contact = {
+                h1: x[0], 
+                h2 : x[1], 
+                h3 : x[2]
+                }
+            contacts.append(contact)
+        return contacts
+
+def save_csv(contacts):
+    with open('contacts.csv', 'w') as file:
+        for contact in contacts:
+            file.write(",".join(contact.values())+ "\n")
+
+def create(contacts):
         contact = {
-            h1: x[0], 
-            h2 : x[1], 
-            h3 : x[2]
+            "First" : input('First: '), 
+            "Last" : input('Last: '), 
+            "Phone" : input('Phone: ')
             }
         contacts.append(contact)
-
-def create():
-        contact = {
-            h1: input('First: '), 
-            h2 : input('Last: '), 
-            h3 : input('Phone: ')
-            }
-        contacts.append(contact)
-
-
-# create()
-# print(contacts)
-
-# print(contacts)
+        return contacts
 
 def retrieve(contacts):
     target = input("What is the First name of the contact you would like to retrieve?  ")
@@ -38,8 +40,6 @@ def retrieve(contacts):
         x = contact
         if x.get("First") == target:
             return(x)
-
-# print(retrieve(contacts))
 
 def update_contact(contacts):
     update_contact = retrieve(contacts)
@@ -53,6 +53,25 @@ def delete_contact(contacts):
     for i, contact in enumerate(contacts):
         if contact == delete_contact:
             del contacts[i]
-    print(contacts)
+    return(contacts)
 
-delete_contact(contacts)
+def run():
+    contacts = load_csv()
+    while True:
+        x = input("What would you like to do? Please enter a number\n1) Create a contact\n2) Retrieve a contact.\n3) Update a contact\n4) Delete a contact\n5) Quit (Ya, Quitter)\n")
+        action= int(x)
+        if action == 1:
+            print(create(contacts))
+        elif action == 2:
+            print(retrieve(contacts))
+        elif action == 3:
+            print(update_contact(contacts))
+        elif action == 4:
+            print(delete_contact(contacts))
+        elif action == 5:
+            save_csv(contacts)
+            break
+        else: 
+            print("That is not a valid selection. Try again.")
+
+run()
