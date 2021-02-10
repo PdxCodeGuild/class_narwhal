@@ -72,12 +72,12 @@ while True:
         break
 
 
-# print(contacts)
+print(contacts)
 
 # writes new contacts into csv file
 rows = [','.join(header)]
-for new_contact in contacts:
-    row = ','.join(new_contact.values())
+for contact in contacts:
+    row = ','.join(contact.values())
     rows.append(row)
 write_contacts = '\n'.join(rows)
 with open('contacts.csv', 'w') as file:
