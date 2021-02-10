@@ -2,11 +2,11 @@
 # Lab 25
 # Feb 10th, 2021
 
-import classes  
+from classes import ATM
 
 
 
-atm = ATM() # create an instance of our class
+atm = ATM(0) # create an instance of our class
 print('Welcome to the ATM')
 while True:
     command = input('Enter a command: ')
