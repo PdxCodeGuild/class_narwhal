@@ -19,7 +19,7 @@ for profile in contact_profiles:                          #pair keys with values
 def create_record():
     new_profile = input(f'\nEnter contact {", ".join(str(key) for key in keys)}, each separated by a comma(,) without spaces:\n>>> ').split(',')
     new_profile = [value.capitalize() for value in new_profile]
-    while len(keys) != len(new_profile):
+    while len(keys) > len(new_profile):
         new_profile.append('')
     contacts.append(dict(zip(keys,new_profile)))
     print(f'\nContact created:\n{dict(zip(keys,new_profile))}')
@@ -27,7 +27,7 @@ def create_record():
 def retrieve_record():
     name = input(f'\n{keys[0]}: ').capitalize()
     for index, contact in enumerate(contacts):
-        if name in contact[keys[0]]:
+        if name == contact[keys[0]]:
             print(f'\n{contacts[index]}')
             return index
     print('\nContact nonexistent')
@@ -49,15 +49,30 @@ def delete_record():
     contacts.pop(record_to_delete)
     print('\nContact deleted.')
 
+def edit_keys():
+    print(f'\n{keys}')
+    key_change = input('\n"A" to add a key.\n"R" to remove a key.\n>>> ').lower()
+    if key_change == 'a':
+        new_key = input('\nNew key: ').capitalize()
+        keys.append(new_key)
+        for contact in contacts:
+            contact[new_key] = ''
+    if key_change == 'r':
+        key_remove = keys.index(input('\nRemove which key: ').capitalize())
+        for contact in contacts:
+            contact.pop(keys[key_remove])
+        keys.pop(key_remove)
+
 crud_func = {
     'c': create_record,
     'r': retrieve_record,
     'u': update_record,
     'd': delete_record,
+    'edit': edit_keys,
 }
 
 while True:
-    crud = input('\nManage contacts; ("Exit" to quit)\n"C" to Create\n"R" to Retrieve\n"U" to Update\n"D" to Delete\n>>> ').lower()
+    crud = input('\nManage contacts; ("Exit" to quit) ("Edit" to Edit Info Keys)\n"C" to Create\n"R" to Retrieve\n"U" to Update\n"D" to Delete\n>>> ').lower()
     try:
         if crud == 'exit':
             break
