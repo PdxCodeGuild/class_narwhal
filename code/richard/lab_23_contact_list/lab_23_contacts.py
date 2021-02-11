@@ -156,11 +156,20 @@ print(f"{contacts}")
 # The Hard way - code it using base Python
 
 # 1. first line - keys of the dictionary
-headers = []
+header = list(contacts[1].keys())
+header = ",".join(header)
+print(" ")
+print(header)
 
 # 2. other lines - loop throgh the items - ' '.join(listname)
+print(" ")
+for item in contacts:
+    row = (list(item.values()))
+    row = ",".join(row)
+    print (row)
 
 # 3. Combine first line & other lines
+
 
 
 
