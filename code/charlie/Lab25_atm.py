@@ -1,18 +1,22 @@
 class ATM:
 
-    def __init__(self):
-        pass
-
+    def __init__(self, bal=0):
+        self.bal = bal
     def balance(self):
-        return self
+        return self.bal
     def withdraw(self,amount):
-        pass
+        self.bal -= amount
+        return
     def calc_interest(self):
-        return self
+        interest = self.bal * 0.01
+        return interest
     def deposit(self, amount):
-        pass
+        self.bal += amount
+        return
     def check_withdrawal(self, amount):
-        pass
+        if self.bal - amount < 0:
+            return False
+        return True
 
 
 atm = ATM() # create an instance of our class
