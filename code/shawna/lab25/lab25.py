@@ -66,9 +66,15 @@ while True:
         print('deposit  - deposit money')
         print('withdraw - withdraw money')
         print('interest - accumulate interest')
+        print('log - print transaction log')
         print('exit     - exit the program')
-    elif command == 'exit':
+    elif command == 'log':
+        print( "-" * 30)
         print(atm.print_transactions())
+        print( "-" * 30)
+    elif command == 'exit':
+        balance = atm.balance() # call the balance() method
+        print(f'Thank you. Your final balance is ${balance}')
         break
     else:
         print('Command not recognized')
