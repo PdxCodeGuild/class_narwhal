@@ -28,12 +28,15 @@ while True:
         amount = atm.calc_interest(amount) # call the calc_interest() method
         atm.deposit(amount)
         print(f'Accumulated ${amount} in interest')
+    elif command == 'history':
+        print(f'\n{atm.print_transactions()}')
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
         print('deposit  - deposit money')
         print('withdraw - withdraw money')
         print('interest - accumulate interest')
+        print('history  - get transaction history')
         print('exit     - exit the program')
     elif command == 'exit':
         break

@@ -12,6 +12,7 @@ Implement the initializer, as well as the following functions:
 class ATM:
     def __init__(self, initial_balance = 0):
         self.acct_balance = initial_balance
+        self.history = []
 
     interest_rate = 0.001
     
@@ -22,6 +23,7 @@ class ATM:
     # deposit(amount) deposits the given amount in the account
     def deposit(self, amount):
         self.acct_balance = self.acct_balance + amount
+        self.history.append(f'Deposited ${amount}')
         return amount
 
     # check_withdrawal(amount) returns true if the withdrawn amount won't put the account in the negative
@@ -35,12 +37,17 @@ class ATM:
     def withdraw(self, amount):
         if self.check_withdrawal(amount) == True:
             self.acct_balance = self.acct_balance - amount
+            self.history.append(f'Withdrew ${amount}')
             return amount
 
     # calc_interest() returns the amount of interest calculated on the account
     def calc_interest(self, amount):
         interest = round(self.acct_balance * self.interest_rate, 2)
         return interest
+
+    def print_transactions(self):
+        history = '\n'.join(action for action in self.history)
+        return history
 
     
     
