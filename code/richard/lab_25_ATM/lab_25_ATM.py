@@ -25,7 +25,7 @@ while True:
         else:
             print('Insufficient funds')
     elif command == 'interest':
-        amount = atm.calc_interest() # call the calc_interest() method
+        amount = atm.calc_interest(amount) # call the calc_interest() method
         atm.deposit(amount)
         print(f'Accumulated ${amount} in interest')
     elif command == 'help':

@@ -18,12 +18,7 @@ class ATM:
     # balance() returns the account balance
     def balance(self):
         return self.acct_balance
-    '''
-    def rotate(self, px, py):
-        rx = px*self.cos_alpha + py*self.sin_alpha
-        ry = -px*self.sin_alpha + py*self.cos_alpha
-        return rx, ry
-    '''
+
     # deposit(amount) deposits the given amount in the account
     def deposit(self, amount):
         self.acct_balance = self.acct_balance + amount
@@ -38,13 +33,13 @@ class ATM:
 
     # withdraw(amount) withdraws the amount from the account and returns it
     def withdraw(self, amount):
-        if check_withdrawal(amount) == True:
+        if self.check_withdrawal(amount) == True:
             self.acct_balance = self.acct_balance - amount
             return amount
 
     # calc_interest() returns the amount of interest calculated on the account
     def calc_interest(self, amount):
-        interest = self.acct_balance * interest_rate
+        interest = round(self.acct_balance * self.interest_rate, 2)
         return interest
 
     
