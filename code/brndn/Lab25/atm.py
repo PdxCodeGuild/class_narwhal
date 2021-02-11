@@ -1,16 +1,33 @@
-# Lab 25: ATM
+'''
+=-=-= Lab 25 10 Feb 2021 =-=-=
+=-=-=-=-=-=- ATM =-=-=-=-=-=-=
+=-=-=- Composer: brndn =-=-=-=
+'''
 
-Let's represent an ATM with a class containing two attributes: a balance and an interest rate. A newly created account will default to a balance of 0 and an interest rate of 0.1%. Implement the initializer, as well as the following functions:
+class ATM:
+    def __init__(self,balance=0,interest=0.1):
+        self.atm_balance = balance
+        self.interest = interest
 
-- `balance()` returns the account balance
-- `deposit(amount)` deposits the given amount in the account
-- `check_withdrawal(amount)` returns true if the withdrawn amount won't put the account in the negative
-- `withdraw(amount)` withdraws the amount from the account and returns it
-- `calc_interest()` returns the amount of interest calculated on the account
+    def balance(self):                    #returns the account balance
+        return self.atm_balance
 
+    def deposit(self,amount):             #deposits the given amount in the account
+        self.atm_balance += amount
 
-```python
-atm = ATM() # create an instance of our class
+    def check_withdrawal(self,amount):    #returns true if the withdrawn amount won't put the account in the negative
+        if self.atm_balance >= amount:
+            return True
+
+    def withdraw(self,amount):            #withdraws the amount from the account and returns it
+        self.atm_balance -= amount
+        return amount       
+
+    def calc_interest(self):              #returns the amount of interest calculated on the account
+        interest = self.atm_balance * self.interest
+        return interest
+
+atm = ATM()
 print('Welcome to the ATM')
 while True:
     command = input('Enter a command: ')
@@ -43,9 +60,3 @@ while True:
         break
     else:
         print('Command not recognized')
-```
-
-## Version 2
-
-Have the ATM maintain a list of transactions. Every time the user makes a deposit or withdrawal, add a string to a list saying 'user deposited $15' or 'user withdrew $15'. Add a new method `print_transactions()` to your class for printing out the list of transactions.
-

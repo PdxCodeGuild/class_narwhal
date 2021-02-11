@@ -46,27 +46,150 @@
 
 # print(my_func("5", "three"))
 
-try:
-    f = open("gettys.txt")
-    contents = f.read()
-    sentences = contents.split('.')
-    chars = ' '.join(sentences)
-    words = chars.split()
-    
-    print("The number of words in the Gettysburg Address = ", len(words)-1)
-    
-    print("The number of characters in the Gettysburg Address = ", len(chars)-1)
-    print("The number of sentences in the Gettysburg Address = ", len(sentences)-1)
-    #print(contents)
-except (IOError, OSError) as e:
-    print(e)
-finally:
-    f.close()
-
-
-
-# with open("gettys.txt") as f:
+# try:
+#     f = open("gettys.txt")
 #     contents = f.read()
+#     sentences = contents.split('.')
+#     chars = ' '.join(sentences)
+#     words = chars.split()
+    
+#     print("The number of words in the Gettysburg Address = ", len(words)-1)
+    
+#     print("The number of characters in the Gettysburg Address = ", len(chars)-1)
+#     print("The number of sentences in the Gettysburg Address = ", len(sentences)-1)
+#     #print(contents)
+# except (IOError, OSError) as e:
+#     print(e)
+# finally:
+#     f.close()
 
-# print(contents)
 
+
+
+# ##################### Classes/OOP ########################
+# # Version1
+# # class Point:
+# #     def __init__(self, x, y): # this is the initializer
+# #         self.x = x # these are member variables
+# #         self.y = y
+    
+# # p = Point(5,2) # call the initializer, instantiate the class
+# # print(p.x) # 5
+# # print(p.y) # 2
+
+# # print(type(p)) # Point
+
+# # Version2
+# import math
+
+# class Point:
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
+    
+#     def distance(self, p): # method, or 'member function'
+#         dx = self.x - p.x
+#         dy = self.y - p.y
+#         return math.sqrt(dx*dx + dy*dy)
+    
+#     def scale(self, v):
+#         self.x *= v
+#         self.y *= v
+# ############## Static Method #######################
+#     @staticmethod
+#     def from_polar(r, theta): # static methods belong to the type, not the instance
+#         px = r * math.cos(theta)
+#         py = r * math.sin(theta)
+#         return Point(px, py) 
+    
+# p3 = Point()
+# p1 = Point(5,2)
+# p2 = Point(8,4)
+# dist = p1.distance(p2) # or p2.distance(p1), either works
+# print(dist)
+# print(p1.x, p1.y)
+# p1.scale(19)
+# print("Scaled = ", p1.x, p1.y)
+# # similar to how we can call methods of the str class
+# s = 'hello world'
+# print(s.split(' '))
+
+# ################### Private Variables ###################
+# class PointPriv:
+#     def __init__(self, x, y):
+#         self.__x = x  # use two underscores to denote a private variable
+#         self.__y = y
+    
+#     def distance(self, p):
+#         dx = self.__x - p.__x # still accessible from inside methods
+#         dy = self.__y - p.__y # still accessible to other members of the same class
+#         return math.sqrt(dx*dx + dy*dy)
+
+# p1 = PointPriv(5,2)
+# p2 = PointPriv(7,8)
+# print(p1.distance(p2))
+# print(p1.__x) # AttributeError: 'PointPriv' object has no attribute '__x'
+
+# ####################### Inheritance ##############################
+# '''Inheritance lets us extend the functionality of a class by adding additional methods and fields. 
+# You can visualize it like an onion, with the super-class in the center, and a sub-class representing a new shell. 
+# The child class has all the attributes of its parent, but additional attributes all its own.'''
+
+# class Animal:
+#     def __init__(self, name):
+#         self.name = name
+
+# class Squirrel(Animal): # inherit from Animal
+#     def __init__(self, name):
+#         super().__init__(name) # invoke the parent's initializer
+
+# s = Squirrel('Clarence')
+# print(s.name)
+
+################## Multiple Inheritance ###########################
+
+# class ParentA:
+#     def __init__(self):
+#         print('start parent a initializer')
+#         super().__init__()                  ### using the "super" keyword in all classes uses multiple inheritance resolution protocol
+#         print('end parent a initializer')
+
+# class ParentB:
+#     def __init__(self):
+#         print('start parent b initializer')
+#         super().__init__()
+#         print('end parent b initializer')
+
+# class Child(ParentA, ParentB):
+#     def __init__(self):
+#         print('start child initializer')
+#         super().__init__()
+#         print('end child initializer')
+
+# c = Child()
+# x = 24
+# y = 5
+# print(x.__add__(y))
+
+####### Dunder Methods in Classes ##############
+import math
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+    
+    def distance(self, p): # method, or 'member function'
+        dx = self.x - p.x
+        dy = self.y - p.y
+        return math.sqrt(dx*dx + dy*dy)
+    
+    def scale(self, v):
+        self.x *= v
+        self.y *= v
+    def __str__(self): # specify a str conversion
+            return '['+str(self.x)+','+str(self.y)+']'
+    
+p3 = Point(7, 10)
+p1 = Point(5,2)
+p2 = Point(8,4)
+print(p1, p2, p3)
