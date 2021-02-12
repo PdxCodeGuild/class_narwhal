@@ -42,30 +42,39 @@ class ATM:
 
 
 # - ATM REPL - #
+
 atm = ATM() # create an instance of our class
-print('Welcome to the ATM')
+print('''
+Welcome to the ATM!''')
 while True:
-    command = input('Enter a command: ')
+    command = input('''
+    Enter a command: ''')
     if command == 'balance':
         balance = atm.balance() # call the balance() method
-        print(f'Your balance is ${balance:.2f}')
+        print(f'''
+        Your balance is ${balance:.2f}''')
     elif command == 'deposit':
         amount = float(input('How much would you like to deposit? '))
         atm.deposit(amount) # call the deposit(amount) method
-        print(f'Deposited ${amount}')
+        print(f'''
+        Deposited ${amount}''')
     elif command == 'withdraw':
-        amount = float(input('How much would you like '))
+        amount = float(input('How much would you like to withdraw? '))
         if atm.check_withdrawal(amount): # call the check_withdrawl(amount) method
             atm.withdraw(amount) # call the withdraw(amount) method
-            print(f'Withdrew ${amount}')
+            print(f'''
+            Withdrew ${amount}''')
         else:
-            print('Insufficient funds')
+            print('''
+            Insufficient Funds''')
     elif command == 'interest':
         amount = atm.calc_interest() # call the calc_interest() method
         atm.deposit(amount)
-        print(f'Accumulated ${amount} in interest')
+        print(f'''
+        Accumulated ${amount} in interest''')
     elif command == 'print':
-        print('Your transaction history is as follows: ')
+        print('''
+        Your transaction history is as follows: ''')
         atm.print_transactions()
     elif command == 'help':
         print('Available commands:')
@@ -73,9 +82,11 @@ while True:
         print('deposit  - deposit money')
         print('withdraw - withdraw money')
         print('interest - accumulate interest')
-        print('print - print transaction history')
+        print('print    - print transaction history')
         print('exit     - exit the program')
     elif command == 'exit':
+        print('''
+        Goodbye!''')
         break
     else:
         print('Command not recognized')
