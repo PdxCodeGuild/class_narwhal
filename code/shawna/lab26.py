@@ -50,6 +50,7 @@ class GameBoard:
         x = ((int(x) - 1))
         y = (int(y) - 1)
         self.board[(x,y)] = player.token
+        print(self.__repr__())
 
     def calc_winner(self, x, y, player):
         x = ((int(x) - 1))
@@ -102,17 +103,16 @@ while True:
     p1_token = ""
     while not (p1_token == 'X' or p1_token == 'O'):
         p1_token = (input("Would you like to be X's or O's: ")[0]).upper()
-    
-    #Create player one
-    p1 = Player(p1_name, p1_token)
-
+   
     #player two info
     p2_name = input("Player 2, enter your name: ")
-    p2_token = ""
-    while not (p2_token == 'X' or p2_token == 'O'):
-        p2_token = (input("Would you like to be X's or O's: ")[0]).upper()
+    if p1_token == "X":
+        p2_token = "O"
+    else:
+        p2_token = "X"
     
-    #Create player two
+    #Create players
+    p1 = Player(p1_name, p1_token)
     p2 = Player(p2_name, p2_token)
 
     #Print the empty board
@@ -134,9 +134,10 @@ while True:
             y = input("Which ROW would you like to place your token? 1, 2, or 3?\nRow: ")
         
         board.move(x,y,current_player)
-        print(board.__repr__())
-
+        #check for winner
         winner = (board.calc_winner(x,y,current_player))
+        
+        #check if game over
         if board.is_over(winner) == True:
             break
         
