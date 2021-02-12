@@ -1,15 +1,17 @@
 class ATM:
 
-    def __init__(self, bal=0):
+    def __init__(self, transactions=[], bal=0):
         self.bal = bal
-    # def print_transactions(self, flag, amount):
-    #     transactions = []
-    #     if flag == 1:
-    #         transactions.append(f"user deposited ${amount}")
-    #     if flag == 2:
-    #         transactions.append(f"user withdrew ${amount}")
+        self.transactions = transactions
 
-        
+    def store_transaction(self, flag, amount):
+        if flag == 1:
+            self.transactions.append(f"user deposited ${amount}")
+        if flag == 2:
+            self.transactions.append(f"user withdrew ${amount}")
+
+    def print_transactions(self):
+        print(self.transactions)
     def balance(self):
         return self.bal
     def withdraw(self,amount):
@@ -27,8 +29,10 @@ class ATM:
         return True
 
 
-atm = ATM() # create an instance of our class
 transactions = []
+flag = 0
+atm = ATM() # create an instance of our class
+
 print('Welcome to the ATM')
 while True:
     command = input('Enter a command (type help for list of commands): ')
@@ -40,16 +44,16 @@ while True:
         atm.deposit(amount) # call the deposit(amount) method
         print(f'Deposited ${amount}')
         transactions.append(f"user deposited ${amount}")
-        #flag = 1
-        #atm.print_transactions(flag, amount)
+        flag = 1
+        atm.store_transaction(flag, amount)
     elif command == 'withdraw':                                         ## Modify for print_transactions()
         amount = float(input('How much would you like '))
         if atm.check_withdrawal(amount): # call the check_withdrawal(amount) method
             atm.withdraw(amount) # call the withdraw(amount) method
             print(f'Withdrew ${amount}')
             transactions.append(f"user withdrew ${amount}")
-            # flag = 2 
-            # atm.print_transactions(flag, amount)
+            flag = 2 
+            atm.store_transaction(flag, amount)
         else:
             print('Insufficient funds')
     elif command == 'interest':
@@ -57,14 +61,14 @@ while True:
         atm.deposit(amount)
         print(f'Accumulated ${amount} in interest')
     elif command == "history":
-        print(transactions)
+        atm.print_transactions()
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
         print('deposit  - deposit money')
         print('withdraw - withdraw money')
         print('interest - accumulate interest')
-        print('history  - see history of transactions')
+        print('history  - print history of transactions')
         print('exit     - exit the program')
     elif command == 'exit':
         break
