@@ -1,0 +1,10 @@
+get dot env
+store creds in .env
+confirm they are hidden
+
+set up google account
+start goole smtp?
+
+create script
+run server
+send text
