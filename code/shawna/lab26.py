@@ -50,7 +50,7 @@ class GameBoard:
         x = ((int(x) - 1))
         y = (int(y) - 1)
         self.board[(x,y)] = player.token
-        print(self.__repr__())
+        print(self.__repr__()) 
 
     def calc_winner(self, x, y, player):
         x = ((int(x) - 1))
@@ -119,12 +119,14 @@ while True:
     board = GameBoard()
     print(board.__repr__())
     current_player = ""
-    while True:
+
+    while True: #loop player moves
         if current_player == p1: 
             current_player = p2 
         else: 
             current_player = p1
-        #player 1 move
+
+        #player move
         print(f"{current_player.name} it is your turn.")
         x = ""
         while not (x == "1" or x == "2" or x == "3"):
@@ -134,13 +136,14 @@ while True:
             y = input("Which ROW would you like to place your token? 1, 2, or 3?\nRow: ")
         
         board.move(x,y,current_player)
+        
         #check for winner
         winner = (board.calc_winner(x,y,current_player))
         
         #check if game over
         if board.is_over(winner) == True:
             break
-        
+    #play again?    
     again = input("Play again? Y/N: ")
     if again.upper() == "N":
         break
