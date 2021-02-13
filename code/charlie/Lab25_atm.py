@@ -1,9 +1,11 @@
 class ATM:
 
-    def __init__(self, transactions=[], bal=0):
-        self.bal = bal
+    def __init__(self, transactions=[], balance=0, interest=0.001):
+        self.bal = balance
         self.transactions = transactions
-
+        self.interest = interest
+    def __str__(self):
+        pass
     def store_transaction(self, flag, amount):
         if flag == 1:
             self.transactions.append(f"user deposited ${amount}")
@@ -12,21 +14,26 @@ class ATM:
 
     def print_transactions(self):
         print(self.transactions)
+
     def balance(self):
         return self.bal
+
     def withdraw(self,amount):
         self.bal -= amount
         return
+        
     def calc_interest(self):
-        interest = self.bal * 0.01
-        return interest
+        return self.bal * self.interest
+        
+
     def deposit(self, amount):
         self.bal += amount
         return
+
     def check_withdrawal(self, amount):
-        if self.bal - amount < 0:
-            return False
-        return True
+        return self.bal > amount
+        #     return False
+        # return True
 
 
 transactions = []
