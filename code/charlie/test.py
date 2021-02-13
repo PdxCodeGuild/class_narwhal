@@ -195,7 +195,7 @@
 # print(p1, p2, p3)
 
 
-board = [[ '' for col in range(0,3)] for row in range(0,3)]
+board = [[ '' for column in range(0,3)] for row in range(0,3)]
 print(board)
-board[1][1] = 'X'
-print(board)
+# board[1][1] = 'X'
+# print(board)
