@@ -22,10 +22,9 @@ sex = col1.radio('Sex', ["female","male"])
 sibling_spouse = st.selectbox('Total Number of Siblings and Spouses', [0,1,2,3,4,5,6,7,8]) # "Sibling_Spouse": 1,
 parent_child = st.selectbox('Total Number of parent and child ', [0,1,2,3,4,5,6,7,8,9]) # "Parent_Child": 0,
 fare = st.slider('Fare Paid', min_value=0, max_value=515) # "Fare": 7.25,
-cabin_class = st.selectbox('Cabin Class', ["A", "B", "C", "D", "E", "F", "G", "T", "U"]) # "Cabin": "Unknown"
-# "Embarked": "Southampton",
-# "Cabin Class": "U",
-# "Title": "Mr",
+cabin_class = st.selectbox('Cabin Class', ["A", "B", "C", "D", "E", "F", "G", "T", "U"]) # "Cabin Class": "U",
+embarked = col1.radio('Embarked', ["Southampton","Cherborg", "Queenstown"]) # "Embarked": "Southampton"
+title = st.selectbox('Title', ["Mr","Mrs","Miss"]) # "Title": "Mr",
 # "Title Type": "Adult",
 # "Family Size": 2,
 # "Family Size_category": "Couple",
@@ -50,7 +49,7 @@ myobj = {
       "Parent_Child": parent_child,
       "Fare": 7.25,
       "Cabin": "Unknown",
-      "Embarked": "Southampton",
+      "Embarked": embarked,
       "Cabin Class": "U",
       "Title": "Mr",
       "Title Type": "Adult",
