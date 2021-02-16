@@ -8,7 +8,7 @@ load_dotenv()
 
 PASSWORD = os.getenv('GOOGLE_PASSCODE') #password is stored in a .env file and since account has 2 factor auth the password is a google generated pass that includes the auth.
 EMAIL = os.getenv('EMAIL')
-TO = os.getenv('PHONE')
+TO = os.getenv('TO_EMAIL')
 
 #Construct Message
 
