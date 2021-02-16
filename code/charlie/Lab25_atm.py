@@ -8,9 +8,9 @@ class ATM:
         pass
     def store_transaction(self, flag, amount):
         if flag == 1:
-            self.transactions.append(f"user deposited ${amount}")
+            self.transactions.append(f"user deposited ${amount}. New account balance: ${self.bal}")
         if flag == 2:
-            self.transactions.append(f"user withdrew ${amount}")
+            self.transactions.append(f"user withdrew ${amount}. New account balance: ${self.bal}")
 
     def print_transactions(self):
         print(self.transactions)
