@@ -10,11 +10,16 @@ Implement the initializer, as well as the following functions:
 
 
 class ATM:
-    def __init__(self, initial_balance = 0):
-        self.acct_balance = initial_balance
+    def __init__(self, initial_balance = 0, interest_rate = 0.001):
+        self.acct_balance = initial_balance # Change to __acct_balance everywhere to make private so user can not change
+        self.interest_rate = interest_rate
         self.history = []
 
-    interest_rate = 0.001
+    # what to print when say print(thisThing)
+    def __str__(self):
+        return f"{self.acct_balance} @ {self.interest_rate * 100}%"
+
+    # interest_rate = 0.001
     
     # balance() returns the account balance
     def balance(self):
@@ -28,7 +33,7 @@ class ATM:
 
     # check_withdrawal(amount) returns true if the withdrawn amount won't put the account in the negative
     def check_withdrawal(self, amount):
-        if self.acct_balance > amount:
+        if self.acct_balance >= amount:
             return True
         else:
             return False
@@ -41,7 +46,7 @@ class ATM:
             return amount
 
     # calc_interest() returns the amount of interest calculated on the account
-    def calc_interest(self, amount):
+    def calc_interest(self, amount):  # is amount necessary?
         interest = round(self.acct_balance * self.interest_rate, 2)
         return interest
 

@@ -172,24 +172,42 @@
 # print(x.__add__(y))
 
 ####### Dunder Methods in Classes ##############
-import math
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
+# import math
+# class Point:
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
     
-    def distance(self, p): # method, or 'member function'
-        dx = self.x - p.x
-        dy = self.y - p.y
-        return math.sqrt(dx*dx + dy*dy)
+#     def distance(self, p): # method, or 'member function'
+#         dx = self.x - p.x
+#         dy = self.y - p.y
+#         return math.sqrt(dx*dx + dy*dy)
     
-    def scale(self, v):
-        self.x *= v
-        self.y *= v
-    def __str__(self): # specify a str conversion
-            return '['+str(self.x)+','+str(self.y)+']'
+#     def scale(self, v):
+#         self.x *= v
+#         self.y *= v
+#     def __str__(self): # specify a str conversion
+#             return '['+str(self.x)+','+str(self.y)+']'
     
-p3 = Point(7, 10)
-p1 = Point(5,2)
-p2 = Point(8,4)
-print(p1, p2, p3)
+# p3 = Point(7, 10)
+# p1 = Point(5,2)
+# p2 = Point(8,4)
+# print(p1, p2, p3)
+
+
+# board = [[ '' for column in range(0,3)] for row in range(0,3)]
+# print(board)
+# board[1][1] = 'X'
+# print(board)
+
+from passlib.hash import pbkdf2_sha256
+#import passlib.hash
+
+my_hash = pbkdf2_sha256.hash("let'sseethisworkshallwee?")
+print("The hash of my  32-bit PASS == ", my_hash)
+#thrtytwo_byte = pbkdf2_sha256.using(salt_size = 8).hash("let'sseethisworkshallwee?")
+#print("The hash of my 32-byte PASS == ", thrtytwo_byte, type(thrtytwo_byte))
+symbols = []
+for i in range(10000, 100000):
+    symbols.append(chr(i))
+print(",".join(symbols))
