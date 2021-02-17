@@ -4,6 +4,8 @@
 import autogluon as ag
 from autogluon import TabularPrediction as task
 
+# 0. Should have broken the train dataset into train and test using python.. but did not.
+
 # 1. Definin the training dataset
 train_data = task.Dataset(file_path='data/train.csv')
 
