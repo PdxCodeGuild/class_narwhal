@@ -6,10 +6,39 @@ from google import auth
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import os
+import time
+import playsound
+import speech_recognition as sr
+from gtts import gTTS
 
-# If modifying these scopes, delete the file token.pickle.
+
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+MONTHS = ["january", "february", "march", "april", "may", "june","july", "august", "september","october", "november", "december"]
+DAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+DAY_EXTENTIONS = ["rd", "th", "st", "nd"]
 
+def speak(text):
+    """Takes text input and converts to audio output."""
+    tts = gTTS(text=text, lang='en')
+    filename = 'voice.mp3'
+    tts.save(filename)
+    playsound.playsound(filename)
+
+def listen():
+    """Takes in audio command"""
+
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+        said = ""
+
+        try:
+            said = r.recognize_google(audio)
+            print(said)
+        except Exception as e:
+            print('Exception:' + str(e))
+    return said
 
 def authenticate_google():
     """Shows basic usage of the Google Calendar API.
@@ -38,15 +67,15 @@ def authenticate_google():
     
     return service
 
-    # Call the Calendar API
+# Call the Calendar API for events
 def get_events(n, service):
     """
-    Prints the start and name of the next selected number(n) of events on the user's calendar.
+    Returns the selected number(n) of events on the user's calendar.
     """
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     print(f'Getting the upcoming {n} events')
     events_result = service.events().list(calendarId='primary', timeMin=now,
-                                        maxResults=n, singleEvents=True,
+                                        maxResults=1, singleEvents=True,
                                         orderBy='startTime').execute()
     events = events_result.get('items', [])
 
@@ -55,6 +84,7 @@ def get_events(n, service):
     for event in events:
         start = event['start'].get('dateTime', event['start'].get('date'))
         print(start, event['summary'])
+        
 
 service = authenticate_google()
 get_events(3, service)
