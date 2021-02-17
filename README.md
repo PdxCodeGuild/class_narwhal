@@ -35,10 +35,16 @@ Presentation Day: May 7th, 2021
  Lab 18 -- Peaks and Valleys  
  Lab 22 -- ARI  
  Lab 21 -- Count Words  
+ Lab 16 -- Image Manipulation  
+ Lab 23 -- Contact List  
+ Lab 25 -- ATM  
+ Lab 26 -- Tic Tac Toe  
+ Python Mini-Capstone: Mini presentations first thing Thursday, Feb 18th  
+ 
 
 #### Optional Python Labs
 
-  Practice 1-5  
+  Practice 1-7  
   Labs 01-08, 11, 12, 17 (You did these during the intro course)  
   Lab 24 -- Rain Data  
   Lab 27 -- Connect Four  
