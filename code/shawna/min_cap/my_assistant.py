@@ -13,6 +13,7 @@ import smtplib
 from email.message import EmailMessage
 from dotenv import load_dotenv
 import os
+import re
 
 load_dotenv()
 
@@ -69,18 +70,37 @@ def get_events(service):
         print('No upcoming events found.')
     for event in events:
         message = {}
-        start = event['start'].get('dateTime', event['start'].get('date'))
         message['Subject'] = event['summary']
-        description = event['description'].split('\n')
+        description = event['description'].split('<br>')
         for each in description:
             each = each.split(': ')
             message[each[0]] = each[1]
+        message['To'] = re.sub(r'</?a(|\s+[^>]+)>', '', message['To'])
         messages.append(message)
-    return(messages)
+    return messages
+       
+# Email 
+def send_message(messages):
+    for message in messages:
+        msg = EmailMessage()
+        msg['Subject'] = message['Subject']
+        msg['From'] = 'Shawna Duvall'
+        msg['TO'] = message['To']
+        msg.set_content(message['Body'])
+        
+    #Log into mail server
 
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp: #(gmail mail server, port number)
+
+            smtp.login(MY_EMAIL, PASSWORD)
+            
+            #Send Message
+            
+            smtp.send_message(msg)
 
 service = authenticate_google()
 messages = get_events(service)
+send_message(messages)
 
 
 
