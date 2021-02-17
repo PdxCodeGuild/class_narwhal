@@ -71,5 +71,12 @@ prob_survived = round((prediction.get("data")[0].get("confidence(1.00)")) * 100,
 col2.write(f"Chances this person survived: {prob_survived} %")
 
 
+# to run - streamlit run appname.py
+
+# previous version deployed on heroku (free hosting) at 
+# http://titanic.boomerangpredict.com/
+
+
+
 
 
