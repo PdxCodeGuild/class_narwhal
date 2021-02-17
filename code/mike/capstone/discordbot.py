@@ -10,8 +10,6 @@ import json
 import requests
 import random
 from datetime import date
-from dotenv import load_dotenv
-load_dotenv()
 
 # create client to connect to discord
 client = discord.Client()
@@ -19,10 +17,20 @@ token = os.getenv('TOKEN')
 
 # random facts using Random Uselsess Facts REST API v1.0 by https://jsph.pl
 def get_fact():
-    response = requests.get('https://uselessfacts.jsph.pl/random.json?language=en')
+    response = requests.get(f'https://uselessfacts.jsph.pl/random.json?language=en')
     json_data = json.loads(response.text)
     fact = json_data['text']
     return(fact)
+
+# returns events that occurred on this day from wikipedia.org
+def get_day():
+    today = date.today()
+    today = (f'{today.month}/{today.day}')
+    response = requests.get(f'https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/{today}')
+    json_data = json.loads(response.text)
+    random_event = random.choice(json_data['events'])
+    day = 'In the year ' + str(random_event['year']) + ', ' + random_event['text']
+    return day
 
 def get_lottery():
     lottery = []
@@ -32,7 +40,6 @@ def get_lottery():
     bonus = random.randint(1,26)
     lottery.append(bonus)
     return lottery
-
 
 # event callback function makes bot ready for use
 @client.event
@@ -68,7 +75,11 @@ async def on_message(message):
         today = today.strftime('%B %d, %Y')
         await message.channel.send(f'{message.author.name}, today is {today}')
 
-## Add On This Day command
+    # bot returns on this day
+    if message.content.startswith('!!day'):
+        day = get_day()
+        await message.channel.send(f'On this day:{day}')
+        await message.delete()
 
 
 

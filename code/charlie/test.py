@@ -195,7 +195,19 @@
 # print(p1, p2, p3)
 
 
-board = [[ '' for column in range(0,3)] for row in range(0,3)]
-print(board)
+# board = [[ '' for column in range(0,3)] for row in range(0,3)]
+# print(board)
 # board[1][1] = 'X'
 # print(board)
+
+from passlib.hash import pbkdf2_sha256
+#import passlib.hash
+
+my_hash = pbkdf2_sha256.hash("let'sseethisworkshallwee?")
+print("The hash of my  32-bit PASS == ", my_hash)
+#thrtytwo_byte = pbkdf2_sha256.using(salt_size = 8).hash("let'sseethisworkshallwee?")
+#print("The hash of my 32-byte PASS == ", thrtytwo_byte, type(thrtytwo_byte))
+symbols = []
+for i in range(10000, 100000):
+    symbols.append(chr(i))
+print(",".join(symbols))

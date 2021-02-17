@@ -65,7 +65,7 @@ while True:
     if game.is_game_over() == True:
         print('\nGame Over')
         game.reset_board()
-        player = 1
+        players = 1
         continue
     
     if players == 1:
