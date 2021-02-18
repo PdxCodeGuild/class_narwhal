@@ -1,22 +1,11 @@
-from datetime import date
-import requests
-import json
-import random
+# fuction to pull call of duty user stats
+def cod_stats():
+    platform = input('What platform is the user? (pc/ps4/xbox): ').lower()
+    username = input('Enter Call of Duty Username: ')
+    if platform == 'pc':
+        username = username.replace('#', '%23')
+    stats = f'https://codstats.net/warzone/profile/{platform}/{username}'
+    return stats
 
 
-# returns events that occurred on this day
-def get_day():
-    today = date.today()
-    day = str(today.day)
-    month = str(today.month)
-    today = (f'{today.month}/{today.day}')
-    response = requests.get(f'https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/{today}')
-    json_data = json.loads(response.text)
-    random_event = random.choice(json_data['events'])
-    day = str(random_event['year']) + ' - ' + random_event['text']
-    return day
-
-
-print(get_day())
-
-
+print(cod_stats())
