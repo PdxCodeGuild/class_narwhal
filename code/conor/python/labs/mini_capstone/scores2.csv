@@ -1,10 +1,12 @@
 rounds,conor,billy,mike
-round_1,36,39,38
-round_2,35,40,37
-round_3,37,38,42
-round_4,36,40,39
+round_1,75,71,78
+round_2,71,79,80
+round_3,68,77,76
+round_4,74,78,77
 
-name,round 1,round 2,round 3,round 4
-conor,36,35,37,36
-billy,39,40,38,40
-mike,38,37,42,39
+name,Round 1,Round 2,Round 3,Round 4
+Conor,75,71,68,74
+Billy,71,79,77,78
+Mike,78,80,76,77
+Jax,76,80,85,82
+Fred,90,92,89,98

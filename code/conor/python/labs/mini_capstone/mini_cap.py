@@ -89,12 +89,12 @@ def plotting(scoring_list):
     print(df)
     while True:
         show_me = input("""
-        Individual' or 'All' Together? """).lower()
-        if show_me == 'individual': 
+        'I'ndividual or 'A'll together? """).lower()
+        if show_me == 'i': 
             df.plot(kind = 'line', x = "Rounds", y = names, ylim = (60, 100), title = tourny, subplots = True, layout = (4,3)) # plots the points as a line chart
             plt.show() # plots individual subplots for each player
             break
-        elif show_me == 'all':
+        elif show_me == 'a':
             df.plot(kind = 'line', marker = '.', x = "Rounds", y = names, ylim = (60, 100), title = tourny) # plots the points as a line chart
             plt.show() # combines all players into one single chart
             break
