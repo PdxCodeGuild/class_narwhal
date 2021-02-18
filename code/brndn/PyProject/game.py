@@ -6,8 +6,15 @@
 
 import pygame as pg
 pg.init()
-X = 50
-Y = 50
+
+Z = 50 #100
+walls_on = False #True
+movement = 'mouse' #'keys'
+hole_mode = 'norm' #'chain' #'infinite'
+enemy_delay = 100
+
+X = Z
+Y = Z
 window = pg.display.set_mode((1100,600))
 pg.display.set_caption("Game")
 fps = 60
@@ -24,41 +31,41 @@ bkgrnd = pg.transform.scale(pg.image.load('background.jpg'),(1100,600))
 wall_image = pg.transform.scale(pg.image.load('wall.jpg'),(20,20))
 life_font = pg.font.SysFont('ariel',50,True)
 score_font = pg.font.SysFont('ariel',50,True)
-
 walls = []
-level = [
-    'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w       wwwwww                                        w',
-    'w       w                                             w',
-    'w       w                                             w',
-    'w       w                                             w',
-    'w       w                                             w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                  wwwwwwwwwwwwwwwww                  w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'w                                                     w',
-    'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww'
-    ]
-
+if walls_on == True:
+    level = [
+        'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                    wwwwwwwwwwwww                    w',
+        'w                    w           w                    w',
+        'w                    w           w                    w',
+        'w                    w           w                    w',
+        'w                    w           w                    w',
+        'w                    wwwwwwwwwwwww                    w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'w                                                     w',
+        'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww'
+        ]
+else:level = []
 
 for y,row in enumerate(level):
     for x,col in enumerate(row):
@@ -84,7 +91,7 @@ def draw_window(player,enemies,holes,life,score):
     
 
 def main():
-    player = pg.Rect(500,300,X,Y)
+    player = pg.Rect(500,500,X,Y)
     life = 5
     score = 0
     holes = []
@@ -102,9 +109,10 @@ def main():
                 run = False
 
             #if event.type == pg.MOUSEMOTION:
-            #    mx, my = pg.mouse.get_pos()
+            if movement == 'mouse':
+                mx, my = pg.mouse.get_pos()
             #    dmx, dmy = pg.mouse.get_rel()
-            #    player.center = (mx,my)
+                player.center = (mx,my)
 
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_w:
@@ -147,26 +155,33 @@ def main():
                 hole.y += hole_velocity
                 hole.x += hole_velocity
             
-
-        keys = pg.key.get_pressed()
-        if keys[pg.K_UP]:
-            player.y -= player_velocity
-        if keys[pg.K_DOWN]:
-            player.y += player_velocity
-        if keys[pg.K_LEFT]:
-            player.x -= player_velocity
-        if keys[pg.K_RIGHT]:
-            player.x += player_velocity
-        for wall in walls:
-            if player.colliderect(wall):
-                if keys[pg.K_UP]:
-                    player.y += player_velocity
-                if keys[pg.K_DOWN]:
-                    player.y -= player_velocity
-                if keys[pg.K_LEFT]:
-                    player.x += player_velocity
-                if keys[pg.K_RIGHT]:
-                    player.x -= player_velocity
+        for direction, hole in holes:
+            for wall in walls:
+                if hole.colliderect(wall):
+                    try:
+                        holes.remove((direction,hole))
+                    except ValueError:
+                        pass
+        if movement == 'keys':                
+            keys = pg.key.get_pressed()
+            if keys[pg.K_UP]:
+                player.y -= player_velocity
+            if keys[pg.K_DOWN]:
+                player.y += player_velocity
+            if keys[pg.K_LEFT]:
+                player.x -= player_velocity
+            if keys[pg.K_RIGHT]:
+                player.x += player_velocity
+            for wall in walls:
+                if player.colliderect(wall):
+                    if keys[pg.K_UP]:
+                        player.y += player_velocity
+                    if keys[pg.K_DOWN]:
+                        player.y -= player_velocity
+                    if keys[pg.K_LEFT]:
+                        player.x += player_velocity
+                    if keys[pg.K_RIGHT]:
+                        player.x -= player_velocity
 
 
         for enemy in enemies:
@@ -174,51 +189,85 @@ def main():
             enemy_vector = pg.math.Vector2(*(enemy.x,enemy.y))
             new_enemy_vector = pg.math.Vector2(*(enemy.x,enemy.y))
             distance = enemy_vector.distance_to(player_vector)
-        
+            step_size = 4
+            for wall in walls:
+                wall_vector = pg.math.Vector2(*(wall.x,wall.y))
+                if enemy.colliderect(wall):
+                    step_size -= 5
+                #if enemy.colliderect(wall) == False:
+                    
             if distance > 0:
                 direction_vector = (player_vector - enemy_vector) / distance
                 step_distance = min(distance, step_size)
                 new_enemy_vector = enemy_vector + direction_vector * step_distance
                 enemy.x,enemy.y = new_enemy_vector
-
-                
-            #for wall in walls:
-            #    if enemy.colliderect(wall):
             
             if player.colliderect(enemy):
                 enemies = []
                 life -= 1
-            #if enemy.colliderect(wall):
-            #    direction_vector = 
-            for direction, hole in holes:
-                if hole.colliderect(enemy) and direction != 'space':
-                    try:
-                        enemies.remove(enemy)
+            
+            if hole_mode == 'infinite':
+                for direction, hole in holes:
+                    if hole.colliderect(enemy):
+                        try:
+                            enemies.remove(enemy)
+                            score += 1
+                            if direction == 'space':
+                                holes.remove((direction,hole))
+                        except ValueError:
+                            pass
+                    if hole.x < 0 or hole.x > 1100 or hole.y < 0 or hole.y > 600:
                         holes.remove((direction,hole))
-                        score += 1
-                    except ValueError:
-                        pass
-                elif hole.colliderect(enemy) and direction == 'space':
-                    try:
-                        enemies.remove(enemy)
-                        holes.remove(('space',hole))
-                        holes.extend([('up',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('down',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('left',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('right',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('upleft',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('upright',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('downleft',pg.Rect(hole.x,hole.y,X/2,Y/2)),
-                            ('downright',pg.Rect(hole.x,hole.y,X/2,Y/2))]
-                            )
-                    except ValueError:
-                        pass
+
+            if hole_mode == 'chain':
+                for direction, hole in holes:
+                    if hole.colliderect(enemy):
+                        try:
+                            score += 1
+                            enemies.remove(enemy)
+                            holes.remove((direction,hole))
+                            holes.extend([
+                                ('up',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('down',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('left',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('right',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('upleft',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('upright',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('downleft',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('downright',pg.Rect(hole.x,hole.y,X/2,Y/2))
+                                ])
+                        except ValueError:
+                            pass
+            if hole_mode == 'norm':
+                for direction, hole in holes:
+                    if hole.colliderect(enemy) and direction != 'space':
+                        try:
+                            enemies.remove(enemy)
+                            holes.remove((direction,hole))
+                            score += 1
+                        except ValueError:
+                            pass
+                    if hole.colliderect(enemy) and direction == 'space':
+                        try:
+                            enemies.remove(enemy)
+                            holes.remove((direction,hole))
+                            holes.extend([
+                                ('up',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('down',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('left',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('right',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('upleft',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('upright',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('downleft',pg.Rect(hole.x,hole.y,X/2,Y/2)),
+                                ('downright',pg.Rect(hole.x,hole.y,X/2,Y/2))
+                                ])
+                        except ValueError:
+                            pass
 
         
-
-        if loopcount % 100 == 0:  
+        if loopcount % enemy_delay == 0:  
             enemies.append(pg.Rect(30,30,X,Y))
-        if life == 0:
+        if life <= 0:
             score = 0
             life = 5
         draw_window(player,enemies,holes,life,score)
