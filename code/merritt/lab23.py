@@ -28,6 +28,7 @@ def create_contact(data, keys):
     new_contact = {}
     for key in keys:
         new_contact[key] = input(f"What is your new contact's {key}? ")
+    # new_contact = {key: input(f"What is your new contact's {key}?") for key in keys}
     data.append(new_contact)
 
 def read_contact(data, keys):

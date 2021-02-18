@@ -32,6 +32,7 @@ def get_day():
     day = 'In the year ' + str(random_event['year']) + ', ' + random_event['text']
     return day
 
+# generate random 6 digit lottery number
 def get_lottery():
     lottery = []
     for num in range(5):
@@ -40,6 +41,15 @@ def get_lottery():
     bonus = random.randint(1,26)
     lottery.append(bonus)
     return lottery
+
+# fuction to pull call of duty user stats
+def cod_stats():
+    platform = input('What platform is the user? (pc/ps4/xbox): ').lower()
+    username = input('Enter Call of Duty Username: ')
+    if platform == 'pc':
+        username = username.replace('#', '%23')
+    stats = f'https://codstats.net/warzone/profile/{platform}/{username}'
+    return stats
 
 # event callback function makes bot ready for use
 @client.event
@@ -60,7 +70,7 @@ async def on_message(message):
         await message.delete()
     
     # bot responds with hello (user's name) when user says hello
-    if message.content.startswith('hello'):
+    if message.content.startswith('!!hello'):
         await message.channel.send(f'Hello, {message.author.name}')
 
     # bot responds with 6 lottery numbers
@@ -81,6 +91,32 @@ async def on_message(message):
         await message.channel.send(f'On this day:{day}')
         await message.delete()
 
+    # bot dances
+    if message.content.startswith('!!dance'):
+        await message.channel.send('https://tenor.com/view/happy-dancing-celebrate-excited-gif-13870839')
+        await message.delete()
+
+    # gets link to call of duty player stats
+    if message.content.startswith('!!codstats'):
+        stats = cod_stats()
+        await message.channel.send(stats)
+
+    # list available commands
+    if message.content.startswith('!!help'):
+        commands_help ='''
+!!fact - Returns random fact
+!!hello - Returns hello
+!!lottery - Returns 6 Lottery Numbers
+!!date - Returns today\'s date
+!!day - Returns historical event that occured on today\'s date
+!!dance - Makes bot dance
+'''
+        await message.channel.send(commands_help)
+        await message.delete()
+
+    # refers to !!help command
+    if message.content.startswith('zant'):
+        await message.channel.send('For Zant Bot Commands, type !!help')
 
 
 client.run(token)
