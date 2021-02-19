@@ -5,7 +5,8 @@ class Game:
 
     
     def move(self, x, y, player):
-        pass
+        if self.board[x][y] == '':
+            self.board[x][y] = 
 
     def calc_winner(self):
         pass
