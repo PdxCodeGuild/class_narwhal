@@ -6,7 +6,7 @@ class Game:
     
     def move(self, x, y, player):
         if self.board[x][y] == '':
-            self.board[x][y] = 
+            self.board[x][y] = player.token
 
     def calc_winner(self):
         pass
