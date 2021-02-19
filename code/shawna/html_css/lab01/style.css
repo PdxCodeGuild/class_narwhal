@@ -1,0 +1,70 @@
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upperbox {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #7ba1aa;
+    background-image: url('ag-square.png');
+    height: 496px;
+    width: 100%;
+    box-shadow: 0 0 16px 0 rgb(0 0 0 / 45%);
+    position: relative;
+   
+}
+.supportbox {
+    z-index: 90;
+    height: 917px;
+    width: 60%;
+    background-color: #f0f5f7;
+    top:90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    display: flex;
+    padding: 2%;
+}
+.main_img {
+    z-index: 100;
+    object-position: center;
+    object-fit: contain;
+    top:60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    box-shadow: 0 0 40px 0 rgb(0 0 0 / 20%);
+}
+
+h1, h2, h3 {
+    font-family: 'Tangerine', cursive;
+}
+
+h1 {
+    font-size: 6vw;
+    z-index: 200;
+    position: relative;
+}
+
+h2{
+    display: inline-block;
+    justify-content: left;
+    text-align: left;
+    font-size: 4vw;
+
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5vw;
+}
+.text_end {
+    align-self: flex-end;
+}
+
+.section_header{
+    width: 100%;
+}
