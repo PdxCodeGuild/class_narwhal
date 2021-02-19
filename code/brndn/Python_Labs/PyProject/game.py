@@ -7,10 +7,10 @@
 import pygame as pg
 pg.init()
 
-Z = 50 #100
-walls_on = False #True
-movement = 'mouse' #'keys'
-hole_mode = 'norm' #'chain' #'infinite'
+Z = 50
+walls_on = False
+movement = 'keys' #'mouse' 'keys'
+hole_mode = 'chain' #'infinite' 'norm' 'chain'
 enemy_delay = 100
 
 X = Z
