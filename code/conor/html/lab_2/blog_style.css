@@ -1,0 +1,13 @@
+html {
+    box-sizing: border-box;
+    border: solid black;
+    background-color: silver;
+}
+
+.nav {
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+}

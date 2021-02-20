@@ -8,21 +8,37 @@
 # print(sorted(l2))
 # print("This is what a delta looks like: \u0394")
 
+#######******* Recursion and binary search algorithm *********#########
+import random
 
-# def binary_search_recurse(num, nums, low, high):
-#     if low >= high:
-#         return None
-#     mid = (low + high) // 2
-#     if nums[mid] == num:
-#         return mid
-#     elif nums[mid] < num: # search in the upper half
-#         return binary_search_recurse(num, nums, mid+1, high)
-#     else: # search in the lower half
-#         return binary_search_recurse(num, nums, low, mid+1)
+nums = [num for num in range(random.randint(0, 10000)) if num % 2 != 0]
+print(nums)
+random.shuffle(nums)
+print(nums)
+
+
+def binary_search_recurse(num, nums, low, high):
+    if low >= high:
+        return None
+    mid = (low + high) // 2
+    if nums[mid] == num:
+        return mid
+    elif nums[mid] < num: # search in the upper half
+        return binary_search_recurse(num, nums, mid+1, high)
+    else: # search in the lower half
+        return binary_search_recurse(num, nums, low, mid+1)
 
         
-# def binary_search(num, nums):
-#     return binary_search_recurse(num, nums, 0, len(nums)-1)
+def binary_search(num, nums):
+    return binary_search_recurse(num, nums, 0, len(nums)-1)
+
+num = input("Please enter a number from 0 to 10,000 and we'll see if it's in the Chamber of Recursion!")
+
+catch = 0
+catch = binary_search(num, nums)
+
+
+print(f"")
 
 ###### List Comprehensions #######
 # Stardust = [x**3 for x in range(100)]
@@ -200,14 +216,14 @@
 # board[1][1] = 'X'
 # print(board)
 
-from passlib.hash import pbkdf2_sha256
-#import passlib.hash
+# from passlib.hash import pbkdf2_sha256
+# #import passlib.hash
 
-my_hash = pbkdf2_sha256.hash("let'sseethisworkshallwee?")
-print("The hash of my  32-bit PASS == ", my_hash)
-#thrtytwo_byte = pbkdf2_sha256.using(salt_size = 8).hash("let'sseethisworkshallwee?")
-#print("The hash of my 32-byte PASS == ", thrtytwo_byte, type(thrtytwo_byte))
-symbols = []
-for i in range(10000, 100000):
-    symbols.append(chr(i))
-print(",".join(symbols))
+# my_hash = pbkdf2_sha256.hash("let'sseethisworkshallwee?")
+# print("The hash of my  32-bit PASS == ", my_hash)
+# #thrtytwo_byte = pbkdf2_sha256.using(salt_size = 8).hash("let'sseethisworkshallwee?")
+# #print("The hash of my 32-byte PASS == ", thrtytwo_byte, type(thrtytwo_byte))
+# symbols = []
+# for i in range(10000, 100000):
+#     symbols.append(chr(i))
+# print(",".join(symbols))
