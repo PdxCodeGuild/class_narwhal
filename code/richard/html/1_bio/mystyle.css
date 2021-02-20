@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    color: green;
+    background-color: rgb(197, 191, 191);
+}
+
+h1 {
+    font-size:20px;
+    color: red;
+}
+
+p {
+    font-size:16px;
+    padding: 10px;
+    margin: 20px;
+}
+
+q {
+    font-family: fantasy;
+}
+
+li {
+    list-style: none;
+}
+
+li:before { 
+    content: '\261E'; 
+    margin-left: -20px; 
+    margin-right: 10px; } 
+
+
+.face {
+    float: right;
+    border-radius: 5px;
+}
