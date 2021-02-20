@@ -1,43 +1,38 @@
-from PyQt5 import QtWidgets 
-from PyQt5.QtWidgets import QApplication, QMainWindow
-import sys
+from playsound import playsound
+playsound('the_warcry.mp3',False)
+from PIL import Image, ImageOps
+import random 
+import time 
 
 
-class ImWindow(QMainWindow):
-    def __init__(self):
-        super(ImWindow, self).__init__()
-        self.setGeometry(200, 200, 300, 300)
-        self.setWindowTitle("Isaac mini Capstone.")
-        self.initUI()
+img = Image.open("BP.png")
+img2 = ImageOps.grayscale(img)
+img2.save("grayscale.png")
+width, height = img.size
+pixels = img2.load()
+img3 = Image.open("ironman3_2.png")
+img4 = Image.open("vinmcu.png")
+img5 = Image.open("iron_spi.png")
+img6 = Image.open("cap_am.png")
+img7 = Image.open("fal_buck.png")
+img8 = Image.open("hawk_ron.png")  
+img9 = Image.open("ant_man.png")
 
 
-
-    def initUI(self):
-         
-         self.label = QtWidgets.QLabel(self)
-         self.label.setText("Just do it")
-         self.label.move(75,75)
-
-         self.b1 = QtWidgets.QPushButton(self)
-         self.b1.setText("Push Me")
-         self.b1.clicked.connect(self.clicked)
-
-
-    def clicked(self):
-        self.label.setText("You pushed the button")
+Civil_War = ["ironman3_2.png","vinmcu.png","iron_spi.png","cap_am.png","fal_buck.png","hawk_ron.png","ant_man.png",
+"Bp.png"]
 
 
 
-
-def window():
-        app = QApplication(sys.argv)
-        win = ImWindow()
-        win.show()
-        sys.exit(app.exec_())
-
-window()
-
-
-
-
+counter = 0
+  
+  
+while counter < len(Civil_War):
+    img = Image.open(Civil_War[counter % len(Civil_War)])
+    img.show()
+    counter +=1
+    time.sleep(1)
+    
+    
+   
 
