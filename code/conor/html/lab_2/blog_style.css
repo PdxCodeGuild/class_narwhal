@@ -1,13 +1,89 @@
 html {
     box-sizing: border-box;
-    border: solid black;
-    background-color: silver;
+    background-color: slategrey;
 }
 
-.nav {
-    align-items: center;
+*:before, *:after {
+    box-sizing: inherit;
 }
 
-.nav ul {
-    display: flex;
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header, footer {
+    color: black;
+    text-align: center;
+    background-color: yellow;
+}
+
+header, main, footer {
+    padding: 6px;
+    border: solid 3px black;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: black;
+    text-align: center;
+}
+
+#sidebar {
+    border-style: solid;
+    background-color: green;
+    text-align: center;
+}
+
+main h2 {
+    text-align: center;
+    margin: 12px;
+}
+
+main h3 {
+    text-decoration: underline;
+}
+
+main p {
+    text-align: justify;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .gallery-view {
+        margin: 0 -6px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .gallery-view div {
+        width: 50%;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    nav {
+        align-items: flex-end;
+    }
 }
