@@ -14,7 +14,7 @@ body {
     background-color: transparent;
     background-position: center;
     background-attachment:local;
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     font-family:fantasy;
     font-size: 1.5em;
     -webkit-text-stroke-width: .5px;
@@ -61,6 +61,7 @@ ul {
 #img1 {
     float:left;
     border-radius: 1em;
+    box-shadow: 0 0 16px 0 #9ca5b2;
 }
 
 #gif1 {
