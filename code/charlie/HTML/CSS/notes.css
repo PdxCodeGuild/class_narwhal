@@ -1,0 +1,10 @@
+
+/************* CSS ****************/
+/*Box-Sizing-size, margin, border, padding*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+

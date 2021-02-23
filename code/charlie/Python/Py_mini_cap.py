@@ -57,11 +57,13 @@ while count > 0 and choice == "yes":
         print("your password is valid and has been encrypted correctly!")
         count -= 1
     else:
-        print("Something has gone wrong.........")
-        count -= 1
-        print(f"You have {count} chances left to verify!")
-    if count == 0:
-        break
+        for i in range(len(count)):
+            print("Something has gone wrong.........")
+            count -= 1
+            print(f"You have {count} chances left to verify!")
+            pass_to_verify = input("Please enter you password to verify it was encrypted correctly:\n").strip()
+        if count == 0:
+            break
     choice = input("Would you like to have another password generated (yes/no)? ")
 
 print("Thank you for using the OSSS password genration tool.\nGoodbye!")
