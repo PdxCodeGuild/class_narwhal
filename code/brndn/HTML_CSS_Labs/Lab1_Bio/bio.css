@@ -1,0 +1,70 @@
+/* Lab01 18-19 Feb 2021
+   Alan Watts Bio
+  Composer: brndn */
+
+body {
+    text-align: center;
+    background-color: #383c4f;
+    color: #eee5e3;
+}
+
+#header {
+    background-image: url("https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xOTA5ODY3MC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYzNzAxODcwOH0.vhw9Ji96VyGXUQZVsquKFeeozT6Ytt0DQw5lVGuzCHw/img.jpg?width=1200&coordinates=0%2C86%2C0%2C87&height=600");
+    border-radius: 10em;
+    background-color: transparent;
+    background-position: center;
+    background-attachment:local;
+    background-repeat:no-repeat;
+    font-family:fantasy;
+    font-size: 1.5em;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #eee5e3;
+    color: transparent;
+    padding: 0.25em;
+}
+
+h1 a {
+    font-size: 2em;
+    text-align: left;
+    color: transparent;
+    text-decoration: none;
+    -webkit-text-stroke-width: .75px;
+    -webkit-text-stroke-color:#9ca5b2;
+}
+
+h1 a:hover {
+    color:#eee5e3;
+    -webkit-text-stroke-color:#383c4f;
+    -webkit-text-stroke-width: 0.001em;
+}
+
+h3 {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+ul {
+    padding-top: 3em;
+    margin-left: 19em;
+    padding-left: 19em;
+    margin-right: 19em;
+    padding-right: 19em;
+    padding-bottom: 5em;
+    list-style-type: katakana-iroha;
+}
+
+#quotes {
+    padding: 1em;
+    font-style: italic;
+}
+
+#img1 {
+    float:left;
+    border-radius: 1em;
+    box-shadow: 0 0 16px 0 #9ca5b2;
+}
+
+#gif1 {
+    float: right;
+    border-radius: 1em;
+}
