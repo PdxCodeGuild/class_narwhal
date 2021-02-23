@@ -14,17 +14,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 header{
-    background-color: green;
-    color:aliceblue
+    background-color: burlywood;
+    color: green;
 }
 
 header a{
-    color:rebeccapurple
+    color:rebeccapurple;
 }
 
 img{
     max-width: 100%;
-    display:block
+    display: block;
 
 }
 
