@@ -51,6 +51,7 @@ img{
     }
 }
 
+/*For bigger screens (Desktop)*/
 @media (min-width:1024px){
     .flex-gallery div{
         width:33.3333%;
