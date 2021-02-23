@@ -1,0 +1,59 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+}
+
+header{
+    background-color: red;
+    color: green;
+}
+
+header a{
+    color:rebeccapurple;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+
+}
+
+/*For bigger screens (Tablet)*/
+@media (min-width: 768px){
+    nav{
+        display:flex ;
+        justify-content: flex-start;
+    }
+
+    nav p{
+        margin: 6px 12px;
+    }
+
+    .flex-gallery{
+        width:auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .flex-gallery div{
+        margin: 50%;
+        padding:6px;
+    }
+}
+
+/*For bigger screens (Desktop)*/
+@media (min-width:1024px){
+    .flex-gallery div{
+        width:33.3333%;
+    }
+}
