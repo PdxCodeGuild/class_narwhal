@@ -1,0 +1,24 @@
+header {
+    width: 100vw;
+    height: 30vh;
+    background-color: aqua;
+  }
+  #articles {
+    height: 70vh;
+    width: 100vw;
+    background-color: blueviolet;
+  }
+  #sidebar {
+    display: none;
+  }
+  @media (min-width: 500px) {
+    main {
+      display: flex;
+    }
+    #sidebar {
+      display: block;
+    }
+    footer {
+      display: none;
+    }
+  }

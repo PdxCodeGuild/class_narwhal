@@ -31,6 +31,12 @@ main {
     background-color: whitesmoke;
 }
 
+.left {
+    display: flex;
+    flex-direction: column;
+    
+}
+
 
 
 
@@ -76,6 +82,10 @@ footer p {
     header h1 {
         margin-bottom: 6px;
         font-size: 3em;
+    }
+
+    .left {
+        background-color: red;
     }
 
 }
