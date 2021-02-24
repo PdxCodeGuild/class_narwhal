@@ -1,0 +1,110 @@
+html {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+.bg {
+    background-image: url(https://wallpapercave.com/wp/FDJx1ey.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
+    padding: 10px;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0;
+}
+
+.left, .right {
+    width: 100%;
+    padding: 0;
+}
+
+.card {
+    /* background-color: white; */
+    background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.transbox{
+    margin: 3px;
+    background-color: white;
+    border: 1px solid black;
+    opacity: 1;
+}
+
+header .transbox h2, footer .transbox h2 {
+    margin: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.transbox h2, h3, h4, h5, h6, img, p, ul, a {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+}
+
+.social-media img {
+    display: inline-flex;
+    line-height: 1.5em;
+    font-size: 1.50em;
+}
+
+img {
+    display: block;
+    width: 90%;
+}
+
+footer {
+    background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .right {
+        float: right;
+        width: 74%;
+    }
+
+    .left {
+        float: left;
+        width: 25%;
+    }
+
+    .clear:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@media (min-width: 1024px) {
+    header .transbox h2, footer .transbox h2 {
+        margin: 30px;
+        font-weight: bold;
+        color: #000000;
+    }
+}
