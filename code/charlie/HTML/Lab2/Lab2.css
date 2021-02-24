@@ -14,8 +14,11 @@ h1, h2, h3, h4, h5, h6{
 }
 
 header{
-    background-color: red;
-    color: green;
+    background-color:#008080;
+
+}
+nav p a{
+    color:coral;
 }
 
 header a{
@@ -31,11 +34,13 @@ img{
 /*For bigger screens (Tablet)*/
 @media (min-width: 768px){
     nav{
+        color: chartreuse;
         display:flex ;
         justify-content: flex-start;
     }
 
     nav p{
+        color:chartreuse;
         margin: 6px 12px;
     }
 
