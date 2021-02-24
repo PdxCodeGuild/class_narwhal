@@ -18,7 +18,7 @@ header {
     text-align: center;
 }
 
-header div {
+#title {
     padding-top: 2em;
     -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: #eee5e3;
@@ -33,15 +33,29 @@ h1 {
     margin: 0em;
 }
 
-h2 {
-    margin-top: 0em;
-}
-
 h3 {
     padding-top: 0.5em;
     margin-top: 0em;
     padding-bottom: 1.5em;
     margin-bottom: 0em;
+}
+
+#nav1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#nav1 a {
+    text-decoration: none;
+    color:black;
+}
+
+#nav1 a:hover {
+    color:lightcoral;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
+    font-size: 2em;
 }
 
 #hr1 {
@@ -59,6 +73,10 @@ h3 {
     box-shadow: inset 0 -12px 12px -12px #eee5e3;
     margin-top: -1em;
     margin-bottom: 1em;
+}
+
+h2 {
+    margin-top: 0em;
 }
 
 #hr3 {
@@ -81,24 +99,6 @@ h3 {
     background: transparent;
 }
 
-#nav1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#nav1 a {
-    text-decoration: none;
-    color:black;
-}
-
-#nav1 a:hover {
-    color:lightcoral;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: black;
-    font-size: 2em;
-}
-
 #nav2 {
     display: flex;
     flex-direction: row;
@@ -116,4 +116,66 @@ h3 {
     -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: black;
     font-size: 2em;
+}
+
+@media (min-width: 768px) {
+
+    #title {
+        float: right;
+        font-size: 3vw;
+        -webkit-text-stroke-width: 1px;
+        width: 75vw;
+        height: 25vw;
+        background-position: right;
+    }
+
+    h1, h3 {
+        margin: 2.5vw;
+    }
+
+    #nav-bar {
+        position: fixed;
+        width:23vw;
+        height: 95%;
+        padding-top: 4.5%;
+        background-image: url("PinClipart.com_weed-leaf-clip-art_5620222.png");
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #nav1 {
+        flex-direction: column;
+    }
+
+    main {
+        overflow-x: hidden;
+        position: absolute;
+        left: 25vw;
+        top: 35vw;
+        right: 2vw;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #title {
+        font-size: 2vw;
+        width: 65vw;
+        height: 20vw;
+        margin-right: 6%;
+        background-position: center;
+    }    
+    #nav-bar {
+        width: 20%;
+    }
+
+    main {
+        left: 22vw;
+        top: 30vw;
+        }
 }
