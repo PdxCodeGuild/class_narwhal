@@ -11,7 +11,7 @@ body {
 
 
 #main {
-  display: flex;
+  /* display: flex; */
   flex: 1;
 }
 
@@ -45,19 +45,23 @@ h1 {
 .center {
   text-align: center;
 }
-
+/* 
 nav {
   display:none;
 }
 
 aside {
   display:none;
-}
+} */
 
 
 @media (min-width: 768px) {
   nav {
     display:block;
+  }
+
+  #main {
+    display: flex;
   }
 
 
