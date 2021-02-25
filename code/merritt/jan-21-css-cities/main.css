@@ -1,3 +1,9 @@
+/* #260517
+#59072D
+#A6294B
+#F2A7AD
+#F2F2F2 */
+
 html {
     box-sizing: border-box;
 }
@@ -6,21 +12,24 @@ html {
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Shippori Mincho', serif;
+    background-color: #F2F2F2;
+    color: #260517;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 header, footer {
-    background-color: darkred;
-    color: whitesmoke;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #59072D;
+    color: #F2A7AD;
     text-align: center;
 }
 
 header, main, footer {
-    padding: 12px;
+    padding: 16px;
 }
 
 header h1 {
@@ -28,7 +37,13 @@ header h1 {
 }
 
 header a {
-    color: whitesmoke;
+    color: #F2A7AD;
+    transition: all .1s ease-in-out;
+}
+
+header a:hover {
+    color: #A6294B;
+    transition: all .1s ease-in-out;
 }
 
 main p {
@@ -44,7 +59,29 @@ footer p {
     margin: 0;
 }
 
+/* header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+main {
+    margin-top: 116px;
+} */
+
+/* .flex-gallery div:nth-child(2) {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: -1;
+} */
+
 @media (min-width: 768px) {
+
+    header, main, footer {
+        padding: 16px 32px;
+    }
 
     nav {
         display: flex;
@@ -52,19 +89,20 @@ footer p {
     }
 
     nav p {
-        margin: 6px 12px;
+        margin: 8px 16px;
     }
 
     .flex-gallery {
-        margin: 0 -6px;
+        margin: 0 -16px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .flex-gallery div {
         width: 50%;
-        padding: 6px;
+        padding: 16px;
     }
+
 }
 
 @media (min-width: 1024px) {
@@ -75,8 +113,12 @@ footer p {
         text-align: left;
     }
 
+    header, main, footer {
+        padding: 16px 128px;
+    }
+
     header h1 {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         font-size: 3em;
     }
 
@@ -91,5 +133,20 @@ footer p {
     .flex-gallery div {
         width: 33.333%
     }
+
+    /* .flex-gallery div {
+        width: calc(33.333% - 32px);
+        border: 1px solid #A6294B;
+        border-radius: 4px; 
+        margin: 16px;
+        box-shadow: 0 0 8px #A6294B;
+        text-shadow: 2px 2px 4px #260517;
+        line-height: 1.15;
+    }
+
+    .flex-gallery div:hover {
+        background-color: #260517;
+        color: #F2F2F2;
+    } */
 
 }
