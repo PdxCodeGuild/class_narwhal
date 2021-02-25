@@ -54,7 +54,7 @@ img {
 }
 
 h1 {
-  /* margin-top: 2em; */
+  color: purple;
 }
 
 h2 {
@@ -101,7 +101,6 @@ p {
 .footer {
   grid-column: 1 / 2;
   margin-top: 2em;
-  grid
 }
 
 .footer h3 {
