@@ -18,9 +18,6 @@ html {
 
 header, footer {
     font-family: "Garamond", serif;
-}
-
-header {
     background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
     padding: 10px;
     text-align: center;
@@ -36,7 +33,6 @@ body h1, h2, h3, h4, h5 {
 }
 
 .card {
-    /* background-color: white; */
     background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
     padding: 10px;
     margin-top: 20px;
@@ -58,7 +54,7 @@ div .transbox{
     opacity: 1;
 }
 
-header .transbox h2, footer .transbox h2 {
+header .transbox h2, footer .transbox h3 {
     margin: 15px;
     font-weight: bold;
     color: #000000;
@@ -82,9 +78,6 @@ img {
 }
 
 footer {
-    background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
-    padding: 10px;
-    text-align: center;
     margin-top: 20px;
 }
 
@@ -107,7 +100,7 @@ footer {
 }
 
 @media (min-width: 1024px) {
-    header .transbox h2, footer .transbox h2 {
+    header .transbox h2, footer .transbox h3 {
         margin: 30px;
         font-weight: bold;
         color: #000000;
