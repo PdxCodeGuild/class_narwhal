@@ -59,8 +59,10 @@ header nav a {
 }
 
 main h2 {
+    background-color: white;
+    border-style: solid;
     text-align: center;
-    margin-top: 40px;
+    margin: 40px;
 }
 
 .gallery-view{
@@ -119,8 +121,8 @@ footer p {
         margin-left: 175px;
         margin-right: 50px;
         padding-right: 6px;
-      }
-
+    }
+}
 
 @media (min-width: 1024px) {
     header {
@@ -135,6 +137,5 @@ footer p {
 
     nav {
         align-items: flex-end;
-    }
-    
+    }   
 }
