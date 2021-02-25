@@ -11,7 +11,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
-    line-height:1em
+    line-height:1em;
 }
 
 header, footer {
@@ -27,31 +27,21 @@ h1 {
 
 h2 {
     padding: .25em;
-    font-size:2em
+    font-size:2em;
 }
 
 a {
     color: lime;
-    text-decoration:none
-}
-
-
-hr {
-    color: #eee;
-    background-color: #eee;
-    height: 2px;
-    border: none;
-    margin-top: 40px;
-    margin-bottom:40px
+    text-decoration:none;
 }
 
 img {
-    max-width:100%
+    max-width:100%;
 }
 
 aside {
     background-color: purple;
-    text-align:center
+    text-align:center;
 }
 
 aside, aside a {
@@ -59,45 +49,53 @@ aside, aside a {
 }
 
 aside div {
-    padding: 20px;
-    margin:0
+    padding: 0px;
+    margin:0;
 }
 
 aside div img {
     border-radius: 50%;
     max-height: 100px;
-    max-width: 150px
+    max-width: 150px;
 }
 
 aside div h1 {
-    margin:15px 0 5px
+    margin:15px 0 5px;
 }
 
 aside div p {
     color: white;
     margin: 0 0 15px;
-    font-size: 1em
+    font-size: 1em;
 }
 
-aside nav ul li {
-    display: inline;
+aside div nav ul li {
     line-height: 1.5em;
     font-size: 1.25em;
+}
+
+aside div nav ul li a:hover {
+    color: white;
 }
 
 main nav {
     text-align: center;
     padding: 14px 0;
     border-bottom: 1px white;
-    font-size:0
+    font-size:0;
 }
 
 main article {
-    margin:0 8% 2%
+    padding: 15px;
+    margin:0 8% 2%;
+    border: 1px solid lime;
+    border-radius: 4px;
+    margin:16px;
+    box-shadow: 0 0 8px purple;
 }
 
 main article header h2 {
-    margin-bottom:0
+    margin-bottom:0;
 }
 
 main article header p {
@@ -108,7 +106,7 @@ main article header p {
 
 main footer {
     padding-top: 4px;
-    border-top:1px solid #eee
+    border-top:1px solid #eee;
 }
 
 main footer p {
@@ -116,27 +114,27 @@ main footer p {
     text-align: center;
     padding: 0 40px;
     color: lime;
-    font-size:11px
+    font-size:11px;
 }
 
 
 ul.list, ul.social {
     list-style-type: none;
     margin: 0;
-    padding:0
+    padding:0;
 }
 
 ul.list {
-    padding:1em 0
+    padding:1em 0;
 }
 
 ul.list li {
-    padding:4px
+    padding:4px;
 }
 
 ul.social {
     font-size: 1.6em;
-    padding-top:20px
+    padding-top:20px;
 }
 
 ul.social li {
