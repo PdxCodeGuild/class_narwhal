@@ -73,6 +73,7 @@ p {
   margin-top: 2em;
   height: 200px;
   align-items: center;
+  padding-top: 3px;
 }
 
 .cards:hover {
