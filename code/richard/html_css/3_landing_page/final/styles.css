@@ -156,6 +156,7 @@ button {
   .hero-text {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
+    padding: 50px;
     /* background-color: red; */
   }
 
@@ -164,21 +165,28 @@ button {
   } */
 
   .card1 {
-    grid-column: 1 / 2;
+    padding-top: 1em;
+    /* grid-column: 1 / 2; */
     grid-row: 1 / 4;
 
   }
 
   .card2 {
-    grid-column: 2 / 3;
-    grid-row: 1 / 4;
+    padding-top: 1em;
+    /* grid-column: 2 / 3; */
+    grid-row: 2 / 4;
 
   }
 
   .card3 {
-    grid-column: 3 / 4;
-    grid-row: 1 / 4;
+    padding-top: 1em;
+    /* grid-column: 3 / 4; */
+    grid-row: 3 / 4;
 
+  }
+
+  .hero-text p {
+    text-align: center;
   }
 
 
