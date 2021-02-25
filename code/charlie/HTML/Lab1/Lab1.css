@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    ;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+}
+
+header{
+    background-color:#008080;
+
+}
+nav p a{
+    color:coral;
+}
+
+header a{
+    color:rebeccapurple;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
