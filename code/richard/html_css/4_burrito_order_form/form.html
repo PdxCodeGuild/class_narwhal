@@ -8,91 +8,80 @@
 
         <body>
             <header>
-                <h1>Header goes here</h1>
+                <h1>Header image here</h1>
             </header>
 
-            <div class="left-side">
-                <p>Picture of burrito on left side</p>
+            <div id="container"> 
 
+                <div id="left-side">
+                    <h3>A Yummy Burrito</h3>
+                    <img src="burrito.jpg" alt="burrito picture">
+                </div>
+
+                <div id="right-side">
+                    <h2>Order a Burrito</h2>
+                    <h3>Your Burrito's Details</h3>
+                    <h4>Included in your 6 bucks</h4>
+
+
+                    <form action="https://webhook.site/be35ff9a-aa91-41fe-b876-ae383cda4a7c" method="post">
+                        <fieldset class="left">
+                            <legend>Order Info</legend>
+                                <p>Tortilla: </p>
+                                <input type="radio" name="Tortilla" value="White"> White<br>
+                                <input type="radio" name="Tortilla" value="Wheat"> Wheat<br>
+                                <input type="radio" name="Tortilla" value="Spinach"> Spinach<br>
+                                <input type="radio" name="Tortilla" value="Corn"> Corn<br>
+
+                                <p>Rice: </p>
+                                <input type="radio" name="Rice" value="White"> White<br>
+                                <input type="radio" name="Rice" value="Brown"> Wheat<br>
+
+                                <p>Beans: </p>
+                                <input type="radio" name="Beans" value="Black"> Black<br>
+                                <input type="radio" name="Beans" value="Pinto"> Pinto<br>
+
+                                <p>Meat: </p>
+                                <input type="radio" name="Meat" value="Chicken"> Chicken<br>
+                                <input type="radio" name="Meat" value="Steak"> Steak<br>
+                                <input type="radio" name="Meat" value="Pork"> Pork<br>
+                                <input type="radio" name="Meat" value="None"> None<br>
+
+                                <br>
+
+                                <p>Additional Ingredients</p>
+                                <input type="checkbox" name="Cheese" value="Cheese"> Cheese<br>
+                                <input type="checkbox" name="Salsa" value="Salsa"> Salsa<br>
+                                <input type="checkbox" name="Sour_Cream" value="Scour_Cream"> Sour Cream<br>
+                        </fieldset>
+
+                        <fieldset class="right">
+                            <legend>Personal Info</legend>
+                            Username: (at least 6 characters) <input type="text" pattern="[a-z]{6,}" name="username" required/><br/>
+                            Password: (at least 6 characters) <input type="text" pattern="[a-z]{6,}" name="password" required/><br/>
+                            Name (First and Last): (two words, at lease 3 characters each) <input type="text" pattern="^.{7,}$" name="name" required/><br/>
+                            Email: <input type="text" pattern="(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])" name="email"/><br/>
+                            Phone Number: <input type="text" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" name="phone_number" required/><br/>
+                            Date of birth: (3/1/2021) <input type="text" match="^\d{1,2}\/\d{1,2}\/\d{4}$" name="dob" required/><br>
+                            Social Security Number: (442-88-1234) <input type="text" match="^\d{3}-\d{2}-\d{4}$" name="ssn" required/><br>
+                            Street: <input type="text" name="street"/><br/>
+                            City: <input type="text" name="city"/><br/>
+                            State: <input type="text" name="state"/><br>
+                            Zip: (5 digits)<input type="text" pattern="[0-9]{5,5}" name="zip"/><br>
+                            <p></p>
+                            <button type="submit">submit</button>
+                        </fieldset>
+
+                    </div> 
+
+
+                        
+                    </form>
+
+
+                    
             </div>
-
-            <div class="right-side">
-                <h2>Order a Burrito</h2>
-                <h3>Your Burrito's Details</h3>
-                <h4>Included in your 6 bucks</h4>
-                <p>Tortilla: </p>
-                <p>Meat: </p>
-                <p>Beans</p>
-                <p>Cheese</p>
-                <p>Salsa</p>
-                <p>Sour Cream</p>
-
-
-                <form action="" method="post">
-                    <fieldset>
-                        <legend>Order Info</legend>
-                            <p>Tortilla: </p>
-                            <input type="radio" name="Tortilla" value="White"> White<br>
-                            <input type="radio" name="Tortilla" value="Wheat"> Wheat<br>
-                            <input type="radio" name="Tortilla" value="Spinach"> Spinach<br>
-                            <input type="radio" name="Tortilla" value="Corn"> Corn<br>
-
-                            <p>Rice: </p>
-                            <input type="radio" name="Rice" value="White"> White<br>
-                            <input type="radio" name="Rice" value="Brown"> Wheat<br>
-
-                            <p>Beans: </p>
-                            <input type="radio" name="Beans" value="Black"> Black<br>
-                            <input type="radio" name="Beans" value="Pinto"> Pinto<br>
-
-                            <p>Meat: </p>
-                            <input type="radio" name="Meat" value="Chicken"> Chicken<br>
-                            <input type="radio" name="Meat" value="Steak"> Steak<br>
-                            <input type="radio" name="Meat" value="Pork"> Pork<br>
-                            <input type="radio" name="Meat" value="None"> None<br>
-
-                            <br>
-
-                            <p>Additional Ingredients</p>
-                            <input type="checkbox" name="Cheese" value="Cheese"> Cheese<br>
-                            <input type="checkbox" name="Salsa" value="Salsa"> Salsa<br>
-                            <input type="checkbox" name="Sour_Cream" value="Scour_Cream"> Sour Cream<br>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Personal Info</legend>
-                        Username: <input type="text" name="username"/><br/>
-                        Password: <input type="text" name="password"/><br/>
-                        Name: <input type="text" name="name"/><br/>
-                        Email: <input type="text" name="email"/><br/>
-                        Phone Number: <input type="text" name="phone_number"/><br/>
-                        Date of birth: <input type="text" name="dob"/><br>
-                        Social Security Number: <input type="text" name="ssn"/><br>
-                        Street: <input type="text" name="street"/><br/>
-                        City: <input type="text" name="city"/><br/>
-                        State: <input type="text" name="state"/><br>
-                        Zip: <input type="text" name="zip"/><br>
-                    </fieldset>
-
-
-
-
-                    <p></p>
-                    <button type="submit">submit</button>
-                </form>
-            </div>
-
-
-            
-
-
-        </body>
-
-
-
-
+            <footer><h3>Copyright 2021</h3></footer>
     </html>
-
-
-
 </html5>
+

@@ -1,11 +1,70 @@
-
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 body{
+
     background-color: gray;
 }
 
+header {
+    width: 100%;
+    background-color: yellow;
+    min-width: 200px;
+    margin: 10px;
+
+}
+
+#container {
+    /* background-color:coral; */
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+
+#left-side {
+    background-color: hotpink;
+
+
+}
+
+
+#right-side {
+    background-color: blue;
+
+}
+
+
+
+
+
+
+img {
+    max-height: 400px;
+}
+
 form {
+    display: flex;
     min-height: 100px;
-    min-width: 100px;
     background-color: white;
+}
+
+fieldset.left {
+    background-color: green;
+}
+
+fieldset.right {
+    background-color: red;
+
+}
+
+
+footer {
+    background-color: white;
+    text-align: center;
 }
