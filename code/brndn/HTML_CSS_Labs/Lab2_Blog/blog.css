@@ -40,22 +40,24 @@ h3 {
     margin-bottom: 0em;
 }
 
-#nav1 {
+#nav1, #nav2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
-#nav1 a {
+#nav1 a, #nav2 a {
     text-decoration: none;
     color:black;
 }
 
-#nav1 a:hover {
+#nav1 a:hover, #nav2 a:hover {
     color:lightcoral;
     -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: black;
-    font-size: 2em;
+    margin: -0.5em;
+    font-size: 1.5em;
 }
 
 #hr1 {
@@ -97,25 +99,6 @@ h2 {
     font-size: 2em;
     padding: 0 0.25em;
     background: transparent;
-}
-
-#nav2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#nav2 a {
-    padding: 1em;
-    text-decoration: none;
-    color:black;
-}
-
-#nav2 a:hover {
-    color:lightcoral;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: black;
-    font-size: 2em;
 }
 
 @media (min-width: 768px) {
