@@ -25,11 +25,13 @@ nav {
     left: 50%;
     transform: translate(-50%);
     mix-blend-mode: screen;
+    transition: color, background-color .25s ease-in-out;
 }
 
 nav:hover {
     background-color: black;
     color: antiquewhite;
+    transition: all .25s ease-in-out;
 }
 
 nav a {
@@ -40,6 +42,7 @@ nav a:hover {
     background-color: black;
     color: antiquewhite;
     text-decoration: underline overline;
+    transition: all .25s ease-in-out;
 }
 
 #name {
@@ -54,11 +57,13 @@ nav a:hover {
     left: 50%;
     transform: translate(-50%);
     mix-blend-mode: screen;
+    transition: color, background-color .25s ease-in-out;
 }  
 
 #name:hover {
     background-color: black;
     color: antiquewhite;
+    transition: all .25s ease-in-out;
 }
 
 .image{
