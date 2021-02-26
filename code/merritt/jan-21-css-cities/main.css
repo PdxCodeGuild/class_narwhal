@@ -77,6 +77,57 @@ main {
     z-index: -1;
 } */
 
+/* input[type="text"],
+input[type="email"] {
+    width: 200px;
+    height: 200px;
+    color: white;
+    background-color: black;
+    transition: all .5s ease-in-out;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover {
+    width: 300px;
+    height: 300px;
+    color: black;
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    width: 300px;
+    height: 300px;
+    color: black;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all .5s ease-in-out;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+} */
+
+form {
+    border: 1px solid #260517;
+    padding: 16px;
+}
+
+input {
+    transition: all .1s ease-in-out;
+    margin: 2px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="text"]:focus,
+input[type="email"]:focus {
+    box-shadow: 0 0 5px black;
+}
+
 @media (min-width: 768px) {
 
     header, main, footer {
@@ -101,6 +152,10 @@ main {
     .flex-gallery div {
         width: 50%;
         padding: 16px;
+    }
+
+    .flex {
+        display: flex;
     }
 
 }
