@@ -80,6 +80,10 @@ nav a:hover {
     scroll-snap-align: start;
 }
 
+footer {
+    display: none;
+}
+
 @media (min-width: 768px) {
 
     nav, #name {
