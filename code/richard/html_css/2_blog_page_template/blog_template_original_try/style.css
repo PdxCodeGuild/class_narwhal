@@ -1,0 +1,91 @@
+html {
+    box-sizing: border-box;
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(184, 177, 177);
+}
+
+header, main, footer {
+    padding: 12px;
+}
+
+header, footer {
+    
+    background-color: rgb(70, 122, 199);
+    color: whitesmoke;
+    text-align: center;
+    align-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction:column-reverse;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+
+
+header h1 {
+    margin: 0;
+}
+
+
+main p {
+    text-align: justify;
+    
+}
+
+
+
+footer p {
+    margin: 0;
+}
+
+
+
+@media (min-width: 768px) {
+
+}
+
+
+
+@media (min-width: 1024px) {
+
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    header h1 {
+        margin-bottom: 6px;
+        font-size: 3em;
+    }
+
+    .left {
+        background-color: red;
+    }
+
+}

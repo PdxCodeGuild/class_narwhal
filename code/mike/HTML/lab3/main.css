@@ -1,0 +1,160 @@
+/* #A62684
+#1A5AD9
+#85AAF2
+#538C2A
+#65A637 */
+
+html {
+    display: block;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #85AAF2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1em;
+}
+
+header, footer {
+    padding: .5em;
+    background-color: #A62684;
+}
+
+div header h1, h2{
+    float: left;
+    max-width: 75vw;
+}
+
+div header h1 {
+    color:#1A5AD9;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+    text-transform: uppercase;
+    padding-bottom: .25em;
+}
+
+div header h2 {
+    font-style: italic;
+    font-weight: 100;
+}
+
+div header ul {
+    font-weight: bolder;
+    color:#1A5AD9;
+    text-align: right;
+}
+
+div main div{
+    display: block;
+    padding: 15px;
+    margin:0 8% 2%;
+    border: 1px solid lime;
+    border-radius: 4px;
+    margin:16px;
+    box-shadow: 0 0 8px purple;
+}
+
+div main img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    background-color: white;
+    display: block;
+}
+
+div main h3 {
+    padding: .5em;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    background-color: #1A5AD9;
+    line-height: 1.5em;
+}
+
+div footer {
+    padding: 0;
+    text-align: center;
+}
+
+ul.nav {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+
+ul.bar {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.searchbar input {
+    float:left;
+    height: 4em;
+    width: 60%;
+    display: flex;
+    border-color: #1A5AD9;
+    padding:5px;
+    margin-right: 2.5px
+}
+
+li.nav-right img {
+    text-align: right;
+    border: 1px solid lime;
+    border-radius: 4px;
+    margin:2.5px 0 -1em 0;
+    box-shadow: 0 0 8px purple;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+}
+
+ul.social {
+    font-size: 1.6em;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 1em;
+}
+
+ul.social li {
+    display:inline;
+    width: 36px;
+    height: 36px;
+}
+
+ul.social img {
+    width: 36px;
+    height: 36px;
+}
+
+ul.social a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    font-size: .8em;
+    line-height:36px;
+}
+
+@media (min-width: 768px) {
+
+    .items {
+        margin: 0 -16;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .items div {
+        width: 50%;
+        padding: 16px;
+    }
+}

@@ -1,0 +1,47 @@
+html {
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)), url(ANCC11.jpg);
+    background-origin: border-box;
+    background-size: cover;
+    border: solid yellow;
+}
+
+body {
+    text-align: center;
+    color: yellow;
+    font-family:'Courier New', Courier, monospace;
+}
+
+h1, h2 {
+    background-color: green;
+}
+
+p {
+    margin: 1em 25px;
+    background-color: green;
+}
+
+ul {
+    text-align: center;
+    list-style:  inside;
+    background-color: green;
+}
+
+a {
+    text-align: left;
+    color: red;
+    background-color: black;
+}
+
+.hogan {
+    float: left;
+    border: solid yellow;
+    height: 625px;
+    width: 450px;
+}
+
+.ancc {
+    float: bottom;
+    border: solid yellow;
+    height: 200px;
+    width: 900px
+}

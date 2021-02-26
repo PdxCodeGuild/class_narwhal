@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header, footer {
+    background-color: darkred;
+    color: whitesmoke;
+    text-align: center;
+}
+
+header, main, footer {
+    padding: 12px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header a {
+    color: whitesmoke;
+}
+
+main p {
+    text-align: justify;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav p {
+        margin: 6px 12px;
+    }
+
+    .flex-gallery {
+        margin: 0 -6px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .flex-gallery div {
+        width: 50%;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    header h1 {
+        margin-bottom: 6px;
+        font-size: 3em;
+    }
+
+    header h3 {
+        margin: 0;
+    }
+
+    nav {
+        align-items: flex-end;
+    }
+
+    .flex-gallery div {
+        width: 33.333%
+    }
+
+}

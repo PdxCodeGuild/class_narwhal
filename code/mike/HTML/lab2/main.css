@@ -1,0 +1,164 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *after {
+
+    box-sizing: inherit;
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height:1em;
+}
+
+header, footer {
+    background-color: purple;
+    color: lime;
+    text-align: left;
+}
+
+h1 {
+    color: white;
+    font-size:2.5em;
+}
+
+h2 {
+    padding: .25em;
+    font-size:2em;
+}
+
+a {
+    color: lime;
+    text-decoration:none;
+}
+
+img {
+    max-width:100%;
+}
+
+aside {
+    background-color: purple;
+    text-align:center;
+}
+
+aside, aside a {
+    color: lime;
+}
+
+aside div {
+    padding: 0px;
+    margin:0;
+}
+
+aside div img {
+    border-radius: 50%;
+    max-height: 100px;
+    max-width: 150px;
+}
+
+aside div h1 {
+    margin:15px 0 5px;
+}
+
+aside div p {
+    color: white;
+    margin: 0 0 15px;
+    font-size: 1em;
+}
+
+aside div nav ul li {
+    line-height: 1.5em;
+    font-size: 1.25em;
+}
+
+aside div nav ul li a:hover {
+    color: white;
+}
+
+main nav {
+    text-align: center;
+    padding: 14px 0;
+    border-bottom: 1px white;
+    font-size:0;
+}
+
+main article {
+    padding: 15px;
+    margin:0 8% 2%;
+    border: 1px solid lime;
+    border-radius: 4px;
+    margin:16px;
+    box-shadow: 0 0 8px purple;
+}
+
+main article header h2 {
+    margin-bottom:0;
+}
+
+main article header p {
+    color: grey;
+    font-size: 1em;
+    margin-left: .50em;
+}
+
+main footer {
+    padding-top: 4px;
+    border-top:1px solid #eee;
+}
+
+main footer p {
+    margin: 2px;
+    text-align: center;
+    padding: 0 40px;
+    color: lime;
+    font-size:11px;
+}
+
+
+ul.list, ul.social {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+
+ul.list {
+    padding:1em 0;
+}
+
+ul.list li {
+    padding:4px;
+}
+
+ul.social {
+    font-size: 1.6em;
+    padding-top:20px;
+}
+
+ul.social li {
+    display:inline;
+    width: 36px;
+    height: 36px;
+}
+
+ul.social img {
+    width: 36px;
+    height: 36px;
+}
+
+ul.social a:hover {
+    z-index: 1;
+    transform:translateY(-2px);
+}
+
+ul.social a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: .8em;
+    line-height:36px;
+}

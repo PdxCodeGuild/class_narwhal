@@ -1,0 +1,169 @@
+html {
+    box-sizing: border-box;
+    background-color: #F2D8CE;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+/* .bg {
+    background-image: url(https://wallpapercave.com/wp/FDJx1ey.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+} */
+
+header, footer {
+    background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
+    padding: 10px;
+    text-align: center;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+body, nav h1, h2, h3, h4, h5 {
+    font-family: "Copperplate", "Papyrus", fantasy
+}
+
+p {
+    font-family: "garamond";
+    font-size: 20px;
+}
+
+.left, .right {
+    width: 100%;
+    padding: 0;
+}
+
+.card {
+    background-image: url("https://th.bing.com/th/id/Rd7fa4dcac85665c50b4a1a10f87c491b?rik=ttXWP9m5sWh0gw&riu=http%3a%2f%2fwallpaperstock.net%2fhibiscus-pattern-wallpapers_51566_1920x1200.jpg&ehk=MXkteyEyokvqpAj%2bgCPqYLpOSjvI7KPquR6BAhh1hz8%3d&risl=&pid=ImgRaw");
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.transbox{
+    margin: 5px;
+    background-color: whitesmoke;
+    border: 1px solid #6CD9C5;
+    opacity: 1;
+}
+
+div .transbox{
+    margin: 3px;
+    padding-bottom: 20px;
+    background-color: whitesmoke;
+    border: 1px solid #6CD9C5;
+    opacity: 1;
+}
+
+header .transbox h2, footer .transbox h3 {
+    margin: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.transbox h2, h3, h4, h5, h6, img, p, ul, a {
+    margin: 5%;
+    font-weight: bold;
+    color: black;
+}
+
+.social-media img {
+    display: inline-flex;
+    line-height: 1.5em;
+    font-size: 1.50em;
+}
+
+ul :hover {
+    opacity: .8;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+.newsletter {
+    padding: 20px;
+    margin: 8px;
+    display: center;
+}
+
+.newsletter input {
+    max-width: 90%
+}
+
+img {
+    display: block;
+    width: 90%;
+    border: #8C0327;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .right {
+        float: right;
+        width: 74%;
+    }
+
+    .left {
+        float: left;
+        width: 25%;
+    }
+
+    .clear:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@media (min-width: 1024px) {
+    header .transbox h2, footer .transbox h3 {
+        margin: 30px;
+        font-weight: bold;
+        color: #000000;
+    }
+}

@@ -1,0 +1,33 @@
+@media screen and (min-width: 1024px) {
+    aside {
+        width: 25vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-y:auto;
+    }
+
+    aside div {
+        padding:36px 18px;
+    }
+
+    aside div nav ul li {
+        padding: 0 !important;
+        display:block;
+    }
+
+    aside div ul.social {
+        padding-top:32px;
+    }
+
+    main {
+        width: 75vw;
+        height: 100vh;
+        position: absolute;
+        margin-top: 0;
+        top: 0;
+        left: 25vw;
+        overflow-x:hidden;
+    }
+}

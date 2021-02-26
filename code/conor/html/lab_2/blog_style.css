@@ -1,0 +1,141 @@
+body, html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+.bg {
+    background-image: url(https://wallpapercave.com/wp/FDJx1ey.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header, footer {
+    color: black;
+    text-align: center;
+    background-color: white;
+}
+
+header, footer {
+    padding: 6px;
+    border: solid 3px black;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: black;
+    text-align: center;
+}
+
+.sidebar {
+    border-style: solid;
+    background-color: white;
+    text-align: center;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 85px; /* Stay at the top */
+    padding: 6px;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+main h2 {
+    background-color: white;
+    border-style: solid;
+    text-align: center;
+    margin: 40px;
+}
+
+.gallery-view{
+    background-color: green;
+    padding: 4px;
+}
+
+main h3 {
+    text-decoration: underline;
+}
+
+main p {
+    text-align: justify;
+    max-width: 100%
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .gallery-view {
+        margin: 0 -6px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .gallery-view div {
+        width: 48%;
+        padding: 6px;
+        margin-right: 1px;
+    }
+
+    .sidebar {
+        height: auto;
+        width: 140px; /* Set the width of the sidebar */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        align-content: left;
+    }
+      
+      /* The navigation menu links */
+    .sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        display: block;
+    }
+
+    main {
+        margin-left: 175px;
+        margin-right: 50px;
+        padding-right: 6px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    header h1 {
+        margin-top: 6px;
+    }
+
+    nav {
+        align-items: flex-end;
+    }   
+}

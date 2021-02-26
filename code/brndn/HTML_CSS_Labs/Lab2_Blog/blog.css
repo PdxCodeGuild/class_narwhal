@@ -1,0 +1,181 @@
+/* Lab02 22 Feb 2021
+    A Blog Template
+    Composer: brndn */
+
+
+html {
+    box-sizing: border-box;
+}
+    
+body {
+    font-family: monospace;
+    background-color: #e22b2b4d;
+}
+
+
+header {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#title {
+    padding-top: 2em;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #eee5e3;
+    background-image: url("kisspng-leaf-monstera-5ac184d28626c7.4676546915226318905495.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;   
+}
+
+h1 {
+    padding: 0em;
+    margin: 0em;
+}
+
+h3 {
+    padding-top: 0.5em;
+    margin-top: 0em;
+    padding-bottom: 1.5em;
+    margin-bottom: 0em;
+}
+
+#nav1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#nav1 a {
+    text-decoration: none;
+    color:black;
+}
+
+#nav1 a:hover {
+    color:lightcoral;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
+    font-size: 2em;
+}
+
+#hr1 {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px #eee5e3;
+    padding-top: 0em;
+    margin-top: 0em;
+    margin-bottom: -1em;
+}
+
+#hr2 {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 -12px 12px -12px #eee5e3;
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    margin-top: 0em;
+}
+
+#hr3 {
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    margin-top: 1.75em;
+}
+
+#hr3:after {
+    content: "☕️";
+    display: inline-block;
+    position: relative;
+    top: -0.8em;
+    font-size: 2em;
+    padding: 0 0.25em;
+    background: transparent;
+}
+
+#nav2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#nav2 a {
+    padding: 1em;
+    text-decoration: none;
+    color:black;
+}
+
+#nav2 a:hover {
+    color:lightcoral;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
+    font-size: 2em;
+}
+
+@media (min-width: 768px) {
+
+    #title {
+        float: right;
+        font-size: 3vw;
+        -webkit-text-stroke-width: 1px;
+        width: 75vw;
+        height: 25vw;
+        background-position: right;
+    }
+
+    h1, h3 {
+        margin: 2.5vw;
+    }
+
+    #nav-bar {
+        position: fixed;
+        width:23vw;
+        height: 95%;
+        padding-top: 4.5%;
+        background-image: url("PinClipart.com_weed-leaf-clip-art_5620222.png");
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #nav1 {
+        flex-direction: column;
+    }
+
+    main {
+        overflow-x: hidden;
+        position: absolute;
+        left: 25vw;
+        top: 35vw;
+        right: 2vw;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #title {
+        font-size: 2vw;
+        width: 65vw;
+        height: 20vw;
+        margin-right: 6%;
+        background-position: center;
+    }    
+    #nav-bar {
+        width: 20%;
+    }
+
+    main {
+        left: 22vw;
+        top: 30vw;
+        }
+}

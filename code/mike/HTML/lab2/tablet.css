@@ -1,0 +1,35 @@
+@media screen and (min-width: 768px) {
+    aside {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        height: 20vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    aside div {
+        text-align: left;
+    }
+
+    aside div a {
+        text-align: center;
+    }
+
+    aside div h1 {
+
+        text-align: center;
+    }
+    aside nav ul li {
+        align-content: flex-end;
+        display: inline;
+    }
+    
+    main {
+        margin-top: 25vh;
+    }
+    
+
+
+}
