@@ -1,0 +1,184 @@
+<!-- Josh Novac
+Lab 04
+HTML/CSS
+PDX Code Guild -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Burrito Order Form</title>
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Oi&family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fredoka+One&family=Oi&family=Pacifico&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@700&family=Fredoka+One&family=Oi&family=Pacifico&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>Fat Burritos</h1>
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Order</a>
+                <a href="#">Locations</a>
+                <a href="#">Contact</a> 
+            </nav>
+        </header>
+        <main>
+            <h2>Your Burrito Build</h2>
+            <div>
+                <form action="https://webhook.site/8993b703-afbb-4242-b04e-86afb1579cc0" method="post">
+                    <p>Select your choice of Tortilla, Rice, Beans, and Protein to make it your own special Fat Burrito!</p>
+                    
+                    <fieldset>
+                        <legend>Choice of Tortilla:</legend>
+                            <input type="radio" name="tortilla" id="white flour" value="white flour">
+                            <label for="white flour">White Flour</label>
+                            <input type="radio" name="tortilla" id="wheat flour" value="wheat flour">
+                            <label for="wheat flour">Wheat Flour</label>
+                            <input type="radio" name="tortilla" id="spinach" value="spinach">
+                            <label for="spinach">Spinach</label>
+                            <input type="radio" name="tortilla" id="corn" value="corn">
+                            <label for="corn">Corn</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Choice of Rice:</legend>
+                            <input type="radio" name="rice" id="white rice" value="white rice">
+                            <label for="white rice">White Rice</label>
+                            <input type="radio" name="rice" id="brown rice" value="brown rice">
+                            <label for="brown rice">Brown Rice</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Choice of Beans:</legend>
+                            <input type="radio" name="beans" id="black beans" value="black beans">
+                            <label for="black beans">Black Beans</label>
+                            <input type="radio" name="beans" id="pinto beans" value="pinto beans">
+                            <label for="pinto beans">Pinto Beans</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Choice of Protein:</legend>
+                            <input type="radio" name="protein" id="carnitas" value="carnitas">
+                            <label for="carnitas">Carnitas</label>
+                            <input type="radio" name="protein" id="chicken" value="chicken">
+                            <label for="chicken">Chicken</label>
+                            <input type="radio" name="protein" id="sofritas" value="sofritas">
+                            <label for="sofritas">Sofritas</label>
+                            <input type="radio" name="protein" id="none" value="none">
+                            <label for="none">None</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Additional Ingredients:</legend>
+                            <input type="checkbox" name="additional ingredients" id="cheese" value="cheese">
+                            <label for="cheese">Cheese</label>
+                            <input type="checkbox" name="additional ingredients" id="sour cream" value="sour cream">
+                            <label for="sour cream">Sour Cream</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Personal Details:</legend>
+                        <label for="username"> User Name:</label>
+                        <input type="text" placeholder="Enter Username" id="user name" name="user name" required><br>
+
+                        <label for="password">Password:</label>
+                        <input type="text" placeholder="Enter Password" id="password" name="password" required><br>
+
+                        <label for="name">First & Last Name:</label>
+                        <input type="text" placeholder="Enter First & Last Name" id="name" name="name" minlength="3" required><br>
+
+                        <label for="email">E-Mail Address:</label>
+                        <input type="email" placeholder="Enter E-mail Address" id="email" name="email" required><br>
+
+                        <label for="phone number">Phone Number:</label>
+                        <input type="tel" placeholder="Enter Phone Number" id="phone number" name="phone number" required><br>
+
+                        <label for="date of birth">Date of Birth:</label>
+                        <input type="date" placeholder="Enter date of birth" id="date of birth" name="date of birth" required><br>
+
+                        <label for="social security number">Social Security Number:</label>
+                        <input type="text" placeholder="Enter SSN" id="social security" name="social security" required><br>
+
+                        <label for="street">Street Number:</label>
+                        <input type="text" placeholder="Ex.  123" id="street" name="street" required><br>
+
+                        <label for="address">Address:</label>
+                        <input type="text" placeholder="Ex.  Main St" id="address" name="address" required><br>
+
+                        <label for="city">City:</label>
+                        <input type="text" placeholder="Enter City" id="city" name="city" required><br>
+
+                        <label for="state">State:</label>
+                        <select id="state" name="state" required><br>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Maryland</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="South Dakota">South Dakota</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                        </select><br>
+
+                        <label for="zip">Zip:</label>
+                        <input type="text" placeholder="Enter Zip" id="zip" name="zip" required><br>
+                    </fieldset>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p>Copyright 2021</p>
+        </footer>
+    </body>
+</html>

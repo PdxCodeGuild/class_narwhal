@@ -1,0 +1,140 @@
+h1 {
+    font-family: 'Oi', cursive;
+    font-size: 50px;
+    color: tan;
+    text-shadow: 2px 2px 6px black;
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    background-color:wheat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    text-shadow: 1px 1px 2px black;
+}
+
+main p {
+    text-align: justify;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+}
+
+header {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+body header {
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    background-color: rgba(105, 93, 83, 0.897);
+}
+
+body header div {
+    padding-top: 2px;
+    border-bottom: 1px solid black;
+}
+
+header nav {
+    align-content: center;
+    padding-right: 0px;
+    padding-left: 0px;
+    background-color: tomato;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+    align-self: center;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+form h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    border-bottom: 2px solid black;
+    padding-top: 25px;
+    text-align: justify;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+form p {
+    font-size: 25px;
+    text-align: center;
+}
+
+form {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    background-color: tan;
+    border: 2px solid black;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+fieldset {
+    margin-top: 30px;
+    border: 2px solid black;
+}
+
+legend {
+    font-size: 30px;
+}
+
+input:hover {
+    color: tomato;
+}
+
+
+input {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+
+input[type="submit"] {
+    font-size: 25px;
+    margin-top: 20px;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+input[type="submit"]:hover {
+    color: blue;
+}
+
+select {
+    margin-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    background-color: tomato;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+footer p {
+    font-size: 20px;
+    text-shadow: 1px 1px ghostwhite;
+}
