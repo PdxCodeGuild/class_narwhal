@@ -1,0 +1,47 @@
+/* Lab04 26 Feb 2021
+Burrito Order Form
+Composer: brndn */
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: grid;
+    grid-template: 33.33vh 66.66vh repeat(5, 100vh) / auto-flow;
+    place-content: center;
+    position: relative;
+    /*justify-items: center;*/
+    overflow-x: hidden;
+}
+
+header {
+    width: 100vw;
+}
+
+h1 {
+    position: absolute;
+    background: url("https://t3.ftcdn.net/jpg/00/80/58/02/360_F_80580255_4OqwzNpVC7dVkx0VD8sdqPpRbqmMQ5hK.jpg");
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 4em;
+    text-align: left;
+    word_spacing: 100vw;
+    left: 0em;
+    top: 1.5em;
+    margin: 0;
+
+}
+
+header img {
+    margin-left: 0em;
+    width: 100vw;
+    height: 100%;
+    
+}
+
+form {
+    width: 100vw;
+}
+
