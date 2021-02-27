@@ -1,0 +1,104 @@
+/* Lab03 24 Feb 2021
+Company Home
+Composer: brndn */
+
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    bottom: 0em;
+    left: 50%;
+    transform: translate(-50%);
+    mix-blend-mode: screen;
+    transition: color, background-color .25s ease-in-out;
+}
+
+nav:hover {
+    background-color: black;
+    color: antiquewhite;
+    transition: all .25s ease-in-out;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: black;
+    color: antiquewhite;
+    text-decoration: underline overline;
+    transition: all .25s ease-in-out;
+}
+
+#name {
+    background-color: antiquewhite;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0em;
+    left: 50%;
+    transform: translate(-50%);
+    mix-blend-mode: screen;
+    transition: color, background-color .25s ease-in-out;
+}  
+
+#name:hover {
+    background-color: black;
+    color: antiquewhite;
+    transition: all .25s ease-in-out;
+}
+
+.image{
+    margin: -.5em;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.image img{
+    margin-top: -.25em;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+footer {
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    nav, #name {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #name {
+        height: 3.75em;
+        top: -1.25em;
+    }
+
+    .image img {
+        width: 100vw;
+    }
+}
