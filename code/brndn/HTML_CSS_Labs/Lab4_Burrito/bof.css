@@ -2,8 +2,10 @@
 Burrito Order Form
 Composer: brndn */
 
-html {
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 body {
@@ -27,15 +29,14 @@ h1 {
     color: transparent;
     font-size: 4em;
     text-align: left;
-    word_spacing: 100vw;
     left: 0em;
     top: 1.5em;
-    margin: 0;
+    margin: 0em;
 
 }
 
 header img {
-    margin-left: 0em;
+    margin: 0em;
     width: 100vw;
     height: 100%;
     
@@ -45,3 +46,24 @@ form {
     width: 100vw;
 }
 
+h2 {
+    margin: 0em;
+    padding-left: 0.75em;
+}
+
+button {
+    margin-left: 1em;
+    margin-top: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+footer {
+    background: url("https://t3.ftcdn.net/jpg/00/80/58/02/360_F_80580255_4OqwzNpVC7dVkx0VD8sdqPpRbqmMQ5hK.jpg");
+    margin: -0.5em;
+}
+
+footer p {
+    margin: 0.5em;
+    padding-left: 0.5em;
+}
