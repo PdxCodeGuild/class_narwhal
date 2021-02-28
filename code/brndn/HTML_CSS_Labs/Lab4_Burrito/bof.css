@@ -11,15 +11,15 @@ Composer: brndn */
 body {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: grid;
-    grid-template: 33.33vh 66.66vh repeat(5, 100vh) / auto-flow;
+    grid-template: 33.33vh 66.66vh / auto-flow;
     place-content: center;
-    position: relative;
-    /*justify-items: center;*/
     overflow-x: hidden;
+    margin-left: 0.75em;
 }
 
 header {
-    width: 100vw;
+    position: relative;
+    margin-top: -0.5em;
 }
 
 h1 {
@@ -29,21 +29,34 @@ h1 {
     color: transparent;
     font-size: 4em;
     text-align: left;
-    left: 0em;
-    top: 1.5em;
+    left: 0.1em;
+    bottom: -0.1em;
     margin: 0em;
 
 }
 
 header img {
     margin: 0em;
-    width: 100vw;
-    height: 100%;
-    
+    width: 101vw;
+    height: 100%;   
 }
 
 form {
     width: 100vw;
+}
+
+#floater {
+    position: absolute;
+    width: 6em;
+    right: 0em;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+#floater:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 h2 {
@@ -66,4 +79,38 @@ footer {
 footer p {
     margin: 0.5em;
     padding-left: 0.5em;
+}
+
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 8em;
+    }
+
+    #floater {
+        width: 15em;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    header img {
+        display: none;
+    }
+
+    header {
+        height: 11em;
+        background-image: url("https://media1.giphy.com/media/aDYXQy3W8XFG8/giphy.gif");
+        background-repeat: repeat-x;
+    }
+
+    h1 {
+        font-size: 6em;
+        line-height: 0.9em;
+        bottom: 0em;
+    }
+
+    #floater {
+        width: 20em;
+    }
 }
