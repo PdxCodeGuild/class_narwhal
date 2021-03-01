@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burrito Menu</title>
+  <link rel="stylesheet" href="burrito_style.css">
+  <header>
+    <div class="card">
+      <h2>Uno! Dos! Burritos!</h2>
+    </div>
+  </header>
+  <body>
+    <form action="https://webhook.site/4104384d-1771-4227-9ffa-bccca6f7b3f3" method="post">
+      <h3 class="card">You make your burrito here</h3>
+      <img class="card" src="https://th.bing.com/th/id/R455c6bcb57e62cf3a16cc4b3e39e73fe?rik=w%2b911D47xHYCkQ&riu=http%3a%2f%2fcdn-image.foodandwine.com%2fsites%2fdefault%2ffiles%2fstyles%2f4_3_horizontal_-_1200x900%2fpublic%2ffree-burrito-day-ft-blog0417.jpg%3fitok%3dWZVPFTZP&ehk=aJ5J%2f%2fd6ljLmw6J0Bg5KSPFmHW969sURk7tWcmKDJtE%3d&risl=&pid=ImgRaw">
+      <div class="left">
+        <div class="card">
+          <h4>Pick your Tortilla:</h4>
+            <input type="radio" name="tortilla" id="White Flour" value="White Flour">
+            <label for="White Flour">White Flour</label><br>
+            <input type="radio" name="tortilla" id="Wheat Flour" value="Wheat Flour">
+            <label for="Wheat Flour">Wheat Flour</label><br>
+            <input type="radio" name="tortilla" id="Spinach" value="Spinach">
+            <label for="Spinach">Spinach</label><br>
+            <input type="radio" name="tortilla" id="Corn" value="Corn">
+            <label for="Corn">Corn:</label><br>
+          <h4>Pick your Rice:</h4>
+            <input type="radio" name="rice" id="White Rice" value="White Rice">
+            <label for="White Rice">White Rice</label><br>
+            <input type="radio" name="rice" id="Brown Rice" value="Brown Rice">
+            <label for="Brown Rice">Brown Rice</label><br>
+          <h4>Pick your Protein:</h4>
+            <input type="radio" name="protein" id="Carnitas" value="Carnitas">
+            <label for="Carnitas">Carnitas</label><br>
+            <input type="radio" name="protein" id="Chicken" value="Chicken">
+            <label for="Chicken">Chicken</label><br>
+            <input type="radio" name="protein" id="Sofritas" value="Sofritas">
+            <label for="Sofritas">Sofritas</label><br>
+            <input type="radio" name="protein" id="None" value="None">
+            <label for="None">None</label><br>
+          <h4>Additional Ingredients:</h4>
+            <input type="checkbox" name="additions" id="Cheese" value="Cheese">
+            <label for="Cheese">Cheese</label><br>
+            <input type="checkbox" name="additions" id="Sour Cream" value="Sour Cream">
+            <label for="Sour Cream">Sour Cream</label><br>
+        </div>
+      </div>
+      <div class="right">
+        <div>
+          <div class="card">
+            <h4>Personal Information</h4>
+              <input type="text" id="username" name="username" minlength="6" required placeholder='Username'>
+              <br>
+              <input type="text" id="password" name="password" minlength="6" required placeholder='Password'>
+              <br>
+              <input type="text" id="name" name="name" minlength="3" required placeholder="First Name">
+              <br>
+              <input type="text" id="last-name" name="last-name" minlength="3" required placeholder="Last Name">
+              <br>
+              <input type="text" id="email" name="email" required placeholder="Email">
+              <br>
+              <input type="phone" id="phone" name="phone" required placeholder="Phone Number">
+              <br>
+              <input type="date" id="date of birth" name="date of birth" required placeholder="Date of Birth">
+              <br>
+              <input type="text" id="ssn" name="ssn" minlength="9" maxlength="9" required placeholder="SSN">
+              <br>
+              <input type="text" id="street" name="street" required placeholder="Street">
+              <br>
+              <input type="text" id="city" name="city" required placeholder="City">
+              <br>
+              <input type="text" id="state" name="state" required placeholder="State">
+              <br>
+              <input type="text" id="zip" name="zip" required placeholder="Zip Code">
+          </div>  
+        </div>    
+      </div>
+      <div class="right">
+        <div class="card">
+          <br><input type="submit" value="Make my Food">
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

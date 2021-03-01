@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+  background-color: orange;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+header, body {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'copperplate', sans-serif;
+}
+
+.card {
+  background-color: red;
+  border: solid 2px white;
+  padding: 10px;
+  margin-top: 20px;
+  align-content: center;
+}
+
+.left, .right {
+  width: 100%;
+  padding: 0;
+}
+
+img {
+  
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .right {
+    display: left;
+    width: 45%;
+    margin: 4px;
+  }
+
+  .left {
+    display: left;
+    width: 45%;
+    margin: 4px;
+  }
+
+  img {
+    float: right;
+    width: 50%;
+    border: #8C0327;
+  }
+
+  /* .clear:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+}
