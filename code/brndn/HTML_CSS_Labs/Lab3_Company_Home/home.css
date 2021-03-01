@@ -17,6 +17,7 @@ nav {
     justify-content: space-evenly;
     background-color: antiquewhite;
     color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
     font-weight: bold;
     width: 100%;
@@ -48,7 +49,7 @@ nav a:hover {
 #name {
     background-color: antiquewhite;
     color: black;
-    font-size: 1em;
+    font-size: 1.25em;
     font-weight: bold;
     width: 100%;
     text-align: center;
@@ -86,8 +87,19 @@ footer {
 
 @media (min-width: 768px) {
 
-    nav, #name {
+    #name {
+        font-size: 2.25em;
+        height: 4em;
+        top: -1em;
+    }
+
+    nav {
         font-size: 2em;
+        height: 1.75em;
+    }
+
+    nav p {
+        margin-top: 0.25em;
     }
 }
 
