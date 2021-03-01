@@ -1,0 +1,74 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+}
+
+header{
+    background-color:#008080;
+
+}
+nav p a{
+    color:coral;
+}
+
+header a{
+    color:rebeccapurple;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/*For bigger screens (Tablet)*/
+@media (min-width: 768px){
+    nav{
+        color: chartreuse;
+        display:flex ;
+        justify-content: flex-start;
+    }
+
+    nav p{
+        color:blanchedalmond;
+        margin: 6px 12px;
+    }
+
+    .flex-gallery{
+        margin:0 -6px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .flex-gallery div{
+        width: 50%;
+        padding:6px;
+        border: 1px salmon;
+        box-shadow: 8px 8px 8px #696969;
+    }
+}
+
+/*For bigger screens (Desktop)*/
+@media (min-width:1024px){
+    
+    
+    header, main, footer{
+        padding: 16px 128px;
+        flex-wrap:wrap;
+    } 
+    
+    .flex-gallery div{
+        width:calc(33.3333%-34px);
+        padding:6px;
+        border: 1px salmon;
+        box-shadow: 8px 8px 8px #696969;}
+}

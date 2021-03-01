@@ -1,0 +1,291 @@
+h1 {
+    font-family: 'Oi', cursive;
+    font-size: 50px;
+    color: tan;
+    text-shadow: 2px 2px 6px black;
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    background-color:wheat;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    text-shadow: 1px 1px 2px black;
+}
+
+main p {
+    text-align: justify;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+}
+
+header {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+body header {
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    background-color: rgba(105, 93, 83, 0.897);
+}
+
+body header div {
+    padding-top: 2px;
+    border-bottom: 1px solid black;
+}
+
+header nav {
+    align-content: center;
+    padding-right: 0px;
+    padding-left: 0px;
+    background-color: tomato;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+    align-self: center;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+form h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    border-bottom: 2px solid black;
+    padding-top: 25px;
+    text-align: justify;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+form p {
+    font-size: 25px;
+    text-align: center;
+}
+
+form {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    background-color: tan;
+    border: 2px solid black;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+fieldset {
+    margin-top: 30px;
+    border: 2px solid black;
+}
+
+legend {
+    font-size: 30px;
+}
+
+input:hover {
+    color: tomato;
+}
+
+
+input {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+
+input[type="submit"] {
+    font-size: 25px;
+    margin-top: 35px;
+    text-shadow: 1px 1px ghostwhite;
+    border-radius: 25px;
+}
+
+input[type="submit"]:hover {
+    color: blue;
+}
+
+select {
+    margin-bottom: 25px;
+    margin-left: 15px;
+}
+
+footer {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    background-color: tomato;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+footer p {
+    font-size: 20px;
+    text-shadow: 1px 1px ghostwhite;
+}
+
+@media (min-width: 768px) {
+
+    header h1 {
+        font-size: 60px;
+        text-shadow: 3px 4px black;
+        letter-spacing: 1px;
+    }
+
+    header nav a {
+        font-size: 35px;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    main h2 {
+        font-size: 55px;
+        letter-spacing: 8px;
+    }
+
+    form p {
+        font-size: 30px;
+    }
+
+    legend {
+        font-size: 35px;
+    }
+
+    form fieldset {
+        font-size: 30px;
+    }
+
+    input[type="radio"] {
+        transform: scale(1.3);
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.3);
+    }
+
+    input[type="text"] {
+        transform: scale(1);
+    }
+
+    input[type="submit"] {
+        font-size: 40px;
+        margin-top: 25px;
+        margin-bottom: 8px;
+        text-shadow: 1px 1px ghostwhite;
+    }
+
+    select {
+        margin-left: 15px;
+    }
+
+    footer p {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    header h1 {
+        font-size: 65px;
+        text-shadow: 3px 4px black;
+        letter-spacing: 3px;
+    }
+
+    header nav a {
+        font-size: 35px;
+        margin: 30px;
+        padding: 32px;
+        letter-spacing: .3px;
+    }
+
+    main h2 {
+        font-size: 60px;
+        letter-spacing: 10px;
+    }
+}
+
+@media (min-width: 1920px)  {
+
+    header h1 {
+        font-size: 70px;
+        text-shadow: 3px 4px black;
+        letter-spacing: 4px;
+    }
+
+    header nav a {
+        font-size: 35px;
+        margin: 73px;
+        padding: 98px;
+        letter-spacing: 1px;
+    }
+
+    input[type="radio"] {
+        transform: scale(1.5);
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+    }
+
+    input[type="text"] {
+        transform: scale(.9);
+    }
+
+    input[type="date"] {
+        transform: scale(1);
+        margin-left: 32px;
+    }
+
+    input[type="tel"] {
+        transform: scale(.9);
+    }
+
+    input[type="email"] {
+        transform: scale(.9);
+    }
+
+    main h2 {
+        font-size: 70px;
+        letter-spacing: 15px;
+    }
+
+    form p {
+        font-size: 40px;
+    }
+
+    legend {
+        font-size: 45px;
+    }
+
+    form fieldset {
+        font-size: 35px;
+    }
+
+    select {
+        margin-left: 15px;
+        margin-left: 32px;
+    }
+
+    input[type="submit"] {
+        font-size: 40px;
+        margin-top: 25px;
+        text-shadow: 1px 1px ghostwhite;
+    }
+}

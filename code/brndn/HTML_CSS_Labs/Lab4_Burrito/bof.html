@@ -1,0 +1,101 @@
+<!-- Lab04 26 Feb 2021
+Burrito Order Form
+Composer: brndn -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="bof.css"/>
+        <title>Bogus Burritos</title>
+    </head>
+    <body>
+        <header>
+            <img src="https://media1.giphy.com/media/aDYXQy3W8XFG8/giphy.gif"/>
+            <div id="name">
+                <h1>Bogus<br/>Burritos</h1>
+            </div>
+        </header>
+        <main>
+            <img id="floater" src="https://i.giphy.com/media/xUA7bbGw5YKDpNBM2Y/giphy.webp"/>
+            <div id="order">
+                <form action="https://webhook.site/488dc11d-3536-40e6-bd1e-8cf065802dfa" method="POST">
+                    <hr>
+                    <h2>Custom Commission</h2>
+                    <hr>
+                    <fieldset>
+                        <Legend>The Wrapping</Legend>
+                        <input type="radio" name="wrap" value="corn" id="corn">
+                        <label for="corn">Corn</label>
+                        <input type="radio" name="wrap" value="flour" id="flour">
+                        <label for="flour">Flour</label>
+                        <input type="radio" name="wrap" value="collard" id="collard">
+                        <label for="collard">Collard</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>The Base</legend>
+                        <input type="radio" name="rice" value="rice" id="rice">
+                        <label for="rice">Rice</label>
+                        <input type="radio" name="quinoa" value="quinoa" id="quinoa">
+                        <label for="quinoa">Quinoa</label>
+                        <input type="radio" name="fries" value="fries" id="fries">
+                        <label for="fries">Fries</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>The Bean</legend>
+                        <input type="radio" name="bean" value="black" id="black">
+                        <label for="black">Black</label>
+                        <input type="radio" name="bean" value="pinto" id="pinto">
+                        <label for="pinto">Pinto</label>
+                        <input type="radio" name="bean" value="chilli" id="chilli">
+                        <label for="chilli">Chilli</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>The Green</legend>
+                        <input type="radio" name="green1" value="lettuce" id="lettuce">
+                        <label for="lettuce">Lettuce</label>
+                        <input type="radio" name="green2" value="jalapeno" id="jalapeno">
+                        <label for="jalapeno">Jalapeno</label>
+                        <input type="radio" name="green3" value="peppers" id="peppers">
+                        <label for="peppers">Roasted Peppers</label>
+                        <input type="radio" name="green4" value="avocado" id="avocado">
+                        <label for="avocado">Avocado</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Also</legend>
+                        <input type="checkbox" name="checked" value="cheese" id="cheese">
+                        <label for="cheese">Cheese</label>
+                        <input type="checkbox" name="checked" value="guacamole" id="guacamole">
+                        <label for="guacamole">Guacamole</label>
+                        <input type="checkbox" name="checked" value="pico" id="pico">
+                        <label for="pico">Pico</label>
+                    </fieldset>
+                    <hr>
+                    <fieldset>
+                        <legend>About You</legend>
+                        <input type="text" name="un" placeholder="Username" pattern="[a-zA-Z0-9]{6,}" title="username must be at least 6 characters, letters and numbers only" required>
+                        <input type="text" name="pw" placeholder="Password" pattern="{6,}" title="password must be at least 6 characters" required><br>
+                        <input type="text" name="first" placeholder="First Name" pattern="[a-zA-Z]{3,}" title="First name must be at least 3 characters" required>
+                        <input type="text" name="last" placeholder="Last Name" pattern="[a-zA-Z]{3,}" title="Last name must be at least 3 characters" required>
+                        <input type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must be in 'characters@characters.domain' format" required>
+                        <input type="text" name="dob" placeholder="Birth Date ##/##/####" pattern="[0-9]{2}+/[0-9]{2}+/[0-9]{4}" title="Birthdate must be in ##/##/#### format" required><br>
+                        <input type="text" name="ssn" placeholder="SSN ###-##-####" pattern="[0-9]{3}+-[0-9]{2}+-[0-9]{4}" title="SSN must be in ###-##-#### format" required>
+                        <input type="text" name="bt" placeholder="Blood Type" required>
+                        <input type="text" name="fb" placeholder="First-Born" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Location</legend>
+                        <input type="text" name="street" placeholder="Street" required>
+                        <input type="text" name="city" placeholder="City" required>
+                        <input type="text" name="state" placeholder="State" required>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
+                <hr>
+            </div>  
+        </main>
+        <footer>
+            <p>B©gus 2021</p>
+        </footer>
+    </body>
