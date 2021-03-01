@@ -37,6 +37,7 @@ nav:hover {
 
 nav a {
     text-decoration: none;
+    transition: all .25s ease-in-out;
 }
 
 nav a:hover {
@@ -58,7 +59,8 @@ nav a:hover {
     left: 50%;
     transform: translate(-50%);
     mix-blend-mode: screen;
-    transition: color, background-color .25s ease-in-out;
+    transition: background-color .25s ease-in-out,
+                color .25s ease-in-out;
 }  
 
 #name:hover {
