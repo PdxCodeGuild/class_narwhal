@@ -1,0 +1,115 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px;
+}
+
+.header-image {
+    background-image: url("https://di-uploads-pod9.dealerinspire.com/doraltoyota/uploads/2018/04/MexicanFoodBannerFT.jpg");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: 'Seymour One', sans-serif;
+}
+
+.header-title {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    font-size: 40px;
+    color: white;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
+    padding-bottom: .25em;
+}
+
+nav {
+    background-color: orange;
+    text-align: center;
+}
+
+nav a{
+    margin: .25em;
+    color: red;
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form {
+    display: inline-block;
+    margin: 1em;
+}
+fieldset {
+    position: relative;
+    background-color: rgb(161, 188, 236);
+    padding: 2em;
+}
+
+fieldset input{
+    width: 50%;
+}
+legend {
+    background-color: orange;
+    border-color: black;
+    border-style: solid;
+    padding: .20em;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+fieldset.personal-info {
+    padding:1em;
+    padding-top: 3em;
+}
+
+button {
+    height: 2.5em;
+    width: 6em;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    background-color: orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .75em;
+    text-align: center;
+}
+
+.container {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+footer ul {
+    list-style: none;
+    text-align: left;
+}
+
+
+footer img {
+    display: inline;
+    width: 50px;
+    height: 50px;
+}
