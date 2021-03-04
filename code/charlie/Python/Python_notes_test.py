@@ -9,36 +9,36 @@
 # print("This is what a delta looks like: \u0394")
 
 #######******* Recursion and binary search algorithm *********#########
-import random
+# import random
 
-nums = [num for num in range(random.randint(0, 10000)) if num % 2 != 0]
-print(nums)
-random.shuffle(nums)
-print(nums)
+# nums = [num for num in range(random.randint(0, 10000)) if num % 2 != 0]
+# print(nums)
+# random.shuffle(nums)
+# print(nums)
 
 
-def binary_search_recurse(num, nums, low, high):
-    if low >= high:
-        return None
-    mid = (low + high) // 2
-    if nums[mid] == num:
-        return mid
-    elif nums[mid] < num: # search in the upper half
-        return binary_search_recurse(num, nums, mid+1, high)
-    else: # search in the lower half
-        return binary_search_recurse(num, nums, low, mid+1)
+# def binary_search_recurse(num, nums, low, high):
+#     if low >= high:
+#         return None
+#     mid = (low + high) // 2
+#     if nums[mid] == num:
+#         return mid
+#     elif nums[mid] < num: # search in the upper half
+#         return binary_search_recurse(num, nums, mid+1, high)
+#     else: # search in the lower half
+#         return binary_search_recurse(num, nums, low, mid+1)
 
         
-def binary_search(num, nums):
-    return binary_search_recurse(num, nums, 0, len(nums)-1)
+# def binary_search(num, nums):
+#     return binary_search_recurse(num, nums, 0, len(nums)-1)
 
-num = input("Please enter a number from 0 to 10,000 and we'll see if it's in the Chamber of Recursion!")
+# num = input("Please enter a number from 0 to 10,000 and we'll see if it's in the Chamber of Recursion!")
 
-catch = 0
-catch = binary_search(num, nums)
+# catch = 0
+# catch = binary_search(num, nums)
 
 
-print(f"")
+# print(f"")
 
 ###### List Comprehensions #######
 # Stardust = [x**3 for x in range(100)]
@@ -227,3 +227,14 @@ print(f"")
 # for i in range(10000, 100000):
 #     symbols.append(chr(i))
 # print(",".join(symbols))
+
+for i in range(1,101):
+    if i % 3 == 0 and i % 5 == 0:
+        print("fizz buzz")
+    elif i % 3 == 0:
+        print("fizz")
+    elif i % 5 == 0:
+        print("buzz")
+    else:
+        print(i)
+    

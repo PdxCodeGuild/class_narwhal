@@ -37,9 +37,22 @@
             </fieldset>
             <fieldset>
                 <legend>Extra Toppings</legend>
-                <input type="checkbox" name="extra" value="Sour Cream"/>Sour Cream<br/>
-                <input type="checkbox" name="extra" value="Pico de Gallo"/>Pico de Gallo<br/>
-                <input type="checkbox" name="extra" value="Guacamole"/>Guacamole<br/>
+                <input type="checkbox" name="Extra Toppings" value="Vegan Sour Cream"/>Vegan Sour Cream<br/>
+                <input type="checkbox" name="Extra Toppings" value="Vegan Cheese"/>Vegan Cheese<br/>
+                <input type="checkbox" name="Extra Toppings" value="Pico de Gallo"/>Pico de Gallo<br/>
+                <input type="checkbox" name="Extra Toppings" value="Guacamole"/>Guacamole<br/>
+            </fieldset>
+            <fieldset>
+                <legend>Personal Info</legend>
+                Username: <input type="text" name="Username" pattern="[A-Za-z0-9_]{6,}" title="At least 6 characters" required/>
+                Password: <input type="text" name="Password" pattern="[A-Za-z0-9]{6,}" title="At least 6 characters" required/>
+                Name(First, Last): <input type="text" name="Name" pattern="[A-Za-z]+{3}[A-Za-z]+{2} " title="First and Last (At least 3 characters)" required/>
+                E-mail:<input type="email" title="username must be between 1 and 15 characters, all lowercase" required/>
+                Phone #: <input type="text" pattern="[a-z]{1,15}" title="username must be between 1 and 15 characters, all lowercase" required/>
+                DOB: <input type="text" pattern="[a-z]{1,15}" title="username must be between 1 and 15 characters, all lowercase" required/>
+                SSN: <input type="text" pattern="[0-9]{3}[0-9]{2}[0-9]{4}" title="Must be 9 digits" required>
+                Street:<input type="text" required>
+                City, state, zip: <input type="text" required>
             </fieldset>
             <button type="submit">submit</button>
 </body>
