@@ -63,7 +63,7 @@ img{
     
     header, main, footer{
         padding: 16px 128px;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
     } 
     
     .flex-gallery div{
