@@ -1,0 +1,10 @@
+li a {
+    color: red;
+}
+
+body {
+    background-image: url("images/lake.jpg");
+    opacity: .5;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
