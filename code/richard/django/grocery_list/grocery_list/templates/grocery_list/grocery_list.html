@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Grocery List</title>
+</head>
+
+<body>
+    <h1>Grocery List</h1>
+    <ul>
+    {% for item in grocery_list %}
+        <li>{{item.description}} - Created: {{item.date_created}} </li>
+    {% endfor %}
+    </ul>
+</body>
