@@ -1,0 +1,20 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
+<h1>Grocery List<h1>
+
+<form action="{%url 'grocery:add'%}" method="post">
+    {% csrf_token %}
+    <input type='text' id='item' name='item'/>
+    <input type='submit' value='Add to List'/>
+</form>
+
+<ul>
+
+    {% for item in current_grocery_list %}
+    <li> {{item.item_text}}
+
+    {% endfor %}
+
