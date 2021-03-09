@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>  
-    <title>Grocery List</title>
+    <title>Richard's Grocery List</title>
 </head>
 
 <body>
-    <h1>Grocery List</h1>
+    <h1>Richard's Grocery List</h1>
+
+    <h3>Incomplete Items</h3>
     <ul>
     {% for item in grocery_list %}
+        {% if item.completed == False %}
         <li><a href="/{{ item.id }}">{{item.description}}</a> - Created: {{item.date_created}} </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h3>Completed Items</h3>
+    <ul>
+    {% for item in grocery_list %}
+        {% if item.completed == True %}
+        <li><a href="/{{ item.id }}">{{item.description}}</a> - Created: {{item.date_created}} </li>
+        {% endif %}
     {% endfor %}
     </ul>
 
