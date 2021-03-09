@@ -11,7 +11,17 @@ def index(request):
     return render(request, 'grocery/index.html', context)
 
 def add(request):
-    print(request.POST)
     grocery_item = request.POST['item']
     GroceryItem.objects.create(item_text=grocery_item)
+    return HttpResponseRedirect(reverse('grocery:index'))
+
+def complete(request, pk):
+    complete_item = get_object_or_404(GroceryItem, pk=pk)
+    complete_item.completed = True
+    complete_item.save()
+    return HttpResponseRedirect(reverse('grocery:index'))
+
+def delete(request, pk):
+    delete_item = get_object_or_404(GroceryItem, pk=pk)
+    delete_item.delete()
     return HttpResponseRedirect(reverse('grocery:index'))

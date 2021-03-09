@@ -11,10 +11,30 @@
     <input type='submit' value='Add to List'/>
 </form>
 
+<h2>Current List</h2>
 <ul>
 
     {% for item in current_grocery_list %}
     <li> {{item.item_text}}
 
-    {% endfor %}
+    <form action="{%url 'grocery:complete' item.id %}" method='post'>
+        {% csrf_token %}
+        <input type='submit' value='Completed'>
+    </form>
 
+    {% endfor %}
+</ul>    
+
+<h2>Completed List Items</h2>
+<ul>
+
+    {% for item in completed_items %}
+    <li> {{item.item_text}}
+
+    <form action="{% url 'grocery:delete' item.id %}" method='post'>
+        {% csrf_token %}
+        <input type='submit' value='Delete'>
+    </form>
+
+    {% endfor %}
+</ul>    
