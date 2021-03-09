@@ -11,4 +11,11 @@ def grocery_list(request):
     return render(request, "grocery_list/grocery_list.html", context)
 
 
+def grocery_item_detail(request, id):
+    grocery_item = Grocery_Item.objects.get(id=id)
+    context = {
+        "grocery_item": grocery_item
+    }
+    return render(request, "grocery_list/item_detail.html", context)
+
 
