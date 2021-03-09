@@ -8,7 +8,9 @@
     <h1>Grocery List</h1>
     <ul>
     {% for item in grocery_list %}
-        <li>{{item.description}} - Created: {{item.date_created}} </li>
+        <li><a href="/{{ item.id }}">{{item.description}}</a> - Created: {{item.date_created}} </li>
     {% endfor %}
     </ul>
+
+    <a href="/item_create" >Add a new item to the list</a>
 </body>
