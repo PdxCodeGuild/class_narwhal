@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+    background: url("https://media-exp1.licdn.com/dms/image/C561BAQFVQK80TJRM6g/company-background_10000/0/1559914238506?e=2159024400&v=beta&t=bmfledvUcys4NQaW42jFCXUEJEpZPg8wwlMh7wWkUJw");
+    background-size: contain;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0em;
+    font-size: 10em;
+    text-align: center;
+}
+
+#additem {
+    text-align: center;
+    margin: 1em;
+}
+
+#lists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.25em;
+    margin: 1em;
+}
+
+div {
+    display: flex;
+    flex-flow: column;
+}
+
+hr {
+    width: 20em;
+}
+
+h2 {
+    margin: 0em;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#listitem, #acquireditem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+button {
+    font-size: 0.75em;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    justify-content: space-between;
+}

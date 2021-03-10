@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'grocery/style.css' %}">
+        <title>index</title>
+    </head>
+    <body>
+        <header>
+            <h1> Grocery List </h1>
+        </header>
+        <main>
+            <form id="additem" action="{% url 'grocery:add_item' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="item" placeholder="Add To List"/>
+                <button type="submit">Add Item</button>
+            </form>
+            <div id="lists">
+                <div>
+                    <hr>
+                    <h2>List</h2>
+                    <ul id="incomplete">
+                        {% for item in incomplete_items %}
+                            <div id="listitem">
+                                <form action="{% url 'grocery:complete' item.id %}" method="post">
+                                    {% csrf_token %}
+                                    <li>{{ item.item_text }}<button type="submit">Acquired</button></li>
+                                </form>
+                                <form action="{% url 'grocery:delete' item.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                </div>
+                <div>
+                    <hr>
+                    <h2>Acquired</h2>
+                    <ul id="completeitems">
+                        {% for item in complete_items %}
+                            <div id="acquireditem">
+                                <form action="{% url 'grocery:delete' item.id %}" method="post">
+                                    {% csrf_token %}
+                                    <li>{{ item.item_text }}<button type="submit">Delete</button></li>
+                                </form>
+                                <form action="{% url 'grocery:relist' item.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Relist</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
