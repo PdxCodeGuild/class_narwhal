@@ -4,13 +4,17 @@
   box-sizing: border-box;
 }
 
+main {
+    width: 100vw;
+}
+
 h1 {
     background: url("https://media-exp1.licdn.com/dms/image/C561BAQFVQK80TJRM6g/company-background_10000/0/1559914238506?e=2159024400&v=beta&t=bmfledvUcys4NQaW42jFCXUEJEpZPg8wwlMh7wWkUJw");
     background-size: contain;
     -webkit-background-clip: text;
     color: transparent;
     margin: 0em;
-    font-size: 10em;
+    font-size: 5em;
     text-align: center;
 }
 
@@ -21,10 +25,9 @@ h1 {
 
 #lists {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.25em;
     margin: 1em;
 }
 
@@ -34,7 +37,7 @@ div {
 }
 
 hr {
-    width: 20em;
+    width: 18em;
 }
 
 h2 {
@@ -60,6 +63,34 @@ button {
 li {
     display: flex;
     flex-direction: row;
-    min-width: 300px;
+    min-width: 170px;
     justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 10em;
+    }
+
+    #lists {
+        flex-direction: row;
+        font-size: 1.25em;
+    }
+
+    li {
+        min-width: 250px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    
+    hr {
+        width: 20em;
+    }
+
+    li {
+        min-width: 300px;
+    }
 }
