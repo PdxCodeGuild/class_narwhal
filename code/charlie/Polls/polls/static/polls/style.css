@@ -1,0 +1,12 @@
+li a {
+    color:red;
+}
+
+body {
+    height:fit-content;
+    background-image: url("images/background.jpeg");
+
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
