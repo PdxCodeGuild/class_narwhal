@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Grocery List App.</title>
+    <title>Grocery List Application</title>
 </head>
 <body>
     <header>Grocery List</header>
@@ -10,7 +10,7 @@
         <input type='text' name='add_item'>
         <button type="submit">Add Grocery</button>
     </form>
-    <h1>My Grocery List</h1>
+    <h1><ins>Groceries to Buy</ins></h1>
         {% for grocery in latest_grocery_list %}
             {% if grocery.bought == False %}
             <div>
@@ -27,7 +27,7 @@
             {% endif %}
         {% endfor %}
 
-    <h2>Bought Items</h2>
+    <h1><ins>Bought Items</ins></h1>
         {% for item in latest_grocery_list %}
             {% if item.bought == True %}
             <div>
