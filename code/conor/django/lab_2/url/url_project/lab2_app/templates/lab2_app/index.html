@@ -2,4 +2,10 @@
 
 {% comment %} <link rel="stylesheet" href=""> {% endcomment %}
 
-<h1>URL Shortener</h1>
+<h1>THE URL Shortener</h1>
+
+<form action="{%url 'lab2_app:submit'%}" method='post'>
+    {% csrf_token %}
+    <input id='input' type='text' name='input_url' placeholder='Enter URL here'>
+    <input type='submit' value='submit'>
+</form>

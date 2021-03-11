@@ -3,8 +3,8 @@ from django.utils import timezone
 import datetime
 
 class URLS(models.Model):
-    long_url = models.URLField(unique=True)
-    short_code = models.URLField(unique=True)
+    long_url = models.CharField(max_length=200)
+    short_code = models.CharField(null= True, max_length=10)
 
     def __str__(self):
-        return self.short_code
+        return f'URL: {self.long_url}, Short URL: {self.short_code}'

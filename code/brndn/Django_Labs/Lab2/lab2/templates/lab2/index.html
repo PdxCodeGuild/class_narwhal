@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'lab2/style.css' %}">
+        <title>index</title>
+    </head>
+    <body>
+        <header>
+            <h1>URL short</h1>
+        </header>
+        <main>
+            <form id="urlentry" action="{% url 'lab2:add_url' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="url" placeholder="url"/>
+                <button type="submit">short</button>
+            </form>
+        </main>
+        <footer>
+        </footer>
+    </body>
