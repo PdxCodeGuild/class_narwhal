@@ -1,11 +1,11 @@
 from django.db import models
 
 class Shortcode(models.Model):
-    url = models.URLField()
-    code = models.CharField(max_length=6)
+    url_long = models.URLField()
+    url_short = models.CharField(max_length=6)
 
 
     def __str__(self):
-        return self.code
+        return self.url_short
 
     
