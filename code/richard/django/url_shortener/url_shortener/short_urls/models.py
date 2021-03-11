@@ -6,6 +6,6 @@ class Shortcode(models.Model):
 
 
     def __str__(self):
-        return self.url_short
+        return self.url_long
 
     

@@ -10,10 +10,10 @@
     <h2>Enter the URL that you want to shorten below: </h2>
 
     <div class="container">
-    <form method="POST" action="/url_created">
+    <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
-        <center><button type="submit">Create URL</button></center>
+        <center>{{ form.as_p }}</center>
+        <center><button type="submit">Create Short URL Now</button></center>
     </form>
     </div>
 

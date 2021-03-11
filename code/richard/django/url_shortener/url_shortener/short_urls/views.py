@@ -6,10 +6,11 @@ import random, string
 
 
 
-def home(request):
+def home2(request):
     return render(request, "short_urls/home.html")
 
-def url_created(request):
+# comment
+def home(request):
     if request.method == 'POST':
         form = CreateNewShortURL(request.POST)
         if form.is_valid():
@@ -21,11 +22,11 @@ def url_created(request):
         
             s = Shortcode(url_long=original_website, url_short=random_chars)
             s.save()
-            return render(request, '/short_urls/url_created', {'chars':random_chars})
+            return render(request, 'short_urls/url_created.html', {'chars':random_chars})
     else:
         form=CreateNewShortURL()
         context = {'form': form}
-        return render(request, 'home')
+        return render(request, 'short_urls/home.html', context)
 
 
 
@@ -37,11 +38,6 @@ def redirect(request, url_short):
 
 
 
-def redirect2(request, id):
-    url_info = Shortcode.objects.get(id=id)
-    context = {
-        "shortcode": url_info
-    }
-    return render(request, "short_urls/redirect.html", context)
+
 
 
