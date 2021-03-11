@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% load static %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'lab2/style.css' %}">
+        <title>redirect</title>
+    </head>
+    <body>
+        <header>
+            <h2>short code</h2>
+        </header>
+        <main>
+            {{url}}
+            <a href="{% url 'lab2:redirect' url.code %}">localhost:8000/{{url.code}}</a>
+        </main>
+        <footer>
+        </footer>
+    </body>
