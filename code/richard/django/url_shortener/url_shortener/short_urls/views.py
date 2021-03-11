@@ -6,8 +6,7 @@ import random, string
 
 
 
-def home2(request):
-    return render(request, "short_urls/home.html")
+
 
 # comment
 def home(request):
@@ -38,6 +37,9 @@ def redirect(request, url_short):
 
 
 
+
+def home2(request):
+    return render(request, "short_urls/home.html")
 
 
 
