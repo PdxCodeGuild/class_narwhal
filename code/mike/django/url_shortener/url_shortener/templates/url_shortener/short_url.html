@@ -1,0 +1,5 @@
+{% load static %}
+
+<h2>Your shortened URL is:</h2>
+
+<a href="{%url 'url_shortener:shortened' short_code %}">localhost:8000/{{short_code}}</a>

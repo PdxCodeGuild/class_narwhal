@@ -4,31 +4,10 @@
 
 
 <h1>URL Shortener<h1>
+<h2></h2>
 
-{% if list_of_urls %}
-<ul>
-    {% for item in list_of_urls %}
-        <li><a href="{% url 'grocery_list:index' item.id %}">{{ item.text_description }}</a></li>
-            <form action="{% url 'grocery_list:completed' item.id %}" method='post'>
-                {% csrf_token %}
-                <input type='checkbox' value='Shorten URL'>
-            </form>
-    {% endfor %}
-</ul>    
-{% else %}
-    <p>No items on the list.</p>
-{% endif %}
-
-<form action="{% url 'grocery_list:add'%}" method="post">
+<form action="{% url 'url_shortener:add' %}" method='post'>
     {% csrf_token %}
-    <input type='text' id='item' name='item'/>
-    <input type='submit' value='Add'/>
+    <input type='text' name='url' id='url' placeholder='Enter URL'>
+    <input type='submit' value='Submit'>
 </form>
-
-
-<h2>Completed List Items</h2>
-<ul>
-    {% for item in completed_items %}
-    <li> {{item.text_description}}
-    {% endfor %}
-</ul>    
