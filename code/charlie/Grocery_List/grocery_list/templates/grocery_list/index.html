@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grocery List Application</title>
+</head>
+<body>
+    <header>Grocery List</header>
+    <form action="{% url 'grocery_list:add_item' %}" method='POST'>
+    {% csrf_token %}
+        <input type='text' name='add_item'>
+        <button type="submit">Add Grocery</button>
+    </form>
+    <h1><ins>Groceries to Buy</ins></h1>
+        {% for grocery in latest_grocery_list %}
+            {% if grocery.bought == False %}
+            <div>
+                <p>{{ grocery.food_item }}</p>
+                <form action="{% url 'grocery_list:delete_item' grocery.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+                <form action ="{% url 'grocery_list:item_status' grocery.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Bought</button>
+                </form>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+    <h1><ins>Bought Items</ins></h1>
+        {% for item in latest_grocery_list %}
+            {% if item.bought == True %}
+            <div>
+                <p>{{ item.food_item }}</p>
+                <form action="{% url 'grocery_list:delete_item' item.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            {% endif %}
+        {% endfor %}    
+
+    
+</body>
+</html>
