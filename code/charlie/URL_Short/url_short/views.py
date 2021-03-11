@@ -7,6 +7,9 @@ from .models import ShortUrl
 # Create your views here
 
 def index(request, pk):
-    if request.get = "POST":
+    if request.get ="POST":
+        
 
-    if request.get = "GET":
+
+    if request.get ="GET":
+        HttpResponseRedirect(reverse())
