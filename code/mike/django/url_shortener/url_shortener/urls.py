@@ -6,5 +6,5 @@ app_name = 'url_shortener'
 urlpatterns = [
     path('', views.index, name='index'),
     path('add/', views.add, name='add'),
-    path('shortened/', views.shortened, name='shortened'),
+    path('<str:short_code>/', views.shortened, name='shortened'),
 ]

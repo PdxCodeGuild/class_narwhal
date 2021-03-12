@@ -2,12 +2,13 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'url_shortener/style.css' %}">
 
-
+<body>
 <h1>URL Shortener<h1>
-<h2></h2>
+
 
 <form action="{% url 'url_shortener:add' %}" method='post'>
     {% csrf_token %}
-    <input type='text' name='url' id='url' placeholder='Enter URL'>
+    <input type='text' name='url' id='url' placeholder='Enter URL'><br/>
     <input type='submit' value='Submit'>
 </form>
+</body>

@@ -1,5 +1,11 @@
 {% load static %}
 
-<h2>Your shortened URL is:</h2>
+<link rel="stylesheet" type="text/css" href="{% static 'url_shortener/style.css' %}">
 
-<a href="{%url 'url_shortener:shortened' short_code %}">localhost:8000/{{short_code}}</a>
+<body>
+<h1>Your shortened URL is:</h1>
+
+<a href="{%url 'url_shortener:shortened' short_code %}">localhost:8000/{{short_code}}</a><br/><br/>
+<p>IP Address: {{ip}}</p>
+
+</body>
