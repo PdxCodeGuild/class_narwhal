@@ -10,15 +10,16 @@
     </head>
     <body>
         <header>
-            <h1>URL short</h1>
+            <h1>URL/short</h1>
         </header>
         <main>
             <form id="urlentry" action="{% url 'lab2:add_url' %}" method="post">
                 {% csrf_token %}
-                <input type="text" name="url" placeholder="url"/>
+                <input type="text" name="url" placeholder=" url"/>
                 <button type="submit">short</button>
             </form>
         </main>
         <footer>
         </footer>
     </body>
+</html>

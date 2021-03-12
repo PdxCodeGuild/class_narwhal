@@ -10,12 +10,12 @@
     </head>
     <body>
         <header>
-            <h2>short code</h2>
+            <h2>short/code</h2>
         </header>
         <main>
-            {{url}}
-            <a href="{% url 'lab2:redirect' url.code %}">localhost:8000/{{url.code}}</a>
+            <span><a href="{% url 'lab2:redirect' url.code %}">localhost:8000/{{url.code}}</a></span><span>{{url}}</span>
         </main>
         <footer>
         </footer>
     </body>
+</html>
