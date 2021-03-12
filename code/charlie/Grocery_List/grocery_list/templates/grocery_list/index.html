@@ -4,40 +4,43 @@
     <title>Grocery List Application</title>
 </head>
 <body>
-    <header>Grocery List</header>
-    <form action="{% url 'grocery_list:add_item' %}" method='POST'>
-    {% csrf_token %}
-        <input type='text' name='add_item'>
+    <header><strong>Grocery List Application</strong></header>
+    <p>
+        <form action="{% url 'grocery_list:add_item' %}" method='POST'>
+        {% csrf_token %}
+        <label for='add_item'>Description:</label>
+        <input id='add_item' type='text' name='add_item'>
         <button type="submit">Add Grocery</button>
-    </form>
-    <h1><ins>Groceries to Buy</ins></h1>
+        </form>
+    </p>
+    <h3><ins>Groceries to Buy</ins></h3>
         {% for grocery in latest_grocery_list %}
-            {% if grocery.bought == False %}
             <div>
                 <p>{{ grocery.food_item }}</p>
                 <form action="{% url 'grocery_list:delete_item' grocery.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Delete</button>
+                {% csrf_token %}
+                <button type="submit">Delete</button>
                 </form>
                 <form action ="{% url 'grocery_list:item_status' grocery.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit">Bought</button>
+                {% csrf_token %}
+                <button type="submit">Bought</button>
                 </form>
+                <!-- <form action ="{% url 'grocery_list:item_status' grocery.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Incomplete</button>
+                </form> -->
             </div>
-            {% endif %}
         {% endfor %}
 
-    <h1><ins>Bought Items</ins></h1>
-        {% for item in latest_grocery_list %}
-            {% if item.bought == True %}
+    <h3><ins>Bought Items</ins></h3>
+        {% for item in bought_groceries %}
             <div>
                 <p>{{ item.food_item }}</p>
-                <form action="{% url 'grocery_list:delete_item' item.id %}" method="POST">
+                <form action="{% url 'grocery_list:item_status' item.id %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit">Delete</button>
+                    <button type="submit">undo</button>
                 </form>
             </div>
-            {% endif %}
         {% endfor %}    
 
     

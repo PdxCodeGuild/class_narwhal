@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charlie's URL Shortener</title>
+</head>
+
+<body>
+    <h1>Charlie's URL Shortener</h1>
+    {% if new_url %}
+
+    <a href="{% url 'url_short:redirect' new_url.short_code %}">localhost:8000/{{ new_url }}</a>
+    {% endif %}
+    <p>
+        <form action="{% url 'url_short:index' %}" method='POST'>
+        {% csrf_token %}
+        <label for='index'>Long URL:</label>
+        <input id='index' type='text' name='index'>
+        <button type="submit">Shorten</button>
+        </form>
+
+        {{ new_url }}
+    </p>
+
+</body>
+
+</html>
