@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <title>IdioSync</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-right">
+        <h1><a href="{% url 'posts:home' %}">IdioSync</a></h1>
+      </div>
+      <div class="nav-left">
+        {% if user.is_authenticated %}
+            <p><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></p>
+            <p><a href="{% url 'logout' %}">Exit</a></p>
+            <p><a href="{% url 'posts:new' %}">+ Sync</a></p>
+        {% else %}
+            <p><a href="{% url 'login' %}">Enter</a></p>
+            <p><a href="{% url 'users:join' %}">Join Us</a></p>
+        {% endif %}
+      </div>
+    </header>
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </main>
+  </body>
+</html>
