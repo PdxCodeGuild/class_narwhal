@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chirp</title>
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Libre+Franklin&display=swap" rel="stylesheet">
+    <link href="{% static 'chirp/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <header class="sidenav">
+      <div>
+        
+        <h1><img src="{% static 'chirp/images/bird.jpg' %}">  <a href="{% url 'posts:home' %}">Chirp</a></h1>
+      </div>
+      <div class="nav">
+      {% if user.is_authenticated %}
+        <p>Hello, <a href="{% url 'users:profile' user.username %}" id="User_link">{{ user.username }}!</a></p><br/>
+        <div class="buttons">
+          <form action="{% url 'posts:new' %}" id="new_chirp">
+            {% csrf_token %}
+            <input type='submit' value="New Chirp">
+          </form>
+          <form action="{% url 'posts:home' %}">
+            {% csrf_token %}
+            <input type='submit' value="Home">
+          </form>
+          <form action="{% url 'users:profile' user.username %}">
+            {% csrf_token %}
+            <input type='submit' value="Profile">
+          </form>        
+          <form action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type='submit' value="Logout">
+          </form>
+        </div>
+      {% else %}
+        <div class="buttons">
+          <form action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type='submit' value="Login">
+          </form>
+          <form action="{% url 'users:signup' %}">
+            {% csrf_token %}
+            <input type='submit' value="Sign Up">
+          </form>
+        </div>
+      {% endif %}
+      </div>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+  </body>
+</html>

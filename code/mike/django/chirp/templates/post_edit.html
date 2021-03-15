@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Edit Chirp</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+    <form action="{% url 'posts:home' %}">
+        {% csrf_token %}
+        <input type="submit" value="Cancel">
+    </form>
+
+
+{% endblock content %}
