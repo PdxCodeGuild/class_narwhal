@@ -6,5 +6,8 @@
             <h2>{{ post.content }}</h2>
             <p>{{ post.author }} | {{ post.date_posted }}</p>
         </div>
+
+        <a href = "{% url 'posts:post_update' post.pk %}">+ Edit Tweet</a>
+        <a href = "{% url 'posts:post_delete' post.pk %}">+ Delete Tweet</a>
     
 {% endblock content %}
