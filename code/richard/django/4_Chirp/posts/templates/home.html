@@ -4,7 +4,7 @@
     {% for post in object_list %}
         <div class = "post-entry">
             <h2><a href="{% url 'posts:post_detail' post.pk %}">{{ post.content }}</a></h2>
-            <p>{{ post.author }} | {{ post.date_posted }}</p>
+            <p><a href="{% url 'users:profile' post.author %}">{{ post.author }}</a> | {{ post.date_posted }}</p>
         </div>
     {% endfor %}
 {% endblock content %}
