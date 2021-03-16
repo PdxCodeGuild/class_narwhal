@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Blip</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <header class="sidebar">
+      <div>
+        <div>
+          <h1><a href="{% url 'posts:home' %}">Blip</a></h1>
+        </div>
+      </div>
+      <div>
+      </div>
+      <div>
+        {% if user.is_authenticated %}
+          <div>
+            <p>Hello, {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+            <p><a href="{% url 'posts:new' %}">New Blog Post</a></p>
+          </div>
+        {% else %}
+          <div>
+            <p><a href="{% url 'login' %}">Login</a></p>
+            <p><a href="{% url 'users:signup' %}">Sign Up</a></p>
+          </div>
+        {% endif %}
+      </div>
+    </header>
+    <div class="gallery-view main">
+        {% block content %}
+        {% endblock content %}
+    </div>
+  </body>
+</html>

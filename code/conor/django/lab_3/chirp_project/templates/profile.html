@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ profile.username }}</h1>
+
+    {% for post in profile.post_set.all %}
+        <div>
+            <p>{{ post.body|linebreaksbr }}</p>
+            {{ post.created }}</h4>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
