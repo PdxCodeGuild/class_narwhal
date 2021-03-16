@@ -11,16 +11,14 @@ def index(request):
     context = {} 
     if request.method == "POST":
         convert_url = request.POST['index']
-        # random.shuffle(convert_url)
         temp = ''
-        for char in range(0, len(convert_url), 12):
+        for i in range(6):
                 temp += random.choice(convert_url)
         convert_url = temp
         new_url = ShortUrl.objects.create(long_url=request.POST['index'], short_code=convert_url)
         context = {"new_url": new_url}
 
     return render(request, 'url_short/index.html', context)
-    return HttpResponse("Ok, step 1")
 
     #  if request.method == "GET":
     #     return HttpResponseRedirect(reverse())

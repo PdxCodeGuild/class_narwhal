@@ -16,8 +16,8 @@ def index(request):
 
 def add_item(request):
     GroceryItem.objects.create(pub_date=timezone.now(), food_item=request.POST['add_item'],bought=False)
-    post = request.POST['add_item']
-    print(type(post)) #****** good for checking you requests *******
+    # post = request.POST['add_item']
+    #print(type(post)) #****** good for checking you requests *******
     return HttpResponseRedirect(reverse('grocery_list:index'))
 
 def delete_item(request, pk):
