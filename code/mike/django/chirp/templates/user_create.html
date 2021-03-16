@@ -4,14 +4,14 @@
 
     <h1>{{ user_profile.username }}</h1>
 
-    <h1>Edit User</h1>
+    <h1>New Profile</h1>
 
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Update">
+        <input type="submit" value="Save">
     </form>
-    <form action="{% url 'posts:home' %}">
+        <form action="{% url 'posts:home' %}">
         {% csrf_token %}
         <input type="submit" value="Cancel">
     </form>
