@@ -1,0 +1,101 @@
+html {
+    display: block;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+}
+
+.sidenav img{
+    width: 40px;
+    height: 40px;
+}
+
+header {
+    padding: 5px;
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#User_link {
+    font-size: 25px;
+}
+
+a {
+    color: inherit;
+}
+
+.buttons {
+    text-align: right;
+}
+
+.buttons :hover{
+    color: blue;
+}
+
+.sidenav a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidenav a:hover {
+    color: lightblue;
+}
+
+.nav p {
+    text-align: right;
+}
+
+.nav form{
+    display: inline-block;
+    align-items: center;
+}
+
+.container {
+    padding: 5px;
+}
+
+.post-buttons {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+@media (min-width: 768px) {
+    .sidenav {
+        width: 150px;
+        position: fixed;
+        z-index: 1;
+        top: 20px;
+        left: 10px;
+        overflow-x: hidden;
+        padding: 8px 0;
+    }
+    .nav a {
+        padding: 6px 8px 6px 16px;
+        font-size: 25px;
+        display: block;
+    }
+
+    .nav p {
+        text-align: left;
+    }
+
+    .nav form {
+        display:block;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    .container {
+        margin-left: 160px;
+        padding: 0px 10px;
+    }
+    
+}

@@ -1,0 +1,32 @@
+
+
+body {
+    text-align: center;
+    top: 25%;
+    height: 10em;
+    border: 3px solid black;
+    width: 50%;
+    margin: 25%;
+    padding: 1em;
+}
+
+input[type=text] {
+    height: 3em;
+    width: 25em;
+    font: .50em sans-serif;
+    border: 1.5px solid black;
+    text-align: center;
+}
+
+input[type=submit] {
+    padding: 5px 20px;
+    width: 10em;
+    font-size: .75em;
+    font-weight: bold;
+    border: 2px solid gray;
+    margin: .5em
+}
+
+a {
+    font-size: 1.5em;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Richard's URL Shortener</title>
+</head>
+
+<body>
+    <h1>Richard's URL Shortener</h1>
+
+    <h2>Enter the URL that you want to shorten below: </h2>
+
+    <div class="container">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <center>{{ form.as_p }}</center>
+        <center><button type="submit">Create Short URL Now</button></center>
+    </form>
+    </div>
+
+
+
+</body>

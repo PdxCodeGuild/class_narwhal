@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+        <div class = "post-entry">
+            <h2>{{ post.content }}</h2>
+            <p><a href="{% url 'users:profile' post.author %}">{{ post.author }}</a> | {{ post.date_posted }}</p>
+        </div>
+
+        <a href = "{% url 'posts:post_update' post.pk %}">+ Edit Tweet</a>
+        <a href = "{% url 'posts:post_delete' post.pk %}">+ Delete Tweet</a>
+    
+{% endblock content %}

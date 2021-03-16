@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+ <head>
+    <title>Richard's Twitter Clone</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+ </head>
+
+ <body>
+    <header>
+        <div class = "nav-left">
+            <h1><a href="{% url 'posts:home' %}">Twitterer - No Ads!</a></h1>
+        </div>
+
+        <div class = "nav-right">
+            <h3><a href="{% url 'posts:post_new' %}">+ New Tweet</a></h3>
+        </div>
+
+    </header>
+
+    {% if user.is_authenticated %}
+        <p>Hi, {{ user.username }}</p>
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <p><a href="{% url 'login' %}">Log In</a></p>
+        <p><a href="{% url 'users:signup' %}">Sign Up</a></p>
+
+    {% endif %}
+
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+ </body>
+
+</html>

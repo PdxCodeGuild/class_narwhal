@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for post in object_list %}
+        <div class="post-entry">
+            <h4><a href="{% url 'users:profile' post.author.username %}">{{ post.author.username }}<a/> - {{ post.created }}</h4>
+            <p>{{ post.body|linebreaksbr }}</p>
+        </div>
+        <div class="post-buttons">
+            {% if request.user == post.author %}
+                <form action="{% url 'posts:edit' post.pk %}">
+                    {% csrf_token %}
+                    <input type='submit' value="Edit Chirp">
+                </form>
+                <form action="{% url 'posts:delete' post.pk %}">
+                    {% csrf_token %}
+                    <input type='submit' value="Delete Chirp">
+                </form>
+            {% endif %}
+        </div>
+
+    {% endfor %}
+{% endblock content %}

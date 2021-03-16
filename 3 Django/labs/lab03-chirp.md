@@ -16,3 +16,7 @@ Your project will also need to have the following functionality:
 * The ability to post chirps of some constrained length (eg. 128 characters)
 * A public profile page that shows all the users chirps
 * Basic UI (navbar, footer) and styling (either by hand or with a framework)
+
+## Optional advanced version
+
+Make an Instagram clone! Your posts will need an associated image, check out the [instruction guide](../docs/06%20-%20Media%20Files.md).

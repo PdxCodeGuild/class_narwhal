@@ -1,0 +1,49 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0em;
+  text-align: center;
+}
+
+h1, h2 {
+  background-color: white;
+  color: black;
+  font-size: 3em;
+  font-weight: bold;
+  width: 100%;
+  mix-blend-mode: screen;
+  transition: background-color .25s ease-in-out,
+              color .25s ease-in-out;
+}
+
+h1:hover, h2:hover {
+  background-color: black;
+  color: white;
+  transition: all .25s ease-in-out;
+}
+
+input[type=text], button {
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 10px;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+span {
+  display: inline-flex;
+  flex-flow: wrap;
+  letter-spacing: 0.1em;
+}
+
+span:nth-child(even) {
+  overflow: hidden;
+  letter-spacing: -1em;
+  transition: ease-in 1s;
+}
