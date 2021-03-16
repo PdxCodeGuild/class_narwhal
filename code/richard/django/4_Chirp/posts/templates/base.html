@@ -19,10 +19,10 @@
 
     {% if user.is_authenticated %}
         <p>Hi, {{ user.username }}</p>
-        <p><a href="{% url 'logout' %}"</a>Log Out</p>
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
     {% else %}
         <p>You are not logged in</p>
-        <p><a href="{% url 'login' %}"</a>Log In</p>
+        <p><a href="{% url 'login' %}">Log In</a></p>
 
     {% endif %}
 
