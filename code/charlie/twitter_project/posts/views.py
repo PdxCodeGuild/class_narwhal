@@ -12,14 +12,14 @@ class TweetListView(ListView):
 
 class TweetDetailView(DetailView):
     model = Post
-    template_name = "post_detail.html"
+    template_name = "tweet_detail.html"
 
 class TweetCreateView(CreateView):
     model = Post
-    template_name = 'post_new.html'
+    template_name = 'tweet_new.html'
     fields = ['title', 'tweet_body']
 
 class TweetEditView(UpdateView):
     model = Post
-    template_name = 'post_edit.html'
+    template_name = 'tweet_edit.html'
     fields = ['title', 'tweet_body']
