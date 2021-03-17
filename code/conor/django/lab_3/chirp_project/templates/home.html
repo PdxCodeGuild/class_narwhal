@@ -3,11 +3,14 @@
 {% block content %}
 
     {% for post in object_list %}
-        <div>
+        <div class="gallery-view">
             <h4><em> -- <a href="{% url 'users:profile' post.author.username %}">{{ post.author.username }}<a/></em>
             <p>{{ post.body|linebreaksbr }}</p>
-            {{ post.created }}</h4>
+            {{ post.created }}<br>
+            <a href="{% url 'posts:detail' post.id %}">See Post</a></h4>
+            
         </div>
     {% endfor %}
 
 {% endblock content %}
+
