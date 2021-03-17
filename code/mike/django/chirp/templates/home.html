@@ -2,7 +2,12 @@
 
 {% block content %}
 
+    <form action="{% url 'posts:new' %}">
+        {% csrf_token %}
+        <input type='submit' id="new_chirp" value="New Chirp">
+    </form>
     {% for post in object_list %}
+        <hr><hr/>
         <div class="post-entry">
             <h4><a href="{% url 'users:profile' post.author.username %}">{{ post.author.username }}<a/> - {{ post.created }}</h4>
             <p>{{ post.body|linebreaksbr }}</p>
