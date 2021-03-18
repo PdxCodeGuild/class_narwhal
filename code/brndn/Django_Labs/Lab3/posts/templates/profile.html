@@ -2,7 +2,9 @@
 
 {% block content %}
 
-    {% for post in object_list %}
+    <h1 class="pg-hdr">{{ user_profile.username }}</h1>
+
+    {% for post in user_profile.post_set.all %}
         <div class="post">
             <a href="{% url 'posts:post' post.id %}">
                 <img src="{{ post.image.url }}">
@@ -11,10 +13,8 @@
                 <br>
                 <p>{{post.body|linebreaksbr}}</p>
             </a>
-            <h5>{{ post.created }}</h5>
-            <a href="{% url 'users:profile' post.author.username %}"><h3>{{ post.author.username }}</h3><a/>
+            <h5><em>{{ post.created }}</em></h5>
         </div>
-        <hr>
     {% endfor %}
 
 {% endblock content %}

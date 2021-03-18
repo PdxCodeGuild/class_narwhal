@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,23 +10,24 @@
   </head>
   <body>
     <header>
-      <div class="nav-right">
-        <h1><a href="{% url 'posts:home' %}">IdioSync</a></h1>
-      </div>
       <div class="nav-left">
+        <h1><a href="{% url 'posts:home' %}">Idio<br>Sync</a></h1>
+        <a href="{% url 'posts:create' %}"><img src="{% static '615240-200.png' %}"></a>
+      </div>
+      <div class="nav-right">
         {% if user.is_authenticated %}
-            <p><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></p>
-            <p><a href="{% url 'logout' %}">Exit</a></p>
-            <p><a href="{% url 'posts:new' %}">+ Sync</a></p>
+          <h3><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></h3>
+          <h4><a href="{% url 'logout' %}">Exit</a></h4>
         {% else %}
-            <p><a href="{% url 'login' %}">Enter</a></p>
-            <p><a href="{% url 'users:join' %}">Join Us</a></p>
+          <h4><a href="{% url 'users:join' %}">Join Us</a></h4>
+          <h4><a href="{% url 'login' %}">Enter</a></h4>
         {% endif %}
       </div>
     </header>
     <main>
         <div class="container">
             {% block content %}
+
             {% endblock content %}
         </div>
     </main>
