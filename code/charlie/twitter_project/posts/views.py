@@ -12,14 +12,27 @@ class TweetListView(ListView):
 
 class TweetDetailView(DetailView):
     model = Post
-    template_name = "tweet_detail.html"
+    template_name = "post_detail.html"
 
 class TweetCreateView(CreateView):
     model = Post
-    template_name = 'tweet_new.html'
+    template_name = 'post_new.html'
     fields = ['title', 'tweet_body']
 
-class TweetEditView(UpdateView):
+class TweetEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    template_name = 'tweet_edit.html'
+    template_name = 'post_edit.html'
     fields = ['title', 'tweet_body']
+
+    def test_user_verify(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+class TweetDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('posts:home')
+
+    def test_user_verify(self):
+        post = self.get_object()
+        return self.request.user == post.author

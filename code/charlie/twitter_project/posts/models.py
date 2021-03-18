@@ -12,8 +12,8 @@ class Post(models.Model):
         return self.title
     
     #Implement after CreateView and UpdateView
-    # def get_absolute_url(self):
-    #     return reverse("model_detail", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse('posts:detail', args=(self.id,))
 
     class Meta:
         ordering = ['-created_date']

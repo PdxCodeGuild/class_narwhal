@@ -15,9 +15,12 @@
             </div>
             <div class="nav-right">
             {% if user.is_authenticated %}
-            
+                <p>Twelcome, <a href="{% url 'users:profile' user.username %}">{{ user.username }}</a>!</p>
+                <p><a href="{% url 'logout'%}">Logout</a></p>
+                <p><a href="{% url 'posts:new'%}">New Tweet</a></p>
             {% else %}
-            
+                <p><a href="{% url 'login' %}">Login</a></p>
+                <p><a href="{% url 'users:register' %}">Register</a></p>
             {% endif %}
             </div>
         </header>
