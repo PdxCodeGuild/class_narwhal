@@ -1,3 +1,0 @@
-
-
-alert('hello Richard');
