@@ -75,5 +75,3 @@ for num in num_list:
     user_total = user_total + num
 user_average = (user_total / len(num_list))
 print(f"average: {user_average}")
-
-
