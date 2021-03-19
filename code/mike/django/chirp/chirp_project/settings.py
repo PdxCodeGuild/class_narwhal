@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from django.db import models
 
@@ -129,4 +129,4 @@ LOGOUT_REDIRECT_URL = 'posts:home'
 LOGIN_URL = 'login'
 
 MEDIA_URL = '/uploaded_files/'
-MEDIA_ROOT = (BASE_DIR, 'uploaded_files')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')

@@ -1,3 +1,5 @@
+/*************** BASE HTML START ******************/
+
 html {
     display: block;
 }
@@ -9,25 +11,117 @@ body {
     color: white;
 }
 
-.sidenav img{
-    width: 40px;
-    height: 40px;
+.sidenav {
+    margin:auto;
+    padding: 5px;
+    width: 50px;
+    position: fixed;
+    overflow-x: hidden;
+    text-align: center;
+} 
+
+.sidenav a {
+    margin-top: 10px;
+    font-size: 25px;
+    display: block;
+    text-align: center;
 }
 
-header {
-    padding: 5px;
+.sidenav a:hover {
+    color: lightblue;
+}
+
+.sidenav img{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    width: 28px;
+    height: 28px;
+}
+
+.bird img {
+    width: 50px;
+    height: 50px;
+}
+
+.container {
+    color:white;
+    margin-left: 70px;
     border-color: gray;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
+    text-align: center;
+}
+
+/*************** BASE HTML END ******************/
+/*************** HOME HTML START ****************/
+
+.welcome {
+    padding: 0px 15px;
+    display: block;
+    font-size: 1.5em;
+    color: white;
+    text-align: right;
+}
+
+.welcome a {
+    text-decoration: none;
+}
+
+.welcome form {
+    text-align: left;
+    font-size: 1.25rem;
 }
 
 #User_link {
-    font-size: 25px;
+    font-size: 2em;
+    color: lightblue;
 }
 
-a {
-    color: inherit;
+#new_chirp {
+    font-size: 1.5em;
+    font-weight: bolder;
+    width: 8em;
+    background-color: lightblue;
+    border-radius: 20px;
 }
+
+.posts {
+    text-align: left;
+    color: white;
+    font-size: 1.25em;
+}
+
+.posts a {
+    color: white;
+    text-decoration: none;
+}
+
+.post-entry {
+    padding: 0px 10px;
+}
+
+.post-buttons {
+    text-align: right;
+}
+
+.post-buttons form {
+    display: inline-block;
+}
+
+.post-buttons input {
+    font-size: 1em;
+    font-weight: bolder;
+    background-color: gray;
+    border-radius: 20px;
+
+}
+
+.post-buttons :hover {
+    color: lightblue;
+}
+
+/*************** HOME HTML END ******************/
+/*************** POST DETAIL HTML START ******************/
 
 .buttons {
     text-align: right;
@@ -44,49 +138,25 @@ a {
     background-color: grey;
     border-radius: 20px;
 }
-
-.sidenav a {
-    text-decoration: none;
-    text-align: center;
-}
-
-.sidenav a:hover {
-    color: lightblue;
-}
-
-.nav p {
-    text-align: right;
-}
-
-.nav form{
-    display: inline-block;
-    align-items: center;
-}
-
-.container {
-    padding: 5px;
-    color:green;
-}
-
-.post-entry {
-    border-style: solid;
-    border-width: 1px;
-    border-color: grey;
-}
-
 .profile_info p{
     border-style: solid;
     border-width: 1px;
     border-color: grey;
+    text-align: left;
 }
 
-#new_chirp {
-    font-size: 1.5em;
-    font-weight: bolder;
-    width: 8em;
-    background-color: lightblue;
-    border-radius: 20px;
-}
+/*************** POST DETAIL HTML END ******************/
+/*************** USER PROFILE HTML START ******************/
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 768px) {
     .sidenav {
@@ -106,10 +176,6 @@ a {
 
     .nav p {
         text-align: left;
-    }
-
-    .nav form {
-        display:block;
     }
 
     .buttons {

@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    
+    <h1 class="pg-hdr">Adjust</h1>
+
+    <div class="post">
+        <img src="{{ post.image.url }}">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body|linebreaksbr }}</p>
+        <h5>Composed: {{ post.created }}</h5>
+        <h5>Adjusted: {{ post.updated }}</h5>
+    </div>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+
+    <p><a href="{% url 'posts:delete' post.pk %}">Remove</a></p>
+
+{% endblock content %}

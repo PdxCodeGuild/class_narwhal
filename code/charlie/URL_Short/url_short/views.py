@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpRequest
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.utils import timezone
@@ -18,6 +18,7 @@ def index(request):
         new_url = ShortUrl.objects.create(long_url=request.POST['index'], short_code=convert_url)
         context = {"new_url": new_url}
 
+    print(request.META['REMOTE_ADDR'])
     return render(request, 'url_short/index.html', context)
 
     #  if request.method == "GET":

@@ -1,5 +1,5 @@
 # Richard
-# Lab 9 - Unit conversions
+# Lab 10 - average numbers
 # January 27th, 2021
 
 # https://github.com/PdxCodeGuild/class_narwhal/blob/main/1%20Python/labs/lab10-average_numbers.md

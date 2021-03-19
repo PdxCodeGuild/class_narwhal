@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 class Post(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images')
     title = models.CharField(max_length=111)
     body = models.TextField()
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -14,5 +14,7 @@ class Post(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("posts:detail", args=(self.id,))
+        return reverse("posts:post", args=(self.id,))
     
+    class Meta:
+        ordering = ['-created']

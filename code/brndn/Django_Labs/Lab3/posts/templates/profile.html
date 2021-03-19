@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <h1 class="pg-hdr">{{ user_profile.username }}</h1>
+
+    {% for post in user_profile.post_set.all %}
+        <div class="post">
+            <a href="{% url 'posts:post' post.id %}">
+                <img src="{{ post.image.url }}">
+                <br>
+                <h2>{{post.title}}</h2>
+                <br>
+                <p>{{post.body|linebreaksbr}}</p>
+            </a>
+            <h5><em>{{ post.created }}</em></h5>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

@@ -13,21 +13,32 @@ class PostList(ListView):
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
-    template_name = 'post_create.html'
-    fields = ['title', 'body']
+    template_name = 'create.html'
+    fields = ['image', 'title', 'body']
+
+    """ def upload_image(request):
+        if request.method == 'POST':
+            form = ImageForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                img_obj = form.instance
+                return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
+        else:
+            form = ImageForm()
+        return render(request, 'index.html', {'form': form}) """
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-class PostDetail(DetailView):
+class PostView(DetailView):
     model = Post
-    template_name = 'post_detail.html'
+    template_name = 'post.html'
     
 class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    template_name = 'post_edit.html'
-    fields = ['title', 'body']
+    template_name = 'edit.html'
+    fields = ['image','title', 'body']
 
     def test_func(self):
         post = self.get_object()
@@ -35,8 +46,8 @@ class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    template_name = 'post_delete.html'
-    success_url = reverse_lazy('posts:index')
+    template_name = 'delete.html'
+    success_url = reverse_lazy('posts:home')
 
     def test_func(self):
         post = self.get_object()
