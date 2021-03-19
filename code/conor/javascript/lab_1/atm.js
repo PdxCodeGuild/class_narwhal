@@ -70,7 +70,6 @@ while (true){
 
         } else {
             alert("You're too broke for that")
-
         }
 
     } else if (command === 'interest'){
@@ -93,7 +92,7 @@ while (true){
     } else if (command === 'exit'){
         alert('Goodbye!')
         break
-        
+
     } else {
         alert("Command not recognized. Type 'help' for assistance.")
     }
