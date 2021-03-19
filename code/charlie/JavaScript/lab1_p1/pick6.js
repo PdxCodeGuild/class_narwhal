@@ -12,9 +12,9 @@ function pick6(){
             temp[i] = Math.ceil(num);
         }
     }
-    // console.log(temp);
-    temp.sort(compareNumbers);
-    // console.log(temp);
+    console.log(temp);
+    temp.sort();
+    console.log(temp);
     return temp;
 }
 
@@ -40,7 +40,7 @@ let winnings ={
 let my_nums = pick6();
 let win_nums = pick6();
 
-for(let i = 0; i < 100000; ++i){
+for(let i = 0; i < 10; ++i){
     earnings += num_matches(my_nums, win_nums, winnings);
     balance -= 2;
     expenses += 2;

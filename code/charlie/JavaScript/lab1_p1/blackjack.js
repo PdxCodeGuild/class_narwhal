@@ -16,6 +16,22 @@ while(choice === 'yes'){
 
         if(card === 'A'){
             total += 1;
+        } else if(card === 'J' || card === 'Q' || card === 'K'){
+            total += 10;
+        } else{
+            total += parseInt(card)
         }
+        console.log(total);
     }
+    if(total < 17){
+        alert('Hit!');
+    } else if(total >= 17 && total < 21){
+        alert('Stay!');
+    }else if(total === 21){
+        alert('Blackjack!!!!');
+    } else{
+        alert('Ya already busted sucka!');
+    }
+    choice = prompt('Would you like play again (yes/no)?');
+    total = 0
 }
