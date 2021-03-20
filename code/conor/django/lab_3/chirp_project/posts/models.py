@@ -10,7 +10,7 @@ class Post(models.Model):
     body = models.TextField()
 
     def __str__(self):
-        return self.title
+        return self.author.username
 
     def get_absolute_url(self):
         return reverse('posts:detail', args=(self.id,))

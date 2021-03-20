@@ -5,7 +5,7 @@
     <h1>{{ profile.username }}</h1>
 
     {% for post in profile.post_set.all %}
-        <div>
+        <div class="gallery-view">
             <p>{{ post.body|linebreaksbr }}</p>
             {{ post.created }}</h4>
         </div>

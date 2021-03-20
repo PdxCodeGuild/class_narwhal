@@ -6,6 +6,12 @@
 
     <h1>Edit User</h1>
 
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="my_image" accept="image/*" required>
+        <button type="submit">submit</button>
+    </form>
+
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

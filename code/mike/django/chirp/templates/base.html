@@ -10,40 +10,20 @@
   </head>
   <body>
     <header class="sidenav">
-      <div>
-        
-        <h1><img src="{% static 'chirp/images/bird.jpg' %}">  <a href="{% url 'posts:home' %}">Chirp</a></h1>
+      <div class="bird">
+          <a href="{% url 'posts:home' %}"><img src="{% static 'chirp/images/bird.jpg' %}"></a><br/>
       </div>
-      <div class="nav">
       {% if user.is_authenticated %}
-        <p>Hello, <a href="{% url 'users:profile' user.username %}" id="User_link">{{ user.username }}!</a></p><br/>
-        <div class="buttons">
-          <form action="{% url 'posts:home' %}">
-            {% csrf_token %}
-            <input type='submit' value="Home">
-          </form>
-          <form action="{% url 'users:profile' user.username %}">
-            {% csrf_token %}
-            <input type='submit' value="Profile">
-          </form>        
-          <form action="{% url 'logout' %}">
-            {% csrf_token %}
-            <input type='submit' value="Logout">
-          </form>
-        </div>
+        <div>
+          <a href="{% url 'posts:home' %}"><img src="{% static 'chirp/images/home.png' %}"></a>
+          <a href="{% url 'users:profile' user.username %}"><img src="{% static 'chirp/images/profile.png' %}"></a>
+          <a href="{% url 'logout' %}"><img src="{% static 'chirp/images/logout.png' %}"></a>
       {% else %}
-        <div class="buttons">
-          <form action="{% url 'login' %}">
-            {% csrf_token %}
-            <input type='submit' value="Login">
-          </form>
-          <form action="{% url 'users:signup' %}">
-            {% csrf_token %}
-            <input type='submit' value="Sign Up">
-          </form>
+          <a href="{% url 'posts:home' %}"><img src="{% static 'chirp/images/home.png' %}"></a>
+          <a href="{% url 'login' %}"><img src="{% static 'chirp/images/login.png' %}"></a>
+          <a href="{% url 'users:signup' %}"><img src="{% static 'chirp/images/register.png' %}"></a>
         </div>
       {% endif %}
-      </div>
     </header>
     <div class="container">
       {% block content %}

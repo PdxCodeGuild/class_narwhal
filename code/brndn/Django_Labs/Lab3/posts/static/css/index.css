@@ -1,0 +1,114 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25em;
+    width: 95%;
+}
+
+.nav-left {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-right {
+    width: 50%;
+    text-align: right;
+}
+
+header img {
+    width: 4.25em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    padding-top: 7em;
+}
+
+.post img {
+    width: 100%;
+}
+
+h1 {
+    margin: 0em;
+    font-family: monospace;
+}
+
+h2 {
+    margin: 0em;
+    font-family: 'Courier New', Courier, monospace;
+}
+  
+h3 {
+    margin: 0em;
+    text-align: right;
+}
+
+header h3 {
+    margin-top: 0.2em;
+    margin-bottom: .7em;
+}
+
+.pg-hdr {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 3.5em;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    mix-blend-mode: screen;
+    transition: background-color .25s ease-in-out,
+                color .25s ease-in-out;
+}
+
+.pg-hdr:hover {
+    background-color: black;
+    color: white;
+    transition: all .25s ease-in-out;
+}
+  
+h4 {
+    margin: 0.125em;
+}
+
+h5 {
+    margin: 0em;
+    text-align: right;
+}
+
+p {
+    margin: 1em;
+    margin-top: 0em;
+    font-size: 1em;
+}
+
+.post-ops {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    padding-right: 10em;
+}
+
+form {
+    margin-top: 2em;
+}
+
+#id_body {
+    max-width: 100%;
+}

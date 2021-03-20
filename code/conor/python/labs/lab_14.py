@@ -5,7 +5,7 @@
 import random
 
 def pick_6():
-    rand_list = [random.randint(1, 99) for _ in range(6)]
+    rand_list = [random.randint(1, 69) for _ in range(6)]
     return rand_list
 
 winning = pick_6()

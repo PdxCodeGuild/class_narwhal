@@ -2,12 +2,23 @@
 
 {% block content %}
 
+    <div class="welcome">
+        {% if user.is_authenticated %}
+            <p>Hello, <a href="{% url 'users:profile' user.username %}" id="User_link">{{ user.username }}</a>!</p>
+        {% else %}
+            <p>Hello! Please <a href="{% url 'login' %}">Login</a> or <a href="{% url 'users:signup' %}">Register</a>
+        {% endif %}
+
     <form action="{% url 'posts:new' %}">
         {% csrf_token %}
         <input type='submit' id="new_chirp" value="New Chirp">
     </form>
+    </div>
+
+
+    <div class="posts">
     {% for post in object_list %}
-        <hr><hr/>
+        <hr>
         <div class="post-entry">
             <h4><a href="{% url 'users:profile' post.author.username %}">{{ post.author.username }}<a/> - {{ post.created }}</h4>
             <p>{{ post.body|linebreaksbr }}</p>
@@ -24,6 +35,6 @@
                 </form>
             {% endif %}
         </div>
-
     {% endfor %}
+    </div>
 {% endblock content %}

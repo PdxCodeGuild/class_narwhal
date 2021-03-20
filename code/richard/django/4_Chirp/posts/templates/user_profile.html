@@ -4,7 +4,7 @@
 
 {% block content %}
     <h2>User Profile Page</h2>
-    {% for post in object.post_set.all %}
+    {% for post in author.post_set.all %}
         <div class = "post-entry">
             <h2>{{ post.content }}</h2>
             <p>{{ post.author }} | {{ post.date_posted }}</p>

@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-from .models import Post, MyModel
+from .models import Post
 
 class BlogListView(ListView):
     model = Post
@@ -39,8 +39,3 @@ class BlogDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author
-
-def upload_image(request):
-    my_image = request.FILES['my_image']
-    model = MyModel(..., my_image=my_image)
-    model.save()
