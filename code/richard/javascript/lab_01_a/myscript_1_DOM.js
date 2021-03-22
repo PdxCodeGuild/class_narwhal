@@ -58,8 +58,9 @@ document.getElementById("answer").innerHTML = average;
 }
 
 // step 2. Listen for events and execute the function if that event occours
-number_input.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
+number_input.addEventListener('input', function(event) { // input or keyup
+    //if (event.key === 'Enter') {
+
         calculateAverage()
-    }
+    //}
 })
