@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Test</title>
+        <title>Distance Conversions</title>
     </head>
     <body>
-        <p>...</p>
-        <script src="myscript.js"></script>
+        <h1>Distance Conversions</h1>
+        
+
+
+        
+        
+        <p>Number to convert</p>
+        <input type="number" id="number_input" name="number" value="50" >
+        <br>
+
+        <p>Units to convert FROM: </p>
+        <input type="radio" id="feet" name="units_from" value="feet" checked>
+        <label for="feet">Feet</label><br>
+        <input type="radio" id="miles" name="units_from" value="miles">
+        <label for="miles">Miles</label><br>
+        <input type="radio" id="meters" name="units_from" value="meters">
+        <label for="meters">Meters</label><br>
+        <input type="radio" id="kilometers" name="units_from" value="kilometers">
+        <label for="kilometers">Kilometers</label><br>
+        <input type="radio" id="yards" name="units_from" value="yards">
+        <label for="yards">Yards</label><br>
+        <input type="radio" id="inches" name="units_from" value="inches">
+        <label for="inches">Inches</label><br>
+
+
+        <p>Units to convert TO: </p>
+        <input type="radio" id="feet" name="units_to" value="feet" checked>
+        <label for="feet">Feet</label><br>
+        <input type="radio" id="miles" name="units_to" value="miles">
+        <label for="miles">Miles</label><br>
+        <input type="radio" id="meters" name="units_to" value="meters">
+        <label for="meters">Meters</label><br>
+        <input type="radio" id="kilometers" name="units_to" value="kilometers">
+        <label for="kilometers">Kilometers</label><br>
+        <input type="radio" id="yards" name="units_to" value="yards">
+        <label for="yards">Yards</label><br>
+        <input type="radio" id="inches" name="units_to" value="inches">
+        <label for="inches">Inches</label><br>
+        <br>
+        <input type="submit" value="Calculate" id="calcBtn">
+
+        
+
+
+        <div id = "output_section">
+
+        <h3><span id = "input_num">50</span> <span id = "input_unit"> feet </span> converts to <span id = "output_num"> 50 </span> <span id = "output_unit"> feet </span>.</h3>
+
+        </div>
+
+
+
+        <script src="myscript_DOM.js"></script>
     </body>
 </html>
