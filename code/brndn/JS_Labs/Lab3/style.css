@@ -1,0 +1,17 @@
+
+section {
+    text-align: center;
+}
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    width: 14em;
+}
+.cell {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 2em;
+    height: 2em;
+    border: 1px solid black;
+    cursor: crosshair;
+    font-size: 1em;
+}
