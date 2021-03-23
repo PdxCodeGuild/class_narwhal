@@ -96,50 +96,49 @@ class ATM {
     }
     print_transactions() {
         for (let transaction in this.transactions){
-            alert(transaction)
+            // alert(transaction)
+            result.textContent = transaction
         }
     }
 }
 
-alert("Welcome to the ATM")
+let result = document.getElementById("result")
 
 let balance = 0
 let transactions = []
 let atm = new ATM()
-while (true){
-    let command = prompt("Enter a command: ")
-    if (command === 'balance'){
-        let balance = atm.acct_balance()
-        alert(`Your balance is $${balance}`)
-    } else if (command === 'deposit'){
-        let amount = parseInt(prompt("How much would you like to deposit? "))
-        atm.deposit(amount)
-        alert(`Deposited $${amount}`)
-    } else if (command === 'withdraw'){
-        let amount = parseInt(prompt("How much would you like to withdraw? "))
-        if (atm.check_withdrawal(amount)){
-            atm.withdraw(amount)
-            alert(`Withdrew $${amount}`)
-        } else {
-            alert("Insufficient Funds")
-        }
-    } else if (command === 'interest'){
-        let amount = atm.calc_interest()
-        atm.deposit(amount)
-        alert(`Accumulated $${amount} in interest`)
-    } else if (command === 'transactions') {
-        alert(atm.transactions)
-    } else if (command === 'help'){
-        alert('Available commands:')
-        alert('balance - get the current balance')
-        alert('deposit - deposit money')
-        alert('withdraw - withdraw money')
-        alert('interest - accumulate interest')
-        alert('transactions - list of transactions')
-        alert('exit - exit the program')
-    } else if (command === 'exit'){
-        break
+// if (command === 'balance'){
+
+balanceBt.addEventListener('click', function() {
+    let balance = atm.acct_balance();
+    result.innerText = `Your balance is $${balance}`;
+})
+depositBt.addEventListener('click', function(event){
+    let amount = parseInt(prompt("How much would you like to deposit? "))
+    atm.deposit(amount)
+    result.innerText = `Deposited $${amount}`;
+    
+    // alert(`Deposited $${amount}`)
+    
+})
+withdrawalBt.addEventListener('click', function(){
+    let amount = parseInt(prompt("How much would you like to withdraw? "));
+    if (atm.check_withdrawal(amount)){
+        atm.withdraw(amount);
+        // alert(`Withdrew $${amount}`)
+        result.innerText = `Withdrew $${amount}`;
     } else {
-        alert("Command not recognized. Type 'help' for assistance.")
+        // alert("Insufficient Funds")
+        result.innerText = "Insufficient Funds";
     }
-}
+})
+interestBt.addEventListener('click', function(){
+    let amount = atm.calc_interest();
+    atm.deposit(amount);
+    // alert(`Accumulated $${amount} in interest`)
+    result.innerText = `Accumulated $${amount} in interest`;
+})
+transactionsBt.addEventListener('click', function() {
+    // alert(atm.transactions)
+    result.innerText = atm.transactions;
+})
