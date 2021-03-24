@@ -15,3 +15,10 @@ section {
     cursor: crosshair;
     font-size: 1em;
 }
+form {
+    width: 15em;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 1em;
+}

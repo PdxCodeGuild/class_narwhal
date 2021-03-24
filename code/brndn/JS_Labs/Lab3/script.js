@@ -1,5 +1,10 @@
 let gameActive = true;
 let currentPlayer = "X";
+const colors = document.querySelector('#colors')
+const colorOne = document.querySelector('#colorone')
+const colorTwo = document.querySelector('#colortwo')
+const cellColor = document.querySelectorAll('.cell')
+
 let gameState = [
     '','','','','','','',
     '','','','','','','',
@@ -8,10 +13,11 @@ let gameState = [
     '','','','','','','',
     '','','','','','','',
 ]
+
 function EveryNth(start, end, nth) {
     let gameSlice = gameState.slice(start,end+1);
     var winPlane = gameSlice.filter((e,i) => i % nth === 0).join('');
-    console.log(winPlane);
+    // console.log(winPlane);
     if (winPlane.indexOf('XXXXX') > -1) {
         return 1;
     }
@@ -47,10 +53,16 @@ let winCons = [
     [4,40,6],
     [5,41,6],
 ]
-
 function CellPlayed(clickedCell, clickedCellIndex) {
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
+    if (currentPlayer == 'X') {
+        clickedCell.style.backgroundColor = colorOne.value;
+    }
+    if (currentPlayer == 'O') {
+        clickedCell.style.backgroundColor = colorTwo.value;
+    }
+    // console.log(clickedCell);
     for (let i =0; i <=23; i++) {
         let winCon = winCons[i];
         let win = EveryNth(winCon[0],winCon[1],winCon[2]);
@@ -92,5 +104,6 @@ function RestartGame() {
         '','','','','','','',
     ];
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+    document.querySelectorAll('.cell').forEach(cell => cell.style.backgroundColor = "#ffffff");
 }
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', CellClick));
