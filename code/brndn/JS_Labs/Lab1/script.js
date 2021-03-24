@@ -28,7 +28,7 @@
 
 // let nmbrs = new Clcultr(parseFloat(prompt("#")), parseFloat(prompt("other #")));
 // let clcl = nmbrs.${prompt("add, subtract, multipy, divide")}`;
-
+/* 
 let clcultr = {
     add: function(a, b) {
         return a + b;
@@ -43,11 +43,44 @@ let clcultr = {
         return a / b;
     }
 }
+*/
 
-numa = parseFloat(prompt("number"));
-opp = prompt("add, subtract, multiply, divide");
-numb = parseFloat(prompt("other number"));
+let numa = document.getElementById("numa")
+let numb = document.getElementById("numb")
+let plusBtn = document.getElementById("plus")
+let minusBtn = document.getElementById("minus")
+let timesBtn = document.getElementById("times")
+let divideBtn = document.getElementById("divide")
+let results = document.getElementById("results")
+let clearBtn = document.getElementById("clear")
 
+plusBtn.addEventListener('click', Clcultr)
+minusBtn.addEventListener('click', Clcultr)
+timesBtn.addEventListener('click', Clcultr)
+divideBtn.addEventListener('click', Clcultr)
+clearBtn.addEventListener('click', function() {
+    results.innerText = "";
+    numa.value = "";
+    numb.value = "";
+})
+
+function Clcultr(event) {
+    let a = parseFloat(numa.value);
+    let b = parseFloat(numb.value);
+    if (event.target.id == 'plus') {
+        var result = a + b;
+    } else if (event.target.id == 'minus') {
+        var result = a - b;
+    } else if (event.target.id == 'times') {
+        var result = a * b;
+    } else if (event.target.id == 'divide') {
+        var result = a / b;
+    }
+    console.log(numa.textContent);
+    numa.value = result;
+    numb.value = "";
+}
+/*
 if (opp == "add") {
     clcl = clcultr.add(numa, numb);
 } else if (opp == "subtract") {
@@ -57,9 +90,8 @@ if (opp == "add") {
 } else if (opp == "divide") {
     clcl = clcultr.divide(numa, numb);
 }
-
-alert(clcl);
-
+*/
+/* 
 Loop:
 while (opp != "quit") {
     
@@ -82,3 +114,4 @@ while (opp != "quit") {
     
     alert(clcl);
 }
+*/
