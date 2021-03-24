@@ -1,3 +1,9 @@
+'''
+Lab 23
+Version 2
+Contacts List
+'''
+
 with open('contacts.csv', 'r') as file: # Opens contacts.csv
     rows = file.read() # reads file as rows
 contacts = [] # creates empty list
@@ -11,13 +17,25 @@ for x in range(1, len(rows)):
     contact = dict(zip(header, row))
     contacts.append(contact)
 
+
 # create contact
-def contact_info():
+def contact_new():
     new_contact = {} # empty dictionary for contact
     for info in header: 
-        details = input(f'Enter contact\'s {info}: ') # user inputs the contact information based on the header value
-        new_contact[info] = details
+        new_contact[info] = input(f'Enter contact\'s {info}: ') # user inputs the contact information based on the header value
     contacts.append(new_contact) # after loop, adds the contact list to the list of dictionaries
+
+
+# looks up contact
+def contact_lookup():
+    for category in header:
+        category = input(f'What category do you want to search by? {header}: ')
+        data = input(f'Enter contact\'s {category}: ')
+        for contact in contacts:
+            if data == contact[category]:
+                data = contact['name'], contact['favorite fruit'], contact['favorite color']
+                data = ' '.join(data)
+                return data
 
 
 # update contact
@@ -34,27 +52,26 @@ def contact_update():
             contact = tuple(contact)
             contact = ' '.join(contact)
             print(contact)
+            return contact
+
+
+# delete contact
+def contact_delete():
+    contactDel = input('Which contact would you like to delete? ')
+    for ind, contact in enumerate(contacts):
+        if contactDel == contact['name']:
+            return contacts.pop(ind)
 
 
 
-# looks up contact
-def contact_lookup():
-    for category in header:
-        category = input(f'What category do you want to search by? {header}: ')
-        data = input(f'Enter contact\'s {category}: ')
-        for info in contacts:
-            if data == info[category]:
-                data = info['name'], info['favorite fruit'], info['favorite color']
-                data = ' '.join(data)
-                return data
-    
+
 # loop to determine user action
 while True:
-    action = input('What would you like to do? (new/search/update): ')
+    action = input('What would you like to do? (new/search/update/delete): ')
 
     # create new contact
     if action == 'new':
-        contact_info()
+        contact_new()
         break
 
     # search for contact by name
@@ -66,19 +83,14 @@ while True:
         contact_update()
         break
         
+    elif action == 'delete':
+        contact_delete()
+        break
+        
 
     # break's loop if "new" or "search" not selected
     else:
         break
 
-
 print(contacts)
-
-# writes new contacts into csv file
-rows = [','.join(header)]
-for contact in contacts:
-    row = ','.join(contact.values())
-    rows.append(row)
-write_contacts = '\n'.join(rows)
-with open('contacts.csv', 'w') as file:
-    file.write(write_contacts)
+    

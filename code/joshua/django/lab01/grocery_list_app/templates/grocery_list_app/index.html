@@ -1,0 +1,15 @@
+<h1>Grocery List</h2>
+
+<ul>
+    {% for item in items %}
+    <li>{{item.name}} -- {{item.created_date}}</li>
+    <a href="{% url 'grocerylist:item' item.id %}">{{ item.name }}</a>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'grocerylist:add_item' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name"/>
+    <input type="submit" value="Add Item"/>
+</form>
+
