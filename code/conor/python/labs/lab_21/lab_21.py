@@ -15,7 +15,9 @@ sherlock = sherlock.lower()
 
 # Take out all punctuation punctuation
 translator = str.maketrans('', '', string.punctuation + "“")
+print(translator)
 words_only = sherlock.translate(translator)
+print(words_only)
 
 # Below is another way to take out all punctuation
 

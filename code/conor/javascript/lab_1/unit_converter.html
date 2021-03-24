@@ -1,9 +1,37 @@
+<!-- Version 1 -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+   <title>Conversion</title> 
+  </head>
+  <body>
+    <script src="unit_converter.js"></script>
+  </body>
+</html> -->
+
+<!-- Version 2 -->
+
 <!DOCTYPE html>
 <html>
   <head>
    <title>Conversion</title> 
   </head>
   <body>
+    <h1>Welcome to the Unit Converter!</h1>
+
+      <p>What is the length?</p>
+      <input id="length" type="text"/>
+
+      <p>What is your starting Unit?</p>
+      <input id="starting" type="text" placeholder="ft, mi, m, km, yd, in"/>
+
+      <p>What unit would you like to convert to?</p>
+      <input id="ending" type="text" placeholder="ft, mi, m, km, yd, in"/>
+
+      <button id="calculate">Calculate</button>
+      <p id="results"></p>
+
     <script src="unit_converter.js"></script>
   </body>
 </html>
