@@ -3,7 +3,7 @@ let card2 = document.getElementById("card2");
 let card3 = document.getElementById("card3");
 let resultLi = document.getElementById("result");
 let adviceBtn = document.getElementById("advice");
-let clearBtn = document.getElementById("clear")
+let clearBtn = document.getElementById("clear");
 
 
 
@@ -14,8 +14,10 @@ adviceBtn.addEventListener('click', function(event) {
 
     if(result <= 17){
         resultLi.innerHTML = "Hit!";
-    } else if(result >=17 && result <= 21){
+    } else if(result >=17 && result < 21){
         resultLi.innerHTML = "Stay!";
+    } else if(result === 21){
+        resultLi.innerHTML = "Blackjack!"
     } else {
         resultLi.innerHTML = "Busted!";
     }
