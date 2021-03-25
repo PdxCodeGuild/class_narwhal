@@ -7,13 +7,8 @@ const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
 
 
-// 2. Event Listeners
-todoButton.addEventListener('click', addTodo);
-todoList.addEventListener('click', deleteCheck);
-filterOption.addEventListener('click', filterTodo)
 
-
-// 3. Functions
+// 2. Functions
 
 function addTodo(event) {
     // Prevent the form from submitting
@@ -93,3 +88,9 @@ function filterTodo(event) {
     };
 }
 
+
+
+// 3. Event Listeners
+todoButton.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteCheck);
+filterOption.addEventListener('change', filterTodo)
