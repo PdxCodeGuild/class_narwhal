@@ -1,0 +1,23 @@
+body {
+    background-image: linear-gradient(120deg, #2b6db9, #8b9da5 );
+    color: white;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 2.5 rem;
+}
+
+header, #main {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#main h3 {
+    border: 1px solid white;
+    padding: 3rem;
+}
