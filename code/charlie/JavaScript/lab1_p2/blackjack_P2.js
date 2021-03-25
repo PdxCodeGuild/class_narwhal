@@ -13,9 +13,9 @@ adviceBtn.addEventListener('click', function(event) {
     let result = parseInt(card1.value) + parseInt(card2.value) + parseInt(card3.value);
 
     if(result <= 17){
-        resultLi.innerHTML = "Hit!";
+        resultLi.innerHTML = "Hit";
     } else if(result >=17 && result < 21){
-        resultLi.innerHTML = "Stay!";
+        resultLi.innerHTML = "Stay";
     } else if(result === 21){
         resultLi.innerHTML = "Blackjack!"
     } else {

@@ -2,10 +2,25 @@
 <html lang='en'>
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ATM</title>
     </head>
     <body>
-        <p>Clickity-Clack........ATM app.!!</p>
+        <h1>Automated Teller Machine</h1>
+        <form> 
+        <input type="number" id="amount" placeholder="amount">
+        <fieldset>
+            <legend>Transactions</legend>
+            <input type="radio" name="transaction" value="Deposit"/>Deposit<br/>
+            <input type="radio" name="transaction" value="Withdraw"/>Withdraw<br/>
+            <input type="radio" name="transaction" value="Interest"/>Calculate interest<br/>
+            <input type="radio" name="transaction" value="Balance"/>Balance<br/>
+            <input type="radio" name="transaction" value="History"/>Transaction History<br/>
+        </fieldset>
+        <button id="submit">Go!</button>
+        </form>
+        <li id="transactions"></li>
         <script src="atm_P2.js"></script>
     </body>
 </html>
