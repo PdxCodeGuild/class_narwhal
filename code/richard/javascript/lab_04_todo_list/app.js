@@ -4,12 +4,11 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const filterOption = document.querySelector('.filter-todo');
 
 
-// 2. Event Listeners
-todoButton.addEventListener('click', addTodo);
 
-// 3. Functions
+// 2. Functions
 
 function addTodo(event) {
     // Prevent the form from submitting
@@ -36,8 +35,62 @@ function addTodo(event) {
     todoList.appendChild(todoDiv);
     // clear out todo input value
     todoInput.value = "";
-
-
-
-
 }
+
+
+function deleteCheck(event) {
+    // alert("working")
+    const item = event.target;
+
+    // delete the todo
+    if(item.classList[0] === "trash-btn") {
+        item.parentNode.remove();
+    }
+
+    // check mark - mark done
+    if(item.classList[0] === "complete-btn") {
+        const todo = item.parentElement;
+        todo.classList.toggle("completed");
+    }
+}
+
+
+function filterTodo(event) {
+    //alert("filter todo working");
+    const todos = todoList.children; // children   .slice(1:)
+    console.log(todos);
+    //todos.forEach(function(todo) {   // rewrite to be a for loop  change to todos[i]
+    // let todo;
+    for (let i = 0; i < todos.length; i++) {
+        console.log(todos[i]);
+        switch(event.target.value) {
+            case "all": 
+                todos[i].style.display = 'flex';
+                console.log("all")
+                break;
+            case "completed":
+                console.log("completed")
+                if (todos[i].classList.contains('completed')){
+                    todos[i].style.display = 'flex';
+                } else {
+                    todos[i].style.display = 'none';
+                }
+                break;
+            case "uncompleted":
+                console.log("uncompleted")
+                if (!todos[i].classList.contains('completed')) {
+                    todos[i].style.display = 'flex';
+                } else {
+                    todos[i].style.display = 'none';    
+                }
+                break;
+        }
+    };
+}
+
+
+
+// 3. Event Listeners
+todoButton.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteCheck);
+filterOption.addEventListener('change', filterTodo)
