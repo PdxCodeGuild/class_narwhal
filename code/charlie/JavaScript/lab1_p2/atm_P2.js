@@ -1,28 +1,47 @@
 let transactionLi = document.getElementById("transactions");
 let transAmount = document.getElementById("amount");
 let submitBtn = document.getElementById("submit");
+let clearBtn = document.getElementById("clear");
 let transTypeBtns = document.querySelectorAll('input[name="transaction"]'); 
+let transaction_history = [];
+let balance = 0;
+let interest = 0.001;
+let checkedValue;
 
 submitBtn.addEventListener('click', function(event){
-    let checkedValue;
+    event.preventDefault();//prevents automatic form submission
     transTypeBtns.forEach(button => {
         if(button.checked){
             checkedValue = button.value;
         }
     })
-    alert(checkedValue);
+    alert(checkedValue);// debug statement
+
     if(checkedValue === "Deposit"){
-
-    } else if(checkedValue === "Withdraw"){
-
-    } else if(checkedValue === "Interest"){
-
-    } else if(checkedValue === "Balance"){
-
-    } else if(checkedValue === "History") {
-
+        balance += parseFloat(transAmount.value);
+        transaction_history.push(`Deposited $${transAmount.value}`);
+    }else if(checkedValue === "Withdraw"){
+        if(transAmount.value > balance){
+            alert("Insufficient funds!");
+        }else {
+            transaction_history.push(`Withdrew $${transAmount.value}`);
+        }
+    }else if(checkedValue === "Interest"){
+        let temp = balance * interest;
+        balance += temp;
+        transaction_history.push(`Accumulated $${temp} in interest.`);
+    }else if(checkedValue === "Balance"){
+        transaction_history.push(`Deposited $${transAmount}`);
+    }else if(checkedValue === "History") {
+        transactionLi.innerHTML = '';
+       for(let i = 0; i < transaction_history.length; ++i){
+           transactionLi.innerHTML += `<li>${transaction_history[i]}</li>`;
+       } 
     }
+})
 
+clearBtn.addEventListener('click', function(event){
+    transactionLi.innerHTML = '';
 })
 
 
