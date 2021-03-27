@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+}
+body {
+    font-family: averia serif libre;
+    font-size: 1em;
+    text-align: center;
+}
+#clock-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rosybrown;
+}
+#frame {
+    font-size: 5em;
+    margin: -0.15em;
+}
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#time {
+    display: flex;
+    flex-direction: row;
+}
+#time p, #calender p {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+#calender {
+    display: flex;
+    flex-direction: column;
+}
+#cal1, #cal2 {
+    display: flex;
+    flex-direction: row;
+}
+#calender p {
+}
+.clock p {
+    margin: 0em;
+}

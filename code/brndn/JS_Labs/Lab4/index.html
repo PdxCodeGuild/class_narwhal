@@ -5,13 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;1,400&display=swap" rel="stylesheet">    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link href="clock-style.css" type="text/css" rel="stylesheet"/>
     <title>Todo</title>
 </head>
 <body>
     <header>
         <img id="toucan" src="Daco_4482382.png">
         <h1>Toucan<br>Do It</h1>
+        <div id="clock-frame">
+            <p id="frame">[</p>
+            <div class="clock">
+                <div id="time">
+                    <p id="second"></p><p> : </p>
+                    <p id="minute"></p><p> : </p>
+                    <p id="hour"></p>
+                </div>
+                <div id="calender">
+                    <div id="cal1">
+                        <p id="day"></p>
+                        <p id="weekday"></p>
+                    </div>
+                    <div id="cal2">
+                        <p id="month"></p>
+                        <p id="year"></p>
+                    </div>
+                </div>
+            </div>
+            <p id="frame">]</p>
+        </div>
     </header>
     <div id="new-todo">
         <input type"text" id="todo-text" placeholder=" tou do">
@@ -23,6 +46,7 @@
     <h4 id="done"></h4>
 
     </main>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
+    <script src="clock-script.js"></script>
 </body>
 </html>

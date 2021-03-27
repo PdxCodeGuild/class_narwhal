@@ -47,6 +47,13 @@ li button {
     background-color: white;
     margin-left: 1em;
 }
+#clock-frame {
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.5em;
+}
 
 @media (min-width: 768px) {
 
@@ -71,6 +78,13 @@ li button {
     #todo-btn {
         font-size: 1em;
     }
+    #clock-frame {
+        left: unset;
+        transform: unset;
+        bottom: unset;
+        top: 0.5em;
+        right: 2em;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -93,5 +107,9 @@ li button {
     }
     #todo-btn {
         font-size: 2em;
+    }
+    #clock-frame {
+        top: 3em;
+        right: 2em;
     }
 }
