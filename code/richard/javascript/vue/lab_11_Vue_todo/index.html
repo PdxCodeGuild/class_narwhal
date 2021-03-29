@@ -16,7 +16,12 @@
     <h1>Vue Todo List App</h1>
 
     <div id="app">
-        {{ message }}
+        <form @submit.prevent="addTodo">
+          <label for="newTodo">New Todo</label>
+          <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
+          <button type = "sumbit" name="button">Add</button>
+
+          <h3>{{ newTodo }}</h3>
     </div>
 
 
