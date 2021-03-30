@@ -16,12 +16,20 @@
     <h1>Vue Todo List App</h1>
 
     <div id="app">
+
         <form @submit.prevent="addTodo">
           <label for="newTodo">New Todo</label>
           <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
           <button type = "sumbit" name="button">Add</button>
-
-          <h3>{{ newTodo }}</h3>
+        </form>
+          
+        <ul>
+          <li v-for="todo in todos">
+            <input type="checkbox" v-model="todo.done">
+            <span :class="{ done: todo.done }">{{ todo.title}}</span>
+            <button @click="removeTodo(todo)" type="button" name="button">Remove</button>
+          </li>
+        </ul>
     </div>
 
 
