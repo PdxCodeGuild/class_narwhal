@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Todos</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div id="taskList">
+        <h1>Vue Todos & Tasks</h1>
+        <input type="text" v-model="newTask" placeholder="Enter New Task"/>
+        <button v-on:click="addTask">Add</button>
+        <ul>
+            <li v-for="(task, index) in tasks">
+                {{ task }}
+                <input type="checkbox" v-model="toggle">
+                <button v-on:click="deleteBt(index)" class="deleteBT">Delete</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

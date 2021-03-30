@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Vue Hello World</title>
+  <meta name="description" content="Hello">
+  <meta name="author" content="Richard">
+
+  <link rel="stylesheet" href="css/site.css">
+
+</head>
+
+<body>
+    <h1>Vue Todo List App</h1>
+
+    <div id="app">
+
+        <form @submit.prevent="addTodo">
+          <label for="newTodo">New Todo</label>
+          <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
+          <button type = "sumbit" name="button">Add</button>
+        </form>
+          
+        <ul>
+          <li v-for="todo in todos">
+            <input type="checkbox" v-model="todo.done">
+            <span :class="{ done: todo.done }">{{ todo.title}}</span>
+            <button @click="removeTodo(todo)" type="button" name="button">Remove</button>
+          </li>
+        </ul>
+    </div>
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

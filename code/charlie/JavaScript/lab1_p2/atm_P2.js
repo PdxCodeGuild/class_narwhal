@@ -15,7 +15,7 @@ submitBtn.addEventListener('click', function(event){
             checkedValue = button.value;
         }
     })
-    alert(checkedValue);// debug statement
+    //alert(checkedValue);// debug statement
 
     if(checkedValue === "Deposit"){
         balance += parseFloat(transAmount.value);

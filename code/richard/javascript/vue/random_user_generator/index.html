@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue.js Random User Generator</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+      <img
+        v-bind:src="picture"
+        :alt="`${firstName} ${lastName}`"
+        :class="gender"
+      />
+      <h1>{{firstName}} {{lastName}}</h1>
+      <h3>Email: {{email}}</h3>
+      <button :class="gender" @click="getUser()">Get Random User</button>
+    </div>
+<!-- partial -->
+  <script src='https://unpkg.com/vue@3.0.5'></script>
+  <script  src="./script.js"></script>
+
+</body>
+</html>

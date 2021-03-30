@@ -1,41 +1,31 @@
-//alert("hello rich")  // test
+// Richard Farr
+// March 25th, 2021
+
+
+// 0. Experimentation Area
+let date_time_now = new Date();
+console.log("date_time_now: " + date_time_now)
+
+let time_now = date_time_now.toLocaleTimeString();
+console.log("time_now: " + time_now);
+
+
 
 // 1. Selectors
-// const todoInput = document.querySelector('.todo-input');
-
+const time_area = document.querySelector('.time_area');
+console.log(time_area);
+console.log("time_area.innerHTML: " + time_area.innerHTML);
+time_area.innerHTML=time_now;
 
 
 
 // 2. Functions
 
-function addTodo(event) {
-    // Prevent the form from submitting
-    event.preventDefault(); 
-    // Create a Todo DIV
-    const todoDiv = document.createElement('div');
-    todoDiv.classList.add("todo");
-    // Create an LI
-    const newTodo = document.createElement('li');
-    newTodo.innerText = todoInput.value;
-    newTodo.classList.add('todo-item');
-    todoDiv.appendChild(newTodo);
-    // Create a Checkmark button
-    const completedButton = document.createElement('button');
-    completedButton.innerHTML = '<i class="fas fa-check"></i>';
-    completedButton.classList.add("complete-btn");
-    todoDiv.appendChild(completedButton);
-    // Create a trash button
-    const trashButton = document.createElement('button');
-    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-    trashButton.classList.add("trash-btn");
-    todoDiv.appendChild(trashButton);
-    // Append all the things above to the list
-    todoList.appendChild(todoDiv);
-    // clear out todo input value
-    todoInput.value = "";
-}
-
+function myTimer() {
+    var d = new Date();
+    document.querySelector('.time_area').innerHTML = d.toLocaleTimeString();
+  }
 
 
 // 3. Event Listeners
-// todoButton.addEventListener('click', addTodo);
+var myVar = setInterval(myTimer, 1000);
