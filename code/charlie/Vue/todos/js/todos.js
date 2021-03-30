@@ -4,7 +4,7 @@ let vmtodo = new Vue({
         todoList:[
             {}
         ]
-    }
+    },
     methods:{
         addTodo: function(){
             
