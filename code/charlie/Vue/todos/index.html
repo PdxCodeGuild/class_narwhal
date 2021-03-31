@@ -7,10 +7,19 @@
         <title>T0d0s Applicati0n</title>
     </head>
     <body>
-        <h2>Todo Application</h2>
+        <h1>Todo Application</h1>
         <div id="vmtodo">
+            <input v-model="newTodo" placeholder="Add a todo!">
             <button v-on:click="addTodo">Add todo</button>
-        </div>
+        <ul>
+            <li v-for="(todo, index) in todos" :key="todo.title">
+                {{ todo.title }}
+                <button v-on:click="removeTodo(index)">remove</button>
+                 
+            </li>
+        </ul>
+
+        </div> 
         <!-- <div id="app-6">
         <p>{{ message }}</p>
         <input v-model="message">
@@ -38,6 +47,6 @@
                 </li>
             </ol>   
         </div> -->
-        <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
-        <script src="/js/todos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+        <script src="js/todos.js"></script>
     </body>

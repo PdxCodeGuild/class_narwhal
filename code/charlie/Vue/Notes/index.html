@@ -8,11 +8,11 @@
     </head>
     <body>
         <div id="app-6">
-        <p>{{ message }}</p>
+        <p>The echo of your typing: {{ message }}</p>
         <input v-model="message">
         </div>
         <div id="app-5">
-            <p>{{ message }}</p>
+            <p> "{{ message }}"</p>
             <button v-on:click="reverseMessage">Reverse Message</button>
         </div>
         <div id="app">
@@ -33,6 +33,10 @@
                   {{ todo.text }}
                 </li>
             </ol>   
+        </div>
+        <div id="app-7">
+            <p> The original message: "{{ message }}"</p>
+            <p>The computed reversed message: "{{ reversedMessage }}"</p>
         </div>
         <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
         <script src="main.js"></script>
