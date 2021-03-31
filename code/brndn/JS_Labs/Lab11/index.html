@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Todo</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue"></script>
+    <header>
+        <div id="lstr">
+            <h1 id="ls">|L<span>I</span>S</h1>
+            <br><h1>|</h1></br>
+            <h1 id="tr">|T<span>E</span>R</h1>
+        </div>
+    </header>
+    <div id="app1">
+        <textarea v-model="message" placeholder="Type Here"></textarea>
+        <input v-model="message" placeholder="Type Here"></input>
+        <p>Message is: {{ message }}</p>
+        {{ message }}
+        <list-item
+        v-for="item in list"
+        v-bind:key="item.id"
+        v-bind:title="item.title"
+        ></list-item>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
