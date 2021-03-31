@@ -1,3 +1,7 @@
+<!--Author: Charles Spahn
+    Project: Vue.js Todo
+    Due Date: Mar. 29, 2021
+  -->
 <!DOCTYPE html>
 <html lang='en'>
     <head>
@@ -9,13 +13,22 @@
     <body>
         <h1>Todo Application</h1>
         <div id="vmtodo">
-            <input v-model="newTodo" placeholder="Add a todo!">
-            <button v-on:click="addTodo">Add todo</button>
+            <input v-model="newTodo" placeholder="Add a todo!" @keyup.enter="addTodo">
+            <button @click="addTodo">Add todo</button> <!-- @click is a shortcut for "v-on"-->
         <ul>
-            <li v-for="(todo, index) in todos" :key="todo.title">
+        <!-- For loop to iterate through completeTodos -->
+            <li v-for="todo in incompleteTodos" :key="todo.id"><!-- ":key" is a shortcut for "v-bind:key"-->
                 {{ todo.title }}
-                <button v-on:click="removeTodo(index)">Remove</button>
-                <button v-on:click="completeTodo(index)">Done</button>
+                <button @click="removeTodo(todo)">Remove</button>
+                <button @click="completeTodo(todo)">Done</button>
+            </li>
+        </ul>
+        <ul>
+        <!-- For loop to iterate through completeTodos -->
+            <li v-for="todo in completeTodos" :key="todo.id">
+                {{ todo.title }}
+                <button @click="removeTodo(todo)">Remove</button>
+                <button @click="completeTodo(todo)">Done</button>
             </li>
         </ul>
         </div> 
