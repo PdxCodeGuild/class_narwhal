@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do</title>
+</head>
+<body>
+    <div id="app">
+        <input v-model="todoItem" placeholder="Type stuff to do here!">
+        <button v-on:click="appendList">Add Item</button>
+        <p>Things to do:</p>
+        <p v-for="(item, index) in incomplete"> 
+            {{item}} 
+
+        <button v-on:click="deleteBtn(index)">X</button>
+        <input type="checkbox" v-on:click="checkOff(index)">
+        </p>
+
+        <p>Things that are done:</p>
+        <p v-for="(item, index) in complete">
+            {{item}}
+        
+        <button v-on:click="compltedDeleteBtn(index)">x</button>
+        </p>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vuetodo.js"></script>
+</body>
+</html>
