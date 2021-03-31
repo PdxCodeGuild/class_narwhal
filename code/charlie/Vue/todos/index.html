@@ -14,8 +14,8 @@
         <ul>
             <li v-for="(todo, index) in todos" :key="todo.title">
                 {{ todo.title }}
-                <button v-on:click="removeTodo(index)">remove</button>
-                 
+                <button v-on:click="removeTodo(index)">Remove</button>
+                <button v-on:click="completeTodo(index)">Done</button>
             </li>
         </ul>
 

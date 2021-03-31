@@ -16,6 +16,9 @@ let vmtodo = new Vue({
             console.log(index)
             console.log("You don't suck!")
             this.todos.splice(index, 1)
+        },
+        completeTodo: function(index){
+            this.todos[index].completed = !this.todos[index].completed;
         }
     }
 })
