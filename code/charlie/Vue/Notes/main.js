@@ -48,3 +48,20 @@ data: {
     message: 'Hello Vue!'
 }
 })
+
+let app7 = new Vue({
+  el: '#app-7',
+  data: {
+    message: '!efil ot yek eht si cisuMusic is the key to life!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  },
+  computed:{
+    reversedMessage: function(){
+      return this.message.split('').reverse().join('')
+    }
+  }
+})

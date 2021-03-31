@@ -1,3 +1,7 @@
+<!--Author: Charles Spahn
+    Project: Vue.js Todo
+    Due Date: Mar. 29, 2021
+  -->
 <!DOCTYPE html>
 <html lang='en'>
     <head>
@@ -7,37 +11,27 @@
         <title>T0d0s Applicati0n</title>
     </head>
     <body>
-        <h2>Todo Application</h2>
+        <h1>Todo Application</h1>
         <div id="vmtodo">
-            <button v-on:click="addTodo">Add todo</button>
-        </div>
-        <!-- <div id="app-6">
-        <p>{{ message }}</p>
-        <input v-model="message">
-        </div>
-        <div id="app-5">
-            <p>{{ message }}</p>
-            <button v-on:click="reverseMessage">Reverse Message</button>
-        </div>
-        <div id="app">
-            {{ message }}
-        </div>
-        <div id="app-2">
-            <span v-bind:title="message">
-                Test_2 === Hover your mouse here to see the DYNAMICALLY bound title!
-            </span>
-        </div>
-        <div id="app-3">
-        <span v-if="seen">Test_3 === Now you see me</span>
-        </div>
-        <div id="app-4">
-            <h2>Test_4 ===</h2>
-            <ol>
-                <li v-for="todo in todos">
-                  {{ todo.text }}
-                </li>
-            </ol>   
-        </div> -->
-        <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
-        <script src="/js/todos.js"></script>
+            <input v-model="newTodo" placeholder="Add a todo!" @keyup.enter="addTodo">
+            <button @click="addTodo">Add todo</button> <!-- @click is a shortcut for "v-on"-->
+        <ul>
+        <!-- For loop to iterate through completeTodos -->
+            <li v-for="todo in incompleteTodos" :key="todo.id"><!-- ":key" is a shortcut for "v-bind:key"-->
+                {{ todo.title }}
+                <button @click="removeTodo(todo)">Remove</button>
+                <button @click="completeTodo(todo)">Done</button>
+            </li>
+        </ul>
+        <ul>
+        <!-- For loop to iterate through completeTodos -->
+            <li v-for="todo in completeTodos" :key="todo.id">
+                {{ todo.title }}
+                <button @click="removeTodo(todo)">Remove</button>
+                <button @click="completeTodo(todo)">Done</button>
+            </li>
+        </ul>
+        </div> 
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+        <script src="js/todos.js"></script>
     </body>

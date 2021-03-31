@@ -1,0 +1,31 @@
+header {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    margin: 0em;
+}
+#lstr {
+    margin: 0em;
+    margin-left: .2em;
+}
+#ls {
+    margin-bottom: -1.25em;
+}
+#tr {
+    margin-top: -1.25em;
+}
+h1 span {
+    display: inline-flex;
+    letter-spacing: 0em;
+}
+h1 span:nth-child(odd) {
+    overflow: hidden;
+    letter-spacing: -1em;
+    transition: ease-in-out 0.5s;
+}
+h1:hover span:nth-child(odd) {
+    letter-spacing: 0em;
+    transition: ease-in-out 0.5s;
+}
