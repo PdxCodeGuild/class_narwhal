@@ -22,7 +22,7 @@ function addTodo() {
     })
 
     const relistBtn = document.createElement('button');
-    relistBtn.innerText = '\u21BA';
+    relistBtn.innerText = '\u293D';
     relistBtn.addEventListener('click', function() {
         list.appendChild(this.parentElement);
         this.parentElement.style.textDecoration = 'none';
