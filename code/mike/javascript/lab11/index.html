@@ -11,23 +11,23 @@
     <div id="app" class="container"><br>
         <h1>Tasks List</h1>
         <add-task @add="addTask"></add-task><br>
-        <ul vi-if="incompleteTasks.length" class="list-unstyled">
-            <task-item
-                v-for="task in incompleteTasks"
-                :key="task.id"
-                :task="task"
-                @remove="removeTask"
-            ></task-item>
-        </ul>
-        <ul v-if="completeTasks.length" class="list-unstyled">
-            <hr>
-            <h1>Completed Tasks</h1><br>
-            <task-item
-                v-for="task in completeTasks"
-                :key="task.id"
-                :task="task"
-                @remove="removeTask"
-            ></task-item>
+        <ul class="list-unstyled">
+            <li vi-if="incompleteTasks.length">
+                <task-item
+                    v-for="task in incompleteTasks"
+                    :key="task.id"
+                    :task="task"
+                    @remove="removeTask"
+                ></task-item>
+            </li>
+            <li vi-if="completeTasks.length" class="text-decoration-line-through">
+                <task-item
+                    v-for="task in completeTasks"
+                    :key="task.id"
+                    :task="task"
+                    @remove="removeTask"
+                ></task-item>
+            </li>
         </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
