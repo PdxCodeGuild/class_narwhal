@@ -6,8 +6,9 @@
     <title>AJAX, API, Axios Tutorial/Notes</title>
 </head>
 <body>
-    <div id="app">
-    <button @click="loadQuotes">Quote Me!</button>
+    <div id="FavQ">
+    <input type="text" id="keyword" placeholder="Who's the author of your favorite quote?" @keyup.enter="loadQuotes">
+    <button @click="loadQuotes">Search!</button>
         <div v-for="quote in results.quotes" :key="quote.id">
             <p><a :href="quote.url">{{ quote.author }}</a></p>
             <p>{{ quote.body }}</p>

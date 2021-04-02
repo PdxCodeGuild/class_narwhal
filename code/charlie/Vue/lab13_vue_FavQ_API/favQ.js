@@ -1,7 +1,12 @@
+// Vue.component('search',{
+
+// })
+
+
 const vm = new Vue({
-    el:'#app',
+    el:'#FavQ',
     data:{
-        userSearch = '',
+        userSearch: "",
         results: {}
     },
     methods:{
@@ -14,7 +19,7 @@ const vm = new Vue({
                 },
                 params:{
                     keyword: "",
-                    filter: `${keyword}`,// having this url: "https://favqs.com/api/quotes&filter=steve+jobs&type=author", is the same as adding "params" to axios.
+                    filter: `${keyword}`, //"Oscar Wilde",         //`${keyword}`,// having this ---> url: "https://favqs.com/api/quotes&filter=steve+jobs&type=author", is the same as adding "params" to axios.
                     type: "author"
                 }
             }).then(response => {
@@ -25,7 +30,4 @@ const vm = new Vue({
             // })
         }
     }
-    
-    
-    
 })
