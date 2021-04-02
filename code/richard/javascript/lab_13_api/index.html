@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue Quote Generator</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>The Famous Quote Generator</h1>
+        <div id="app">
+            <div id = "questions">
+            <label for="search_term">Search For:</label><br>
+            <input v-model="search_term" type="text" id="search_term" name="search_term" value="Steve Jobs"><br>
+
+            <input v-model="search_type" type="radio" id="keyword" name="search_type" value="keyword">
+            <label for="keyword">Keyword</label><br>
+            <input v-model="search_type" type="radio" id="author" name="search_type" value="author" checked>
+            <label for="author">Author</label><br>
+            <input v-model="search_type" type="radio" id="tag" name="search_type" value="tag">
+            <label for="tag">Tag</label><br>
+
+            <button @click="loadQuotes">Get Quotes!</button>
+            <hr>
+            <button @click="loadRandom25">Generate Random Quotes!</button>
+            </div>
+
+        <h2>Here are your quotes</h2>
+
+            <div id="page_number">
+                <h3>Page: {{ results.page }}</h3>
+                <span v-if="results.page != 1"><h3 @click="goToPreviousPage" id="previous_page">Previous Page</h3></span>
+                <span v-if="!results.last_page"><h3 @click="goToNextPage" id="next_page" >Next Page</h3></span>
+            </div>
+
+            <quote v-bind:quote="quote" id="answers" v-for="quote in results.quotes" :key="quote.id"></quote>
+
+            <!-- <div id="answers" v-for="quote in results.quotes" :key="quote.id">
+                <p>{{ quote.body }}</p>
+                <p><a :href="quote.url">{{ quote.author }}</a></p>
+            </div> -->
+
+
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="secrets.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

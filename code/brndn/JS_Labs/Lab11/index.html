@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Todo</title>
 </head>
 <body>
-    <script src="https://unpkg.com/vue"></script>
     <header>
         <div id="lstr">
-            <h1 id="ls">|L<span>I</span>S</h1>
-            <br><h1>|</h1></br>
-            <h1 id="tr">|T<span>E</span>R</h1>
+            <h1 id="ls"><span class="lstr-line">|</span>L<span>I</span>S</h1>
+            <br><h1><span class="lstr-line">|</span></h1></br>
+            <h1 id="tr"><span class="lstr-line">|</span>T<span>E</span>R</h1>
         </div>
     </header>
-    <div id="app1">
-        <textarea v-model="message" placeholder="Type Here"></textarea>
-        <input v-model="message" placeholder="Type Here"></input>
-        <p>Message is: {{ message }}</p>
-        {{ message }}
-        <list-item
-        v-for="item in list"
-        v-bind:key="item.id"
-        v-bind:title="item.title"
-        ></list-item>
-    </div>
+    <main>
+        <div id="toDoApp">
+            <textarea id="textarea" v-model="newDo" placeholder="Type Here" v-on:keyup.enter="addDo"></textarea>
+            <br>
+            <button v-on:click="addDo"><i class="material-icons">create</i></button></button>
+            <ul>
+                <h4 v-for="todo in incomplete" v-bind:key="todo.id">
+                    <button type="button" v-on:click="removeDo(todo, $event)"><i class="material-icons">highlight_off</i></button>
+                    <button type="button" v-on:click="editDo(todo, $event)"><i class="material-icons">{{ editing ? '&#xe86c;' : '&#xe8b8;' }}</i></button>
+                    <input type="checkbox" v-model="todo.completed"></input>
+                    <input v-if="editing" type="text" v-model="todo.text" v-on:keyup.enter="editDo">
+                    <template v-else>{{ todo.text }}</template>
+                    <hr>
+                </h4>
+            </ul>
+            <hr id="list-divider">
+            <ul>
+                <h4 v-for="todo in complete" v-bind:key="todo.id">
+                    <button type="button" v-on:click="removeDo(todo, $event)"><i class="material-icons">highlight_off</i></button>
+                    <input type="checkbox" v-model="todo.completed">
+                    {{ todo.text }}
+                    <hr>
+                </h4>
+            </ul>
+            <button type="button" v-on:click="clearDo()"><i class="material-icons">delete_forever</i></button>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

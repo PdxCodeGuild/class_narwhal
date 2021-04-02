@@ -9,6 +9,7 @@ h1 {
 #lstr {
     margin: 0em;
     margin-left: .2em;
+    color: #b5e1f3;
 }
 #ls {
     margin-bottom: -1.25em;
@@ -20,12 +21,54 @@ h1 span {
     display: inline-flex;
     letter-spacing: 0em;
 }
-h1 span:nth-child(odd) {
+.lstr-line {
+    color: #da6b8e;
+}
+h1 span:nth-child(even) {
     overflow: hidden;
     letter-spacing: -1em;
     transition: ease-in-out 0.5s;
 }
-h1:hover span:nth-child(odd) {
+h1:hover span:nth-child(even) {
     letter-spacing: 0em;
     transition: ease-in-out 0.5s;
+}
+main {
+    text-align: center;
+}
+#textarea {
+    text-align: center;
+    width: 21em;
+    border-color: #b5e1f3;
+}
+ul {
+    padding: 0em;
+    text-align: left;
+}
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    border-radius: 10em;
+}
+button:hover {
+    color: #da6b8e;
+}
+input.checkbox {
+    font-size: 2em;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(181, 225, 243, 0), rgba(181, 225, 243, 0.75), rgba(181, 225, 243, 0));
+}
+#list-divider {
+    height: unset;
+    background-image: unset;
+    overflow: visible;
+    padding: 0;
+    border: none;
+    border-top: medium double #b5e1f3;
+    color: #b5e1f3;
+    text-align: center;
 }

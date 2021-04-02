@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX, API, Axios Tutorial/Notes</title>
+</head>
+<body>
+    <div id="app">
+    <button @click="loadQuotes">Quote Me!</button>
+        <div v-for="quote in results.quotes" :key="quote.id">
+            <p><a :href="quote.url">{{ quote.author }}</a></p>
+            <p>{{ quote.body }}</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="secrets.js"></script> 
+    <script src="notes.js"></script> 
+</body>
+</html>
