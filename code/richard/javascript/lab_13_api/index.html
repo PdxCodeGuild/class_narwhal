@@ -32,10 +32,12 @@
                 <span v-if="!results.last_page"><h3 @click="goToNextPage" id="next_page" >Next Page</h3></span>
             </div>
 
-            <div id="answers" v-for="quote in results.quotes" :key="quote.id">
+            <quote v-bind:quote="quote" id="answers" v-for="quote in results.quotes" :key="quote.id"></quote>
+
+            <!-- <div id="answers" v-for="quote in results.quotes" :key="quote.id">
                 <p>{{ quote.body }}</p>
                 <p><a :href="quote.url">{{ quote.author }}</a></p>
-            </div>
+            </div> -->
 
 
 

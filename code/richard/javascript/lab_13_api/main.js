@@ -1,3 +1,10 @@
+Vue.component('quote', {
+    props: ['quote'],
+    template: '<div><p>{{ quote.body }}</p><p><a :href="quote.url">{{ quote.author }}</a></p></div>'
+});
+
+
+
 const vm = new Vue({
     el: '#app',
     data: {
