@@ -20,15 +20,21 @@
             <label for="tag">Tag</label><br>
 
             <button @click="loadQuotes">Get Quotes!</button>
+            <hr>
+            <button @click="loadRandom25">Generate Random Quotes!</button>
             </div>
 
         <h2>Here are your quotes</h2>
-            <div id="answers" v-for="quote in results.quotes" :key="quote.id">
-                <p>{{ quote.body }}</p>
-                <p><a :href="quote.url">{{ quote.author }}</a></p>
+
+            <div id="page_number">
+                <h3>Page: {{ results.page }}</h3>
+                <span v-if="results.page != 1"><h3 @click="goToPreviousPage" id="previous_page">Previous Page</h3></span>
+                <span v-if="!results.last_page"><h3 @click="goToNextPage" id="next_page" >Next Page</h3></span>
             </div>
 
-            <!-- <div id="random25" v-for="quote in random25.quotes" :key="quote.id">
+            <quote v-bind:quote="quote" id="answers" v-for="quote in results.quotes" :key="quote.id"></quote>
+
+            <!-- <div id="answers" v-for="quote in results.quotes" :key="quote.id">
                 <p>{{ quote.body }}</p>
                 <p><a :href="quote.url">{{ quote.author }}</a></p>
             </div> -->
