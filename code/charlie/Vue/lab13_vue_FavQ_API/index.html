@@ -7,12 +7,23 @@
 </head>
 <body>
     <div id="FavQ">
-    <input type="text" id="keyword" placeholder="Who's the author of your favorite quote?" @keyup.enter="loadQuotes">
-    <button @click="loadQuotes">Search!</button>
+    <select v-model="searchFilter">
+    <option value="keyword">Keyword</option>
+    <option value="author">Author</option>
+    <option value="tag">Tag</option>
+    </select>
+    <input type="text" id="keyword" placeholder="Who's the author of your favorite quote?" @keyup.enter="searchQuotes">
+    <button @click="searchQuotes">Search!</button>
         <div v-for="quote in results.quotes" :key="quote.id">
             <p><a :href="quote.url">{{ quote.author }}</a></p>
             <p>{{ quote.body }}</p>
         </div>
+    <ul>
+        <li v-for="quote in results.quotes" :key="quote.id">
+            <p><a :href="quote.url">{{ quote.author }}</a></p>
+            <p>{{ quote.body }}</p>
+        </li>
+    </ul>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
