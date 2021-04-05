@@ -11,8 +11,14 @@ h1, h2 {
     border: 1px solid red;
 }
 
+#Sex {
+    background-color: yellow;
+}
 
-#answers {
+
+
+
+#output {
     background-color: rgb(235, 232, 211);
     width: 100%;
 }
