@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="crypto.css">
+    <title>CryptoCurrency Price Sheet</title>
+<body>
+    <div id="app">
+        <h1>Current Date and Time</h1>
+        <h2 id='clock'></h2>
+        <h1>Current Prices</h1>
+        <div v-for="(result, index) in results">
+            <h2>{{ index }}</h2>
+            <p>USD: {{ result.USD }}</p>
+            <p>Euro: {{ result.EUR }}</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="crypto.js"></script>
+</body>
+</html>       
