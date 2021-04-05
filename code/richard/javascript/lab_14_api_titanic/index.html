@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Titanic Predictions</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Titanic Predictions</h1>
+        <h2>Using Vue.js and Axios</h2>
+        <div id="app">
+            <h3>Ask Questions = Input</h3>
+
+
+            <div id = "questions">
+
+                <input v-model="Sex" type="radio" name="Sex" value="male">
+                <label for="male">Male</label><br>
+                <input v-model="Sex" type="radio" name="Sex" value="female" checked>
+                <label for="female">Female</label><br>
+
+                <button @click="generatePrediction">Generate Prediction!</button>
+                <hr>
+            </div>
+
+        
+
+            <div id="output">
+                    <h3>Prediction = Output</h3>
+                    {% comment %} 
+                    <span v-if="results.page != 1"><h3 @click="goToPreviousPage" id="previous_page">Previous Page</h3></span>
+                    <span v-if="!results.last_page"><h3 @click="goToNextPage" id="next_page" >Next Page</h3></span>
+                    <quote v-bind:quote="quote" id="answers" v-for="quote in results.quotes" :key="quote.id"></quote> 
+                    {% endcomment %}
+            </div>
+
+            
+
+
+
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
