@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <title>AJAX, API, Axios Tutorial/Notes</title> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX, API, Axios Tutorial/Notes</title>
+    <title>Linear search on company time?!</title>
 </head>
 <body>
     <div id="FavQ">
@@ -12,18 +13,18 @@
     <option value="author">Author</option>
     <option value="tag">Tag</option>
     </select>
-    <input type="text" id="keyword" placeholder="Who's the author of your favorite quote?" @keyup.enter="searchQuotes">
+    <input type="text" id="keyword" placeholder="A search perhaps?" @keyup.enter="searchQuotes">
     <button @click="searchQuotes">Search!</button>
-        <div v-for="quote in results.quotes" :key="quote.id">
+        <!-- <div v-for="quote in results.quotes" :key="quote.id">
             <p><a :href="quote.url">{{ quote.author }}</a></p>
             <p>{{ quote.body }}</p>
-        </div>
-    <ul>
+        </div> -->
+    <ol>
         <li v-for="quote in results.quotes" :key="quote.id">
             <p><a :href="quote.url">{{ quote.author }}</a></p>
             <p>{{ quote.body }}</p>
         </li>
-    </ul>
+    </ol>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
