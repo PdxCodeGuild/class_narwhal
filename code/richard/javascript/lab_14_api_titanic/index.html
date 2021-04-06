@@ -61,12 +61,11 @@
             
             </div>
             <div id="output" class="column is-half">
-            
                     <div id="output">
-                    <h3>Your chance of survival</h3>
-                    <p v-if="Object.keys(prediction).length"> {{prediction.data[0]["confidence(1.00)"] }} </p>
                     
-            </div>
+                    <p id="prediction" v-if="Object.keys(prediction).length"> {{ (100 * prediction.data[0]["confidence(1.00)"]).toFixed(2) }}% </p>
+                    
+                    </div>
 
             </div>
         </div>

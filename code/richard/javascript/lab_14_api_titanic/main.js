@@ -36,6 +36,7 @@ const vm = new Vue({
                 method: "post",
                 data: this.variables,
             }).then(response => {
+                //response.data = 100 * response.data
                 this.prediction = response.data
             })
         },

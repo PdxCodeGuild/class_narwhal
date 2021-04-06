@@ -13,12 +13,26 @@ html {
   #input {
       background-color: white;
       min-height: 200px;
+      padding: 50px;
   }
 
 
   #output {
-      background-color: grey;
-      min-height: 200px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #response {
+      text-align: center;
+      background-color:whitesmoke;
+  }
+
+  
+
+  #prediction {
+      font-size: 80px;
   }
 
 
