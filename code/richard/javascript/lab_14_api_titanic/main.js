@@ -8,8 +8,8 @@ const vm = new Vue({
         variables:   {
             "data": [
               {
-                "Passenger Class": "Third",
-                "Sex": "male",
+                "Passenger Class": "First",
+                "Sex": "female",
                 "Age": 22,
                 "Sibling_Spouse": 1,
                 "Parent_Child": 0,
@@ -36,6 +36,7 @@ const vm = new Vue({
                 method: "post",
                 data: this.variables,
             }).then(response => {
+                //response.data = 100 * response.data
                 this.prediction = response.data
             })
         },
