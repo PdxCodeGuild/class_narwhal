@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Titanic Predictions</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  </head>
-
-
-  <body>
-
-    <section>
-        <div id="header">
-            <h1 class="title">Titanic Survival Predictions</h1>
-            <h2 class="subtitle">How would you fare?</h2>
-        </div>
-
-        <br>
-
+    <head>
+        <meta charset="utf-8">
+        <title>Titanic Predictions</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>Titanic Predictions</h1>
+        <h2>Using Vue.js and Axios</h2>
         <div id="app">
+            
 
-        <div id="main" class="container">
-            <div class="columns">
-            <div id="input" class="column is-half">
 
-            <div id="PassengerClass">
+            <div id = "questions">
+            <h3>Ask Questions = Input</h3>
+                
+
+                <div id="PassengerClass">
                     <p>Passenger Class</p>
                     <input @change="generatePrediction" v-model="variables.data[0]['Passenger Class']" type="radio" name="Passenger Class" value="First">
                     <label for="First">First</label><br>
@@ -35,14 +26,10 @@
                     <label for="Third">Third</label><br>
                 </div>
 
-                <hr>
-
                 <div id="Age">
                     <p>Age</p>
-                    1<input @change="generatePrediction" v-model="variables.data[0]['Age']" type="range" min="1" max="100" value="50" class="slider" id="myRange" name="Age">100
+                    <input @change="generatePrediction" v-model="variables.data[0]['Age']" type="range" min="1" max="100" value="50" class="slider" id="myRange" name="Age">
                 </div>
-
-                <hr>
 
                 <div id="Sex">
                     <p>Sex</p>
@@ -52,45 +39,32 @@
                     <label for="female">Female</label><br>
                 </div>
 
-                <hr>
-
                 <div id="FamilySize">
                     <p>Family Size</p>
-                    1<input @change="generatePrediction" v-model="variables.data[0]['Family Size']" type="range" min="1" max="10" value="50" class="slider" id="myRange" name="FamilySize">10
+                    <input @change="generatePrediction" v-model="variables.data[0]['Family Size']" type="range" min="1" max="10" value="50" class="slider" id="myRange" name="FamilySize">
                 </div>
-            
+
+
+                <hr>
             </div>
-            <div id="output" class="column is-half">
-            
-                    <div id="output">
-                    <h3>Your chance of survival</h3>
+
+        
+
+            <div id="output">
+                    <h3>Prediction = Output</h3>
                     <p v-if="Object.keys(prediction).length"> {{prediction.data[0]["confidence(1.00)"] }} </p>
                     
             </div>
 
-            </div>
+            
+
+
+
+
+
         </div>
-
-
-        <figure class="image is-16by9">
-            <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/b0L_2jKEbA4" frameborder="0" allowfullscreen></iframe>
-        </figure>
-
-    </section>
-
-    </div>
-
-    <footer class="footer">
-        <div class="content has-text-centered">
-        <p><strong>Predictions by Richard Farr. </strong>Copyright 2021</p>
-        </div>
-    </footer>
-
-
-  
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="main.js"></script>
-  </body>
-        
+    </body>
 </html>

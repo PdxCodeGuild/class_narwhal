@@ -8,8 +8,8 @@ const vm = new Vue({
         variables:   {
             "data": [
               {
-                "Passenger Class": "Third",
-                "Sex": "male",
+                "Passenger Class": "First",
+                "Sex": "female",
                 "Age": 22,
                 "Sibling_Spouse": 1,
                 "Parent_Child": 0,

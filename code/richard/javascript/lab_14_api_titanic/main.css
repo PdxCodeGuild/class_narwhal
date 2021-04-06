@@ -1,28 +1,29 @@
+html { 
+    background: url("titanic.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  #header {
+      background-color: white;
+  }
+
+  #input {
+      background-color: white;
+      min-height: 200px;
+  }
 
 
-h1, h2 {
-    text-align: center;
-}
-
-#questions {
-    width: 100%;
-    background-color: rgb(221, 204, 204);
-    display: block;
-    border: 1px solid red;
-}
-
-#Sex {
-    background-color: yellow;
-}
+  #output {
+      background-color: grey;
+      min-height: 200px;
+  }
 
 
+  .footer {
+      max-height: 10px;
+  }
 
 
-#output {
-    background-color: rgb(235, 232, 211);
-    width: 100%;
-}
-
-#previous_page, #next_page {
-    color: blue;
-}
