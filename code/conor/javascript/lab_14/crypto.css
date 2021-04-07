@@ -11,3 +11,14 @@ body, nav h1, h2, h3, h4, h5 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.headliner {
+    text-align: center;
+}
+
+.search-bar {
+    text-align: right;
+}
+
+.topten {
+    text-align: left;
+}
