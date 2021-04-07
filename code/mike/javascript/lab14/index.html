@@ -14,13 +14,22 @@
             </div>
         </div>
         <div id="app" class="container">
-            <get-weather @list="getWeather"></get-weather><br>
-            <div v-for="list in results.list" :key="list.id">
-                <p>City: {{ results.city.name }}
-                <p>Date: {{ list.date }}</p>
-                <p>Current Temperature: {{ list.main.temp }}°F</p>
-                <p>Feels like: {{ list.main.feels_like }}°F</p>
-                <p>Cloud Coverage: {{ list.clouds.all }}</p>
+            <div class="zipcode">
+                <br>
+                <get-weather @result="getWeather"></get-weather><br>
+                <hr>
+            </div>
+            <div v-if="Object.keys(results).length" class="weather-data">
+                <p class="city">{{ results.name }}</p>
+                <p class="date">{{ results.date }}</p>
+                <img :src="image">
+                <p>{{ results.image }}</p>
+                <p class="clouds">{{ results.weather[0].description }}</p>
+                <p class="current-temp">{{ results.main.temp }}°F
+                <p>Current Temperature</p>
+                <p class="feels-like">{{ results.main.feels_like }}°F</p>
+                <p>Feels Like</p>
+                <p class="hi-lo">High: {{ results.main.temp_max }}°F     Low: {{ results.main.temp_min }}°F</p>
                 <hr>
             </div>
         </div>

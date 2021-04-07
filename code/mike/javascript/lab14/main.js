@@ -13,37 +13,38 @@ Vue.component('get-weather',{
     methods: {
         getWeather: function() {
             console.log()
-            this.$emit('list', {zipCode: this.zipCode})
+            this.$emit('result', {zipCode: this.zipCode})
             this.zipCode = ""
         }
     }
 })
 
+
 const vm = new Vue({
     el: '#app',
     data: {
-        list: [],
-        city: [],
         zipCode: "",
+        image: "http://openweathermap.org/img/wn/10d@2x.png",
         results: {}
     },
     methods: {
-        getWeather: function(options) {
-            console.log(options)
+        getWeather: function(location) {
+            console.log(location)
             axios({
                 method: "get",
-                url: `https://api.openweathermap.org/data/2.5/forecast`,
-                headers: {
-                },
+                url: `https://api.openweathermap.org/data/2.5/weather`,
                 params: {
-                    zip: options.zipCode,
+                    zip: location.zipCode,
                     units: "imperial",
                     appid: API_key
                 }
             }).then(response => {
                 this.results = response.data
-                this.results.list.forEach(forecast => forecast.date = new Date(forecast.dt * 1000))
+                this.results.date = new Date(this.results.dt * 1000).toDateString("en")
+                this.results.image = `http://openweathermap.org/img/wn/${this.results.weather[0].icon}@2x.png`
+            }).catch(error => {
+                console.log(error)
             })
-        }
+        },
     }
 })
