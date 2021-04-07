@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+.header-image {
+    background-image: url("images/sky.jpg");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: 'Seymour One', sans-serif;
+}
+
+.header-title {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:1.5em;
+    color: white;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
+}
+
+.header-title h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.container {
+    margin: 5px;
+}
+
+.container button {
+    margin: 5px
+}
+
+.footer {
+    padding-right: 16px;
+    padding-left: 16px;
+    width: 100%;
+    height: 2.5rem;
+    bottom: 0;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: rgb(123, 202, 248);
+    min-height: 10vh;
+    flex-direction: column;
+    align-items: center;
+}
