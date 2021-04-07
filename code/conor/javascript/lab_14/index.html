@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="crypto.css">
+    <title>CryptoCurrency Price Sheet</title>
+<body>
+    <div id="app">
+        <h1>Current Exchange</h1>
+        <h2>NYSE Date/Time</h2>
+        <h3>{{ NYSETime }}</h3>
+        <h2>Your Date/Time</h2>
+        <h3>{{ HomeTime }}</h3>
+        <div v-for="crypto in topTenCrypto">
+            <h3>{{ crypto.CoinInfo.FullName }}</h3>
+                <p>Current USD Price: {{ crypto.DISPLAY.USD.PRICE }}</p>
+        </div>
+        <!-- <div>
+            <p>USD: {{ results.USD }}</p>
+            <p>Euro: {{ results.EUR }}</p>
+            <p>JPY: {{ results.JPY }}</p>
+        </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="crypto.js"></script>
+</body>
+</html>       

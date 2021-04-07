@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>NASA API</title>
+</head>
+<body>
+    <div id= "Nasa">
+        <h2>Browse NEO(Near Earth object) Feed</h2>
+        <input type="text" id="start_date" placeholder="MM-DD-YYYY">
+        <input type="text" id="end_date" placeholder="MM-DD-YYYY" @keyup.enter="NEOFeed">
+        <button @click="NEOFeed">Search</button> 
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="secrets.js"></script> 
+    <script src="nasa.js"></script>
+</body>
+</html>

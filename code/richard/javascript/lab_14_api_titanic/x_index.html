@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Titanic Predictions</title>
+        <link rel="stylesheet" href="x_main.css">
+    </head>
+    <body>
+        <h1>Titanic Predictions</h1>
+        <h2>Using Vue.js and Axios</h2>
+        <div id="app">
+            
+
+
+            <div id = "questions">
+            <h3>Ask Questions = Input</h3>
+                
+
+                <div id="PassengerClass">
+                    <p>Passenger Class</p>
+                    <input @change="generatePrediction" v-model="variables.data[0]['Passenger Class']" type="radio" name="Passenger Class" value="First">
+                    <label for="First">First</label><br>
+                    <input @change="generatePrediction" v-model="variables.data[0]['Passenger Class']" type="radio" name="Passenger Class" value="Second">
+                    <label for="Second">Second</label><br>
+                    <input @change="generatePrediction" v-model="variables.data[0]['Passenger Class']" type="radio" name="Passenger Class" value="Third">
+                    <label for="Third">Third</label><br>
+                </div>
+
+                <div id="Age">
+                    <p>Age</p>
+                    <input @change="generatePrediction" v-model="variables.data[0]['Age']" type="range" min="1" max="100" value="50" class="slider" id="myRange" name="Age">
+                </div>
+
+                <div id="Sex">
+                    <p>Sex</p>
+                    <input @change="generatePrediction" v-model="variables.data[0].Sex" type="radio" name="Sex" value="male">
+                    <label for="male">Male</label><br>
+                    <input @change="generatePrediction" v-model="variables.data[0].Sex" type="radio" name="Sex" value="female">
+                    <label for="female">Female</label><br>
+                </div>
+
+                <div id="FamilySize">
+                    <p>Family Size</p>
+                    <input @change="generatePrediction" v-model="variables.data[0]['Family Size']" type="range" min="1" max="10" value="50" class="slider" id="myRange" name="FamilySize">
+                </div>
+
+
+                <hr>
+            </div>
+
+        
+
+            <div id="output">
+                    <h3>Prediction = Output</h3>
+                    <p v-if="Object.keys(prediction).length"> {{prediction.data[0]["confidence(1.00)"] }} </p>
+                    
+            </div>
+
+            
+
+
+
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

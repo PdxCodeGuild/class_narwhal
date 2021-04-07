@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; 
+    background-image: url("");/* APOD url goes here */
+    background-color: #F2F2F2;
+    color: #260517;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;}
+
+header, footer {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #5352F4;
+    color: #F2A7AD;
+    text-align: center;
+}
+
+header, main, footer {
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
