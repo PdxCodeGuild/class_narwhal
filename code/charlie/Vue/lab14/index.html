@@ -14,6 +14,11 @@
         <input type="date" id="start_date" placeholder="MM-DD-YYYY">
         <input type="date" id="end_date" placeholder="MM-DD-YYYY" @keyup.enter="NEOFeed">
         <button @click="NEOFeed">Search</button> 
+        <img :src="APOD.hdurl">
+        <div v-for="result in NEOResults" :key="result.id">
+            <p><a :href="result.nasajplurl">{{ result.nasajplurl }}</a></p>
+            <!-- Your working code goes here! :-D -->
+        </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
