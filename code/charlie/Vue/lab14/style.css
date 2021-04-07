@@ -7,9 +7,9 @@ html {
 
 body {
     font-family: 'Orbitron', sans-serif; 
-    background-image: url("");/* APOD url goes here */
-    background-color: #F2F2F2;
-    color: #260517;
+    /* background-image: ;APOD url goes here */
+    background-color: #260517;
+    color: #F2F2F2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,4 +28,9 @@ header, main, footer {
 
 header h1 {
     margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
