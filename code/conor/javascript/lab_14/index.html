@@ -5,20 +5,42 @@
     <title>CryptoCurrency Price Sheet</title>
 <body>
     <div id="app">
-        <h1>Current Exchange</h1>
-        <h2>NYSE Date/Time</h2>
-        <h3>{{ NYSETime }}</h3>
-        <h2>Your Date/Time</h2>
-        <h3>{{ HomeTime }}</h3>
-        <div v-for="crypto in topTenCrypto">
-            <h3>{{ crypto.CoinInfo.FullName }}</h3>
-                <p>Current USD Price: {{ crypto.DISPLAY.USD.PRICE }}</p>
+        <div class="headliner">
+            <h1>Current Exchange</h1>
+            <h2>NYSE Date/Time</h2>
+                <p>{{ NYSETime }}</p>
+            <h2>Your Date/Time</h2>
+                <p>{{ HomeTime }}</p>
         </div>
+
+        <coin-me class="search-bar" @crypto="searchCoin"></coin-me>
+            <div v-if="results.USD">
+                <div >
+                    <h3>{{ displayCoin }}</h2>
+                        <p>USD: {{ results.USD.PRICE }}</p>
+                        <p>EUR: {{ results.EUR.PRICE }}</p>
+                        <p>JPY: {{ results.JPY.PRICE }}</p>
+                </div>
+            </div>    
+
+        <div class="topten" v-for="crypto in topTenCrypto">
+            <h5>{{ crypto.CoinInfo.FullName }}</h5>
+                <p>Current USD Price: {{ crypto.DISPLAY.USD.PRICE }}</p>
+                <!-- <p>Current EUR Price: {{ crypto.DISPLAY.EUR.PRICE }}</p>
+                <p>Current JPY Price: {{ crypto.DISPLAY.JPY.PRICE }}</p> -->
+        </div>
+    
+        <div v-for="result in results">
+            <h3>{{ result.DISPLAY }}</h3>
+                <p>{{ result.DISPLAY</p>
+        </div>
+
         <!-- <div>
             <p>USD: {{ results.USD }}</p>
             <p>Euro: {{ results.EUR }}</p>
             <p>JPY: {{ results.JPY }}</p>
         </div> -->
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

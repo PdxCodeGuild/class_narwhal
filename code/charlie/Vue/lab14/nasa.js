@@ -1,35 +1,40 @@
-const Nasa = new Vue({
+const vm = new Vue({
     el:'#Nasa',
     data:{
         start_date: "",
         end_date: "",
+        APOD: {},
+        NEOResults: {},
         results: {}
+
     },
     methods:{
         NEOFeed: function() {
             axios({
-                url: "https://api.nasa.gov/planetary/feed",
+                url: "https://api.nasa.gov/neo/rest/v1/feed",
                 method: "get",
                 headers:{
-                    "Authorization":`Token token="${AK}"`
+
                 },
                 params:{
-                    start_date: this.end_date,
-                    end_date: this.start_date, 
+                    "start_date": this.start_date,
+                    "end_date": this.end_date, 
+                    "api_key" : `${AK}` 
                 }
             }).then(response => {
-                this.results = response.data;
+                this.NEOResults = response.data;
+                console.log(this.NEOResults);
             })
         },
         NEOBrowse: function() {
             axios({
-                url: "https://api.nasa.gov/neo/rest/v1/neo/browse/",
+                url: "https://api.nasa.gov/neo/rest/v1/neo/browse",
                 method: "get",
                 headers:{
-                    "Authorization":`Token token="${AK}"`
+
                 },
                 params:{
-                   
+                    "api_key" : `${AK}` 
                 }
             }).then(response => {
                 this.results = response.data;
@@ -40,13 +45,14 @@ const Nasa = new Vue({
                 url: "https://api.nasa.gov/planetary/apod",
                 method: "get",
                 headers:{
-                    "Authorization":`Token token="${AK}"`
+
                 },
                 params:{
-                  
+                    "api_key" : `${AK}` 
                 }
             }).then(response => {
-                this.results = response.data;
+                this.APOD = response.data;
+                console.log(response.data);
             })
         }
     },
