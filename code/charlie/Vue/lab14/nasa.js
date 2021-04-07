@@ -1,28 +1,40 @@
 const Nasa = new Vue({
     el:'#Nasa',
     data:{
-        searchFilter: "",
-        userSearch: "",
+        start_date: "",
+        end_date: "",
         results: {}
     },
     methods:{
-        searchAPOD: function() {
+        NEOFeed: function() {
             axios({
-                url: "https://api.nasa.gov/planetary/apod",
+                url: "https://api.nasa.gov/planetary/feed",
                 method: "get",
                 headers:{
                     "Authorization":`Token token="${AK}"`
                 },
                 params:{
-                    keyword: "",
-                    filter: `${keyword}`, 
-                    type: this.searchFilter
+                    start_date: this.end_date,
+                    end_date: this.start_date, 
                 }
             }).then(response => {
                 this.results = response.data;
             })
         },
-
+        NEOBrowse: function() {
+            axios({
+                url: "https://api.nasa.gov/neo/rest/v1/neo/browse/",
+                method: "get",
+                headers:{
+                    "Authorization":`Token token="${AK}"`
+                },
+                params:{
+                   
+                }
+            }).then(response => {
+                this.results = response.data;
+            })
+        },
         loadAPOD: function(){
             axios({
                 url: "https://api.nasa.gov/planetary/apod",
@@ -38,7 +50,6 @@ const Nasa = new Vue({
             })
         }
     },
-
     //This is where the Astronomy Picture Of the Day is generated from.
     mounted: function(){
             this.loadAPOD();
