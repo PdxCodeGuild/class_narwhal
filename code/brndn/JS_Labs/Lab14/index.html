@@ -4,12 +4,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="style.css" type="text/css" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
         <title>weather thing</title>
     </head>
     <body>
         <div id="app">
-            <button @click="getWeather">click</button>
-            
+            <div id="options">
+                <form v-on:submit.prevent="getWeather">
+                    <p><input type="text" id="location" name="location" v-model="location" placeholder="City"></p>
+                    <p><button ><i class="material-icons">flash_on</i></button></p>
+                </form>
+            </div>
+            <h1>{{location}} Weather</h1>
+            <hr>
+            <h3 id="overcast">{{overcast}}</h3>
+            <div id="weather">
+                <div id="measure">
+                    <h3>Currently:</h3>
+                    <h3>Range:</h3>
+                    <h3>Sunrise:</h3>
+                    <h3>Sunset:</h3>
+                    <h3>Humidity:</h3>
+                    <h3>Pressure:</h3>
+                    <h3>Wind:</h3>
+                </div>
+                <div id="info">
+                    <h3>{{currentTemp}}°</h3>
+                    <h3>{{minTemp}}° - {{maxTemp}}°</h3>
+                    <h3>{{sunrise}}</h3>
+                    <h3>{{sunset}}</h3>
+                    <h3>{{humidity}}</h3>
+                    <h3>{{pressure}}</h3>
+                    <h3>{{wind}}</h3>
+                </div>
+            </div>      
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
