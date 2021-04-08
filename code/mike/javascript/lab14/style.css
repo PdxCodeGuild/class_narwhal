@@ -1,4 +1,5 @@
 html {
+    display: block;
     box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -8,6 +9,7 @@ html {
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
+    background-color:floralwhite;
 }
 
 .header-image {
@@ -26,23 +28,102 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size:1.5em;
+    font-size:1.5rem;
     color: white;
     -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: black;
 }
 
 .header-title h1 {
-    font-size: 2.5em;
+    font-size: 4rem;
     font-weight: 700;
 }
 
 .container {
-    margin: 5px;
+    align-items: center;
 }
 
 .container button {
-    margin: 5px
+    margin-top: .5rem;
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 10;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: blue;
+    border: none;
+    border-radius: 15px;
+}
+
+.container button:hover {
+    background-color: lightskyblue;
+}
+
+.container button:active {
+    background-color: lightslategray;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px)
+}
+
+.zipcode {
+    text-align: center;
+    width: 100%;
+}
+
+.zipcode input{
+    text-align: center;
+}
+
+.weather-data {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.city {
+    font-size: 2.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.date {
+    margin-top: -1.5em;
+    margin-bottom: 2em;
+    color: grey;
+    text-align: center;
+}
+
+.weather-icon {
+    display: inline-flex;
+    height: 10rem;
+    align-content:flex-end;
+    float: right;
+}
+
+.clouds {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-align: right;
+}
+
+.current-temp {
+    font-weight: bold;
+    margin-bottom: -.25rem;
+}
+
+.feels-like {
+    font-weight: bold;
+    margin-bottom: -.25rem;
+}
+
+.hi-lo {
+    display: flex;
+    align-content: space-between;
 }
 
 .footer {
@@ -55,11 +136,12 @@ body {
     margin-right: auto;
     margin-left: auto;
     box-sizing: border-box;
-    display: flex;
     font-size: 14px;
     line-height: 1.5;
     background-color: rgb(123, 202, 248);
     min-height: 10vh;
     flex-direction: column;
     align-items: center;
+    display: flex;
+    position: static;
 }
