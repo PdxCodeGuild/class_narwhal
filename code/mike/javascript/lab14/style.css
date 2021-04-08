@@ -40,7 +40,7 @@ body {
 }
 
 .container {
-    margin: 5px;
+    align-items: center;
 }
 
 .container button {
@@ -70,6 +70,7 @@ body {
 
 .zipcode {
     text-align: center;
+    width: 100%;
 }
 
 .zipcode input{
@@ -96,10 +97,18 @@ body {
     text-align: center;
 }
 
+.weather-icon {
+    display: inline-flex;
+    height: 10rem;
+    align-content:flex-end;
+    float: right;
+}
+
 .clouds {
     font-weight: 700;
     font-size: 1.5rem;
     text-transform: capitalize;
+    text-align: right;
 }
 
 .current-temp {
@@ -127,11 +136,12 @@ body {
     margin-right: auto;
     margin-left: auto;
     box-sizing: border-box;
-    display: flex;
     font-size: 14px;
     line-height: 1.5;
     background-color: rgb(123, 202, 248);
     min-height: 10vh;
     flex-direction: column;
     align-items: center;
+    display: flex;
+    position: static;
 }

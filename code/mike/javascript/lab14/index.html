@@ -22,9 +22,8 @@
             <div v-if="Object.keys(results).length" class="weather-data">
                 <p class="city">{{ results.name }}</p>
                 <p class="date">{{ results.date }}</p>
-                <img :src="image">
-                <p>{{ results.image }}</p>
                 <p class="clouds">{{ results.weather[0].description }}</p>
+                <img class="weather-icon" :src="results.image">
                 <p class="current-temp">{{ results.main.temp }}°F
                 <p>Current Temperature</p>
                 <p class="feels-like">{{ results.main.feels_like }}°F</p>
@@ -32,8 +31,8 @@
                 <p class="hi-lo">High: {{ results.main.temp_max }}°F     Low: {{ results.main.temp_min }}°F</p>
                 <hr>
             </div>
+            <footer class="footer">API provided by <a href="https://openweathermap.org">OpenWeather</footer>
         </div>
-        <footer class="footer">API provided by <a href="https://openweathermap.org">OpenWeather</footer>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="secrets.js"></script>

@@ -24,8 +24,7 @@ const vm = new Vue({
     el: '#app',
     data: {
         zipCode: "",
-        image: "http://openweathermap.org/img/wn/10d@2x.png",
-        results: {}
+        results: {},
     },
     methods: {
         getWeather: function(location) {
@@ -46,5 +45,19 @@ const vm = new Vue({
                 console.log(error)
             })
         },
+    }
+})
+
+Vue.component('get-image',{
+    data: function() {
+        return {
+            image: "",
+        }
+    },
+    methods: {
+        getImage: function(image) {
+            console.log(image)
+            this.$emit('image', {image: this.image})
+        }
     }
 })
