@@ -8,8 +8,10 @@ html {
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    background-color:floralwhite;
+    font-weight: 100;
+    color: white;
+    background:#606d96;
+    text-shadow: 0 0 2 #000000;
 }
 
 .header-image {
@@ -39,11 +41,17 @@ body {
     font-weight: 700;
 }
 
-.container {
+.zipcode {
+    text-align: center;
     align-items: center;
+    width: 100%;
 }
 
-.container button {
+.zipcode input{
+    text-align: center;
+}
+
+.zipcode button {
     margin-top: .5rem;
     display: inline-block;
     padding: 5px 15px;
@@ -58,27 +66,27 @@ body {
     border-radius: 15px;
 }
 
-.container button:hover {
+.zipcode button:hover {
     background-color: lightskyblue;
 }
 
-.container button:active {
+.zipcode button:active {
     background-color: lightslategray;
     box-shadow: 0 5px #666;
     transform: translateY(4px)
 }
 
-.zipcode {
-    text-align: center;
-    width: 100%;
+.container {
+    width: 520px;
+    height: 170px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
 }
 
-.zipcode input{
-    text-align: center;
-}
-
-.weather-data {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.weather {
+    padding: 15px;
+    vertical-align: middle;
 }
 
 
@@ -93,27 +101,28 @@ body {
 .date {
     margin-top: -1.5em;
     margin-bottom: 2em;
-    color: grey;
+    color: #c1c9e0;
     text-align: center;
 }
 
-.weather-icon {
+/* .weather-icon {
     display: inline-flex;
     height: 10rem;
     align-content:flex-end;
     float: right;
-}
+} */
 
 .clouds {
-    font-weight: 700;
     font-size: 1.5rem;
     text-transform: capitalize;
-    text-align: right;
 }
 
 .current-temp {
+    font-family: 'Vast Shadow', cursive;
+    font-size: 40px;
     font-weight: bold;
-    margin-bottom: -.25rem;
+    vertical-align: top;
+    position: absolute;
 }
 
 .feels-like {
@@ -122,26 +131,10 @@ body {
 }
 
 .hi-lo {
-    display: flex;
-    align-content: space-between;
+    text-align: right;
+    text-justify: distribute;
+    display: block;
+    position: relative;
+    top: -20px;
 }
 
-.footer {
-    padding-right: 16px;
-    padding-left: 16px;
-    width: 100%;
-    height: 2.5rem;
-    bottom: 0;
-    max-width: 1280px;
-    margin-right: auto;
-    margin-left: auto;
-    box-sizing: border-box;
-    font-size: 14px;
-    line-height: 1.5;
-    background-color: rgb(123, 202, 248);
-    min-height: 10vh;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    position: static;
-}

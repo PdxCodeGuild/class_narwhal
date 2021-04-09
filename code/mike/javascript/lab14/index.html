@@ -19,19 +19,22 @@
                 <get-weather @result="getWeather"></get-weather><br>
                 <hr>
             </div>
-            <div v-if="Object.keys(results).length" class="weather-data">
-                <p class="city">{{ results.name }}</p>
-                <p class="date">{{ results.date }}</p>
-                <p class="clouds">{{ results.weather[0].description }}</p>
-                <img class="weather-icon" :src="results.image">
-                <p class="current-temp">{{ results.main.temp }}°F
-                <p>Current Temperature</p>
-                <p class="feels-like">{{ results.main.feels_like }}°F</p>
-                <p>Feels Like</p>
-                <p class="hi-lo">High: {{ results.main.temp_max }}°F     Low: {{ results.main.temp_min }}°F</p>
-                <hr>
+            <div v-if="Object.keys(results).length" class="weather">
+                <div id="weather">
+                    <span class="city">{{ results.name }}</span><br>
+                    <span class="date">{{ results.date }}</span><br>
+                    <img class="weather-icon" :src="results.image">
+                    <span class="current-temp">{{ results.main.temp }}°F </span><br>
+                    {{ results.weather[0].description }}<br>
+                    <span id="temp-values">High: {{ results.main.temp_max }}°F <br> Low: {{ results.main.temp_min }}°F</span>
+                </div>
+                <div id="info">
+                    Feels Like: {{ results.main.feels_like }}°F <br>
+                    Humidity: {{ results.main.humidity }}% <br>
+                    Wind: {{ results.wind.speed }} mph <br>
+
+                </div>
             </div>
-            <footer class="footer">API provided by <a href="https://openweathermap.org">OpenWeather</footer>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
