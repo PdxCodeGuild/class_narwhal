@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students.apps.StudentsConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+
+    'rest_framework',
+
+    'api.apps.ApiConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -127,3 +132,9 @@ LOGIN_REDIRECT_URL = 'students:home'
 LOGOUT_REDIRECT_URL = 'students:home'
 
 LOGIN_URL = 'login'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
