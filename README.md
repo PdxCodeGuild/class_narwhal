@@ -7,7 +7,11 @@ M-F 9:30 am – 4:30 pm
 
 ### Holidays
 
-
+April 16 -- Study Day/No Class  
+April 23 -- Study Day/No Class  
+April 26 -- Study Day/No Class  
+April 30 -- Study Day/No Class  
+May 3 -- Study Day/No Class  
 
 ### Staff
 
@@ -19,13 +23,19 @@ M-F 9:30 am – 4:30 pm
 
 ## Capstone Dates:
 
-Capstone proposal due: April ??th, 2021  
+Capstone proposal due: April 13th, 2021  
 Presentation Day: May 7th, 2021  
 
 ## JavaScript Labs Assigned:
 
 Lab 01-03a Pick 3 (alert/prompt)  
 Lab 01-03b Pick 3 (input/events)  
+Lab 04 Todo  
+Lab 06 Clock  
+Lab 11 Vue Todos  
+Lab 13 Vue FavQs  
+Lab 14 Any API in Vue  
+(Django Lab 06 DRF/Vue) 
 
 #### Optional JavaScript Labs
 
@@ -43,6 +53,7 @@ Lab 12 Vue Calculator
 Lab 01 Grocery List  
 Lab 02 URL Shortener  
 Lab 03 Chirp  
+Lab 06 DRF/Vue  
 
 #### Optional Django Labs
 

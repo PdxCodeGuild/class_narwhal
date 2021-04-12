@@ -39,16 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'students.apps.StudentsConfig',
     'users.apps.UsersConfig',
-
-    'rest_framework',
-    'apis',
-    
+    'rest_framework'
 ]
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ]}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

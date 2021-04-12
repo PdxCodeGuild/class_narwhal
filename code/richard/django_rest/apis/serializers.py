@@ -1,13 +1,16 @@
 # apis/serializers.py
 from rest_framework import serializers
-from todos import models
+from students import models
 
 
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'id',
-            'title',
-            'description',
+            'first_name',
+            'last_name', 
+            'cohort',
+            'favorite_topic',
+            'favorite_teacher',
+            'capstone',
         )
-        model = models.Todo
+        model = models.Student
