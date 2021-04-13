@@ -6,6 +6,7 @@ This is app for goflers that would like to keep track of their statistics from e
 
 ### Features
 The Golf Stats App will allow the golfer to record certain stats from their golf rounds.
+User Authentication
 Those statistics include, but are not limited to:
 * Score (Hole-by-Hole and/or Total)
 * Fairway in Regulation (FIR)
@@ -14,7 +15,6 @@ Those statistics include, but are not limited to:
 * Up and Down
 * Sand Saves
 * More statistics to come
-User Authentication
 
 ### User Experience
 The User should be able to login and enter the **Date** and **Course** from their round and then proceed to the stats part.
