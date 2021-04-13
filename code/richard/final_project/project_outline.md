@@ -1,4 +1,4 @@
-# Are you smarter than a machine?
+# Are You Smarter Than a Model?
 Richard Farr
 April 12th, 2021
 
@@ -21,17 +21,24 @@ They will then be able to login and take a quiz that pits their predictions agai
 Whenever a user takes a quiz the results will be saved and added to a leaderboard. If its the 2nd or later time a user takes the quiz then all their scores will be averaged. 
 
 ## User Stories
-First, its a fun game. The user wants to prove to themself that they can do better than the ML algo and their friends.
+As a user, I want to be able to see a pretty dashbord and be able to filter the data becuase I want to understand the data better.
 
-Secondly, its an upsell for clients. They don't want to pay for a predictive model that isn't as good as they can do themselves. The goal of this app is to demonstrate the value of the machine learning algo that I built.
+As a user I want to be able to take a quiz and compare my predicitons to the machine learning model and the actual results.
+
+As a user, I want to see how I fare against others who have taken quizzes in the past via a leaderboard.
+
+As a freelance data scientist, I want a way to prove that the machine learning models I build perform better someone just using a dashboard to make predictions.
+
+As a freelance data scientist, I want people knocking down my door asking me to build them predictive models in exchange for lots of money.
+
 
 ### Tasks
-Summarize the raw data in an attractive dashboard
-Filter the data and have the data change in the dashboard
-Take a quiz
-See how well a user did on the quiz
-See how well a user did compared to the ml algo
-View a leaderboard
+- Summarize the raw data in an attractive dashboard
+- Filter the data and have the data change in the dashboard accordingly.
+- Take a quiz
+- See how well a user did on the quiz vs
+- See how well a user did compared to the machine learning model
+- View a leaderboard of peoples performance in taking the quiz
 
 ## Data Model
 I see needing 2 tables.
@@ -42,12 +49,15 @@ Table 2 is a place to store results of the quiz questions for the human and ml a
 
 ### Milestone 1 - Thursday, April 15th
 - Wireframe complete using Balsamiq
-- Static outline of website up on a custom domain using Bootstrap (no back end)
+- Github repository up and custom domain working
 
 ### Milestone 2 - Thursday, April 22nd
-- Dashboard working
+- Dashboard working 
+- Ability to filter the dashboard based on Sex, passenger class, etc
+- Apply Bootstrap to make it look decent
 
 ### Milestone 3 - Thursday, April 29th
+- Require authentication in order to see the blank pages for the quiz and the leaderboard
 - Quiz working
 
 ### Milestone 4 - Wednesday, May 5th
