@@ -44,4 +44,13 @@ For each user, the app will store user information, profile, media, groups, and 
 For each dog park, the app will store loaction, information, media, and messages.
 
 ## Schedule
-
+#### Week 1:
+  - Park locator
+  - Park information
+#### Week 2:
+  - User profiles
+  - Park message boards
+#### Week 3:
+  - User messaging
+  - User groups
+  - Group messaging
