@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
     <title>Quote</title>
 </head>
 <body> 
@@ -13,19 +14,21 @@
     <main>
         <div id="app">
             <h1>Quote Search</h1>
-            <search-by @add="searchBy"></search-by>
+            <input type="text" id="search-text" v-model="searchBy" @keyup.enter="loadQuotes" placeholder="search for..."></input>
+            <select v-model="type" id="search-options">
+                <option value="keyword" selected>Keyword</option>
+                <option value="author">Author</option>
+                <option value="tag">Tag</option>
+            </select>
             <button @click="loadQuotes">search</button>
-            <div v-for="quote in results.quotes" :key="quote.id">
-                <p>{{ quote.body }}</p>
-                <p><a :href="quote.url">{{ quote.author }}</a></p>
-                <ol>
-                    <quote-item
-                        v-for="quote in results"
-                        v-bind:todo="quote"
-                        v-bind:key="quote.id"
-                        ></quote-item>
-                </ol>
-            </div>
+            <button @click="randomQuotes">rando</button>
+            <h3>"{{ searchBy }}"</h3>
+            <hr>
+            <quote-item
+                v-for="quote in results.quotes"
+                v-bind:quote="quote"
+                v-bind:key="quote.id"
+                ></quote-item>
         </div>
     </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
