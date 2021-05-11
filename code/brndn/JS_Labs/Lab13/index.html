@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
-    <title>Quote</title>
+    <title>QuoteSearch</title>
 </head>
 <body> 
     <header>
@@ -20,15 +20,25 @@
                 <option value="author">Author</option>
                 <option value="tag">Tag</option>
             </select>
-            <button @click="loadQuotes">search</button>
-            <button @click="randomQuotes">rando</button>
+            <button @click="loadQuotes">Search</button>
+            <button @click="randomQuotes">Random</button>
             <h3>"{{ searchBy }}"</h3>
             <hr>
+            <div v-show="show == true" class="paging">
+                <button @click="pageDown">&#8678</button>
+                <p>pg. {{ page }}</p>
+                <button @click="pageUp">&#8680</button>
+            </div>
             <quote-item
                 v-for="quote in results.quotes"
                 v-bind:quote="quote"
                 v-bind:key="quote.id"
-                ></quote-item>
+            ></quote-item>
+            <div v-show="show == true" class="paging">
+                <button @click="pageDown">&#8678</button>
+                <p>pg. {{ page }}</p>
+                <button @click="pageUp">&#8680</button>
+            </div>
         </div>
     </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
